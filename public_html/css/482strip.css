@@ -54,9 +54,12 @@ p:last-child { margin-bottom: 0; }
 	max-width: 1600px;
 }
 
-.navbar-row { position: relative; }
+.navbar-row { 
+    position: relative; 
+}
 .navbar-container {
 	background-color: #cc9900; 
+        background-image:  url(../img/strip-bg-05.jpg);
 	font-size: 1em;
 	position: absolute; 
 	display: -webkit-flex;
@@ -68,7 +71,7 @@ p:last-child { margin-bottom: 0; }
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 40px;
+    padding: 1em;
     z-index: 1000;
 }
 
