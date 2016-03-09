@@ -7,12 +7,21 @@ and open the template in the editor.
 <html>
     <head>
         <title>jLab Bioinformatics</title>
+        <link rel="icon" href="./jlab.png" type="image/x-icon">
+        <link rel="shortcut icon" href="./jlab.png" type="image/png">  
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bt/jquery-bigtext.js"></script>
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> 
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/slider.css">
+        <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <script src="js/bt/jquery-bigtext.js"></script>
+
+
         <style>
             html,body {
                 min-height: 100%;
@@ -44,14 +53,6 @@ and open the template in the editor.
                 cursor: pointer;
             }
         </style>
-        <link rel="icon" href="./jlab.png" type="image/x-icon">
-        <link rel="shortcut icon" href="./jlab.png" type="image/png">   
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/slider.css">
-        <link rel="stylesheet" href="css/main.css">
-
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
    
     </head>
     <body>
@@ -137,7 +138,7 @@ and open the template in the editor.
                 
                 <div class="row">
                     <div class="col-md-12 shd" style="height:19em;">
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="5000">
+                        <div id="carousel-example-generic" class="carousel" data-ride="carousel" data-interval="5000">
                           <!-- Indicators -->
                           <ol class="carousel-indicators">
                             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
