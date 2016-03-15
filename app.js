@@ -1,9 +1,20 @@
-var express = require('express');
-var app = express();
+var express = require('express'),
+    morgan  = require('morgan');
+    app = express(),
+    port = process.env.PORT || 8080,
+    publicDir = require('path').join(__dirname, '/public');
 
-app.use(express.static(__dirname + '/public'));
+app.use(morgan('dev'));
 
-var port = process.env.PORT || 8080;
+//serve public dir
+app.use(express.static(publicDir));
+
+//respond to other requests
+app.use(function(req, res){
+  var data = '<h1>404</h1>';
+  res.writeHead(404, {'Content-Type': 'text/html'});
+  res.end(data);
+})
 
 app.listen(port);
 
