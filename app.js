@@ -1,6 +1,6 @@
 var express = require('express'),
     morgan  = require('morgan');
-    app = express(),
+var app = new express(),
     port = process.env.PORT || 8080,
     publicDir = require('path').join(__dirname, '/public');
 
@@ -14,8 +14,8 @@ app.use(function(req, res){
   var data = '<h1>404</h1>';
   res.writeHead(404, {'Content-Type': 'text/html'});
   res.end(data);
-})
+});
 
-app.listen(port);
-
-console.log("listening on port: " + port);
+app.listen(port, function() {
+    console.log("App is listening on port: " + port);
+});
