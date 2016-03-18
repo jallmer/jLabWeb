@@ -1,0 +1,24 @@
+{
+  "name": "jlabweb",
+  "version": "1.0.0",
+  "description": "JLab Website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/canerbagci/jLabWeb.git"
+  },
+  "author": "Jens Allmer, Caner Bağcı",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/canerbagci/jLabWeb/issues"
+  },
+  "homepage": "https://github.com/canerbagci/jLabWeb#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "morgan": "^1.7.0"
+  }
+}
