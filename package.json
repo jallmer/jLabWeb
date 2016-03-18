@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/canerbagci/jLabWeb#readme",
   "dependencies": {
+    "ejs": "^2.4.1",
     "express": "^4.13.4",
     "gulp": "^3.9.1",
     "morgan": "^1.7.0"
