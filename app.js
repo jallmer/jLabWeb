@@ -6,6 +6,13 @@ var app = new express(),
 
 app.use(morgan('dev'));
 
+var mysqlconn = require('./mysqlqueries.js');
+mysqlconn.connect(function(connection){
+    if(!connection)
+        console.log("Not connected to mysqldb.");
+});
+
+
 //serve public dir
 app.use(express.static(publicDir));
 
@@ -19,3 +26,13 @@ app.use(function(req, res){
 app.listen(port, function() {
     console.log("App is listening on port: " + port);
 });
+
+//List contributors
+app.route('/contributors')
+	.get(function(req,res){   
+            mysqlconn.getContributors(function(qr) {
+                if(qr)
+                    res.status(200).json(qr);
+                res.status(201).send(null);                
+            });
+	});
