@@ -23,7 +23,6 @@ module.exports = {
     getContributors: function(retfunc) {
         this.connection.query('SELECT * FROM contributors', function(err, rows, fields) {
             if (!err) {
-                //console.log(rows);
                 retfunc(rows);
             } else
                 retfunc(null);
