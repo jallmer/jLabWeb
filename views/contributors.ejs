@@ -7,7 +7,11 @@
     </head>
     <body>
         <div>
-            <%= contributor %>
+            <ul>
+                <% for(var i=0; i<contributors.length; i++) {%>
+                    <li><%= contributors[i].lnames %></li>
+                <% } %>
+            </ul>
         </div>
     </body>
 </html>

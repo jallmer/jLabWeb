@@ -8,9 +8,6 @@ var publicDir = require('path').join(__dirname, '/public');
 
 app.set('view engine','ejs');
 
-app.use(morgan('dev'));
-
-
 mysqlconn.connect(function(connection){
     if(!connection)
         console.log("Not connected to mysqldb.");
@@ -22,14 +19,14 @@ app.use(express.static(publicDir));
 
 //List contributors
 app.route('/contributors')
-	.get(function(req,res){   
+	.get(function(req,res){
+            mysqlconn.logToDB(req.headers,"contributors"); //here is how clicks can be logged to db
             mysqlconn.getContributors(function(qr) {
                 if(qr) {
-                    //qr = [{"ID":1,"fnames":"Jens","lnames":"Allmer","email":"jens@allmer.de","website":"","title":"","thumbloc":""}]
-                    res.render('contributors',{contributor:"Someone Useful"});
-                    //res.status(200).json(qr);
-                } else 
+                    res.status(200).render('contributors',{contributors:qr});
+                } else {
                     res.status(201).send(null);                
+                }
             });
 	});
         
