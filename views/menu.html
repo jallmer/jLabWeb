@@ -1,0 +1,70 @@
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="../index.html"><img alt='jlab Logo' src='../img/jlablogo.png' width="50" style="padding-top: -10px; margin-top: -10px;"/></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li <% if(active == 'news') {%>class="active"<%}%>><a href="./news">News</a></li>
+            <li <% if(active == 'about') {%>class="active"<%}%>><a href="./about">About</a></li>
+            <li <% if(active == 'articles' || active == 'books' || active == 'posters' || active == 'conferences' || active == 'grants' || active == 'projects') {%>class="active"<%}%> class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contributions <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li <% if(active == 'articles') {%>class="active"<%}%>><a href="./articles">Articles</a></li>
+                <li <% if(active == 'books') {%>class="active"<%}%>><a href="./books">Books</a></li>
+                <li <% if(active == 'posters') {%>class="active"<%}%>><a href="./posters">Posters</a></li>
+                <li role="separator" class="divider"></li>
+                <li <% if(active == 'conferences') {%>class="active"<%}%>><a href="./conferences">Conferences</a></li>
+                <li <% if(active == 'grants') {%>class="active"<%}%>><a href="./grants">Grants</a></li>
+                <li <% if(active == 'projects') {%>class="active"<%}%>><a href="./projects">Projects</a></li>
+              </ul>
+            </li>
+            <li <% if(active == 'software') {%>class="active"<%}%>><a href="./software">Software</a></li>
+            <li <% if(active == 'staff' || active == 'group' ||active == 'timeline' ||active == 'collaborators') {%>class="active"<%}%> class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Staff <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li <% if(active == 'staff') {%>class="active"<%}%>><a href="./staff">Staff</a></li>
+                <li <% if(active == 'group') {%>class="active"<%}%>><a href="./group">Group</a></li>
+                <li <% if(active == 'timeline') {%>class="active"<%}%>><a href="./timeline">Timeline</a></li>
+                <li role="separator" class="divider"></li>
+                <li <% if(active == 'collaborators') {%>class="active"<%}%>><a href="./collaborators">Collaborators</a></li>
+              </ul>
+            </li>
+            <li <% if(active == 'curcourses' || active == 'tutorials' ||active == 'workshops' ||active == 'courses') {%>class="active"<%}%> class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Teaching <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li <% if(active == 'curcourses') {%>class="active"<%}%>><a href="./curcourses">Current Courses</a></li>
+                <li <% if(active == 'tutorials') {%>class="active"<%}%>><a href="./tutorials">Tutorials</a></li>
+                <li <% if(active == 'workshops') {%>class="active"<%}%>><a href="./workshops">Workshops</a></li>
+                <li role="separator" class="divider"></li>
+                <li <% if(active == 'courses') {%>class="active"<%}%>><a href="./courses">Course List</a></li>
+              </ul>
+            </li>
+            <li <% if(active == 'soc_genomics' || active == 'soc_transcriptomics' ||active == 'soc_proteomics') {%>class="active"<%}%> class="dropdown disabled">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">WhatsUp <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li <% if(active == 'soc_genomics') {%>class="active"<%}%>><a href="./soc_genomics">Genomics</a></li>
+                <li <% if(active == 'soc_transcriptomics') {%>class="active"<%}%>><a href="./soc_transcriptomics">Transcriptomics</a></li>
+                <li <% if(active == 'soc_proteomics') {%>class="active"<%}%>><a href="./soc_proteomics">Proteomics</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li <% if(active == 'contact') {%>class="active"<%}%>><a href="./contact">Contact</a></li>
+            <li ><a href="http://www.iyte.edu.tr" target="_blank"><img alt='IzTech Logo' src='../img/iyte_en.png' width="30" style="padding-top: -5px; margin-top: -5px;"/></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+    <div class="container">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron" style="min-height: 800px;">
