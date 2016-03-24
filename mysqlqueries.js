@@ -1,6 +1,6 @@
 module.exports = {
     connection: null,
-    
+
     connect: function(cbf) {
         var mysql      = require('mysql');
         /*
@@ -15,9 +15,10 @@ module.exports = {
             user = "root";
             password = "123456";
         } else {
-            hostname = "jlab.iyte.edu.tr";
-            user = "root";
-            password = "123456";
+            //hostname = "jlab.iyte.edu.tr";
+            hostname = "10.2.24.19";
+            user = "jlabweb";
+            password = "j2016lab";
         }
         this.connection = mysql.createConnection({
           host     : hostname,
@@ -28,20 +29,20 @@ module.exports = {
         this.connection.connect();
         cbf(this.connection);
     },
-    
+
     disconnect: function() {
-        this.connection.end();  
+        this.connection.end();
     },
-    
+
     getContributors: function(retfunc) {
         this.connection.query('SELECT * FROM contributors', function(err, rows, fields) {
             if (!err) {
                 retfunc(rows);
             } else
                 retfunc(null);
-        });        
+        });
     },
-    
+
     startsWith: function(str, prefix) { // Not the right place for this function ... but for the time being ok.
         if (str.length < prefix.length)
             return false;
@@ -49,7 +50,7 @@ module.exports = {
             continue;
         return i < 0;
     },
-    
+
     logToDB: function(headers,page) {
         var insert = {};
         //console.log("Headers: " + JSON.stringify(headers));
@@ -62,6 +63,5 @@ module.exports = {
             if(err)
                 console.log(err);
         });
-    }    
+    }
 };
-
