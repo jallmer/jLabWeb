@@ -2,6 +2,7 @@ var express = require('express');
 var morgan  = require('morgan');
 var mysqlconn = require('./mysqlqueries.js');
 var ejs = require("ejs");
+var bodyParser     =        require("body-parser");
 
 var app = new express();
 var port = process.env.PORT || 8080;
@@ -19,7 +20,7 @@ mysqlconn.connect(function(connection){
 
 //serve public dir
 app.use(express.static(publicDir));
-
+//app.use(morgan('dev'));
 //List contributors
 app.route('/contributors')
 	.get(function(req,res){
@@ -28,7 +29,7 @@ app.route('/contributors')
                 if(qr) {
                     res.status(200).render('contributors',{contributors:qr});
                 } else {
-                    res.status(201).send(null);                
+                    res.status(201).send(null);
                 }
             });
 	});
@@ -39,6 +40,16 @@ app.route('/posters')
             res.status(200).render('posters',{title:"jLab Posters",active:"posters"});
 	});
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.post('/bibtexParse/registerBibtex', function(req, res){
+  console.log(req.body);
+  console.log(req.body[0].entryTags.title);
+  res.write(req.body[0].entryTags.author + "\t" + req.body[0].entryTags.title);
+  res.end();
+});
+
 //respond to other requests
 app.use(function(req, res){
     mysqlconn.logToDB(req.headers,"404");
@@ -48,4 +59,3 @@ app.use(function(req, res){
 app.listen(port, function() {
     console.log("App is listening on port: " + port);
 });
-

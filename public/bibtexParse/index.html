@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta name="description" lang="en" content="BibTex Parser" />
+    <meta name="keywords" lang="en" content="BibTex Parser" />
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibTex Parser</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../js/bibtexParse.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <div id="mainDiv">
+
+      <form id="citForm" action="">
+
+        <textarea name="bibtexText" id="bibtexText"> </textarea>
+
+
+
+      </form>
+        <button id="submit" onclick="submit();">Submit</button>
+    </div>
+
+    <div id="res">
+
+    </div>
+
+    <script>
+      function submit(){
+        var bibtextText = $('#bibtexText').val();
+        //console.log(bibtextText);
+        var bibtexObj = bibtexParse.toJSON(bibtextText);
+        //console.log(bibtexObj);
+        var data ={
+          bibtex: bibtexObj
+        };
+        //data.bibtex = bibtexObj;
+        $.ajax({
+          type: "POST",
+          url: "registerBibtex",
+          data: JSON.stringify(bibtexObj),
+          contentType: "application/json",
+          cache: false,
+
+          success: function(response){
+            console.log(response);
+            console.log("posted");
+            $('#res').append(response);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
