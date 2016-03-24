@@ -38,6 +38,12 @@ app.route('/posters')
             mysqlconn.logToDB(req.headers,"posters");
             res.status(200).render('posters',{title:"jLab Posters",active:"posters"});
 	});
+        
+app.route('/software')
+	.get(function(req,res){
+            mysqlconn.logToDB(req.headers,"software");
+            res.status(200).render('software',{title:"jLab Software and Online Tools",active:"software"});
+	});        
 
 //respond to other requests
 app.use(function(req, res){
