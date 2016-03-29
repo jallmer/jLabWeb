@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Head tags and stylesheets include -->
+        <% include templates/head.html %>
+        <!-- Page specific stylesheets -->
+        <link rel="stylesheet" href="/css/main.css"></link>
+        <style>
+            h4 {
+                            text-align: center;
+                            font-weight: bolder;
+                            font-size: 1.5em;
+                            margin-top: 0.5em;
+                            margin-bottom: 0.5em;
+                        }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation bar include -->
+        <% include templates/navbar.html %>
+
+        <!-- Main content and items -->
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron" style="min-height: 800px;">
+                <div class="row">
+                    <div class="row"><div class="col-md-12">
+                        <h1>About</h1>
+                    </div></div>
+                    <div class="row"><div class="col-md-12">
+                        <h2>What Bioinformatics means to us</H2>
+                        <p>Bioinformatics consists of an applied and an algorithmic branch. The algorithmic one aims to develop and improve solutions to 
+                            generic problems at the intersection of biology and compuer science. Applied bioinformatics draws from the existing 
+                            algorithmic solutions; adopts and applies them to specific problems in biology.</p>
+
+                        <h4>We believe that our work should facilitate medical and biological research</h4>
+
+                        <p>To achieve that end we either directly support data analysis in collaboration with experimentalists, and/or develop 
+                            new algorithms/workflows for complex tasks that have no existing solution.</p>
+
+                        <p>We have a young and aspiring team tackling different areas in bioinformatics and about 200 dedicated computer cores to 
+                            support their work in three different areas of bioinformatics.</p>                    
+                    </div></div>
+                    <div class="row"><div class="col-md-12">
+                        &nbsp;
+                    </div></div>
+                    <div class="row"><div class="col-md-6">
+                        <h3>Genomics</h3>
+                        <p>Most work performed in this area is support for other groups like genome and transcriptome assembly, and annotation. 
+                            However, we have also compared de novo assembly tools, developed an algorithm for ab initio detection of adapters and 
+                            showed that some published work contained some deficiencies in the next generation sequence analysis workflow.</p>                        
+                    </div><div class="col-md-6">
+                        <img src="img/genomics.png" height="250" alt="Genomics group (2016)"/>
+                    </div></div>
+                    <div class="row"><div class="col-md-12">
+                        &nbsp;
+                    </div></div>
+                    <div class="row"><div class="col-md-6">
+                        <h3>Transcriptomics</h3>
+                        <p>Differential expression analysis is a task we mostly perform for colleagues in collaboration, 
+                            but we have used it for microRNA expression in Toxoplasma gondii for our own research. 
+                            Most interesting for us is miRNA detection using machine learning approaches. Currently, we focus on miRNA target 
+                            detection and the establishment of miRNA regulatory networks and their interesection with gene regulatory 
+                            networks and known pathways.</p>                        
+                    </div><div class="col-md-6">
+                        <img src="img/transcriptomics.png" height="250" alt="Transcriptomics group (2016)"/>
+                    </div></div>
+                    <div class="row"><div class="col-md-12">
+                        &nbsp;
+                    </div></div>
+                    <div class="row"><div class="col-md-6">
+                        <h3>Proteomics</h3>
+                        <p>In our opinion proteomics sways on a shaky foundation where even peptide and protein identification is not a very well 
+                            established methodology. Therefore, one of our current focus is fixing this problem. Despite these limits, we support 
+                            protein identification at the state-of-the-art and develop workflows allowing protein quantitation and 
+                            facilitating proteogenomics.</p>                        
+                    </div><div class="col-md-6">
+                        <img src="img/proteomics.png" height="250" alt="Proteomics group (2016)"/>
+                    </div></div>
+                </div>
+            </div>
+        </div> <!-- /container -->
+
+        <!-- Script file and function include -->
+        <% include templates/scripts.html %>
+
+    </body>
+</html>

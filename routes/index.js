@@ -16,7 +16,9 @@ router.get('/software', function (req, res, next) {
     res.status(200).render('software', {title: "jLab Software and Online Tools", active: "software"});
 });
 
-
+router.get('/about', function (req, res, next) {
+    res.status(200).render('about', {title: "About jLab", active: "about"});
+});
 
 //Bibtex Parse routes
 router.post('/bibtexParse/registerBibtex', function(req, res){
