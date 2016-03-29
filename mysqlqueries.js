@@ -63,5 +63,23 @@ module.exports = {
             if(err)
                 console.log(err);
         });
+    },
+
+    addPublication: function(bibtexEntry){
+      var insert = {};
+      var fields = ["title", "author", "abstract", "journal", "publisher", "year", "month", "volume", "number", "pages", "keywords", "doi", "url", "pmid", "issn"];
+      for(var key in bibtexEntry.entryTags){
+
+        if(fields.indexOf(key) < 0){
+          continue;
+        }
+        insert[key] = bibtexEntry.entryTags[key];
+      }
+
+      insert['type'] = bibtexEntry.entryType;
+      this.connection.query("INSERT INTO Publications SET ?", insert, function(err, result){
+        if(err)
+          console.log(err);
+      });
     }
 };
