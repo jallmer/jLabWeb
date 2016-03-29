@@ -1,69 +1,63 @@
 var express = require('express');
-var morgan  = require('morgan');
-var mysqlconn = require('./mysqlqueries.js');
-var ejs = require("ejs");
-var bodyParser     =        require("body-parser");
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
-var app = new express();
-var port = process.env.PORT || 8080;
-var publicDir = require('path').join(__dirname, '/public');
+var routes = require('./routes/index');
+var app = express();
 
-app.set('view engine','ejs');
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
-app.engine('html', ejs.renderFile);
 
-mysqlconn.connect(function(connection){
-    if(!connection)
-        console.log("Not connected to mysqldb.");
-});
+//For render .html files
+app.engine('.html', require('ejs').renderFile);
 
-
-//serve public dir
-app.use(express.static(publicDir));
-//app.use(morgan('dev'));
-//List contributors
-app.route('/contributors')
-	.get(function(req,res){
-            mysqlconn.logToDB(req.headers,"contributors"); //here is how clicks can be logged to db
-            mysqlconn.getContributors(function(qr) {
-                if(qr) {
-                    res.status(200).render('contributors',{contributors:qr});
-                } else {
-                    res.status(201).send(null);
-                }
-            });
-	});
-
-app.route('/posters')
-	.get(function(req,res){
-            mysqlconn.logToDB(req.headers,"posters");
-            res.status(200).render('posters',{title:"jLab Posters",active:"posters"});
-	});
-
-app.route('/software')
-	.get(function(req,res){
-            mysqlconn.logToDB(req.headers,"software");
-            res.status(200).render('software',{title:"jLab Software and Online Tools",active:"software"});
-	});
-
-app.use(bodyParser.urlencoded({ extended: false }));
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(logger('dev'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.post('/bibtexParse/registerBibtex', function(req, res){
+//Serve static files in Public directory
+app.use(express.static(__dirname + '/public'));
 
-  for(var i = 0; i < req.body.length; i++){
-    mysqlconn.addPublication(req.body[i]);
+app.use('/', routes);
 
-  }
-  res.end();
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
-//respond to other requests
-app.use(function(req, res){
-    mysqlconn.logToDB(req.headers,"404");
-    res.status(404).render('404');
+// error handlers
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+    app.use(function (err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    console.log(err.message);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
 });
 
-app.listen(port, function() {
-    console.log("App is listening on port: " + port);
-});
+module.exports = app;

@@ -1,11 +1,31 @@
-<% include head.html %>
-<% include menu.html %>
+<!DOCTYPE html>
+<html>
+    <head>
 
+        <!-- Head tags and stylesheets include -->
+        <% include templates/head.html %>
+        <!-- Page specific stylesheets -->
+        <link rel="stylesheet" href="/css/main.css">
 
-    <h1>Posters</h1>
-    <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-    <p>To see the difference between static and fixed top navbars, just scroll.</p>
+    </head>
+    <body>
+        <!-- Navigation bar include -->
+        <% include templates/navbar.html %>
 
+        <!-- Main content and items -->
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron" style="min-height: 800px;">
 
+                <h1>Posters</h1>
+                <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+                <p>To see the difference between static and fixed top navbars, just scroll.</p>
 
-<% include foot.html %>
+            </div>
+        </div> <!-- /container -->
+
+        <!-- Script file and function include -->
+        <% include templates/scripts.html %>
+
+    </body>
+</html>

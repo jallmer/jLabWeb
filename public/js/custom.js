@@ -1,18 +1,1 @@
-// templatemo 467 easy profile
-
-// PRELOADER
-
-$(window).load(function(){
-    $('.preloader').delay(1000).fadeOut("slow"); // set duration in brackets    
-});
-
-// HOME BACKGROUND SLIDESHOW
-$(function(){
-    jQuery(document).ready(function() {
-		$('body').backstretch([
-	 		 "../img/tm-bg-slide-1.jpg", 
-	 		 "../img/tm-bg-slide-2.jpg",
-			 "../img/tm-bg-slide-3.jpg"
-	 			], 	{duration: 3200, fade: 1300});
-		});
-});
+$(window).load(function(){$(".preloader").delay(1e3).fadeOut("slow")}),$(function(){jQuery(document).ready(function(){$("body").backstretch(["/img/backgrounds/tm-bg-slide-1.jpg","/img/backgrounds/tm-bg-slide-2.jpg","/img/backgrounds/tm-bg-slide-3.jpg"],{duration:3200,fade:1300})})});
