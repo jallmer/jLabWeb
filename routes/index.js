@@ -2,6 +2,12 @@ var express = require('express');
 var router = express.Router();
 var mysqlconn = require('../dev/utils/mysqlqueries.js');
 
+mysqlconn.connect(function(connection){
+  if(!connection){
+    console.log("Not connected to mysqldb");
+  }
+});
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('index', {title: 'jLab Bioinformatics'});
