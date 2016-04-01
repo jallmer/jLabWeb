@@ -12,18 +12,18 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../js/bibtexParse.js"></script>
+    <script src="/js/bibtexParse.js"></script>
 
 
   </head>
 
   <body>
 
-    <div id="mainDiv">
-
+     <center>
+    <div id="mainDiv" style="margin-top: 10%;">
       <form id="citForm" action="">
 
-        <textarea name="bibtexText" id="bibtexText"> </textarea>
+        <textarea name="bibtexText" id="bibtexText" rows=20 cols=100> </textarea>
 
 
 
@@ -34,7 +34,7 @@
     <div id="res">
 
     </div>
-
+</center>
     <script>
       function submit(){
         var bibtextText = $('#bibtexText').val();
@@ -47,7 +47,7 @@
         //data.bibtex = bibtexObj;
         $.ajax({
           type: "POST",
-          url: "registerBibtex",
+          url: "./bibtexParse/registerBibtex",
           data: JSON.stringify(bibtexObj),
           contentType: "application/json",
           cache: false,
@@ -56,6 +56,9 @@
             console.log(response);
             console.log("posted");
             $('#res').append(response);
+          },
+         error: function(e){
+           console.log(e);
           }
         });
       }
