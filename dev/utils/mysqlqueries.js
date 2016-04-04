@@ -78,13 +78,13 @@ module.exports = {
 
    },
 
-   addAuthorship : function(autId, pubId){
+   addAuthorship: function(autId, pubId) {
       var insert = {};
       insert["autId"] = autId;
       insert["pubId"] = pubId;
-      this.pool.getConnection(function(err, connection){
-         connection.query("INSERT INTO Authorship SET ?", insert, function(err, rows){
-            if(err){
+      this.pool.getConnection(function(err, connection) {
+         connection.query("INSERT INTO Authorship SET ?", insert, function(err, rows) {
+            if (err) {
                console.log(err);
             }
          });
@@ -92,18 +92,18 @@ module.exports = {
       });
    },
 
-   addAuthor : function(names, pubId){
+   addAuthor: function(names, pubId) {
       var insert = {};
       insert["lname"] = names[0];
       insert["fname"] = names[1].split(" ")[0];
       var mnames = "";
-      for(var i = 1; i < names[1].split(" ").length; i++){
+      for (var i = 1; i < names[1].split(" ").length; i++) {
          mnames += names[1].split(" ")[i] + " ";
       }
       insert["mnames"] = mnames;
-      this.pool.getConnection(function(err, connection){
-         connection.query("INSERT INTO Persons SET ?", insert, function(err, rows){
-            if(err){
+      this.pool.getConnection(function(err, connection) {
+         connection.query("INSERT INTO Persons SET ?", insert, function(err, rows) {
+            if (err) {
                console.log(err);
             }
             console.log(names[0] + " inserted into table with ID: " + rows.insertId);
@@ -114,23 +114,21 @@ module.exports = {
       });
    },
 
-   checkAutExists: function(names, pubId){
+   checkAutExists: function(names, pubId) {
       autId = 0;
       this.pool.getConnection(function(err, connection) {
 
          connection.query("SELECT * FROM Persons WHERE lname = '" + names[0] + "'", function(err, rows) {
-            if(err){
+            if (err) {
                console.log(err);
             }
             var autId = 0;
-            if(rows.length > 0){
+            if (rows.length > 0) {
                autId = rows[0].ID;
-               console.log(names[0] + " exists with ID: " + autId);
                var mysqlconn = require('./mysqlqueries.js');
                mysqlconn.addAuthorship(autId, pubId);
-            }else{
+            } else {
                autId = -1;
-               console.log(names[0] + " doesn't exist");
                var mysqlconn = require('./mysqlqueries.js');
                mysqlconn.addAuthor(names, pubId);
             }
@@ -150,15 +148,56 @@ module.exports = {
       }
    },
 
-   addPublication: function(bibtexEntry) {
-      console.log("deneme");
+   //NOT WORKING atm
+   updatePublication: function(bibtexEntry) {
+      console.log("updating");
       var insert = {};
       var fields = ["title", "author", "abstract", "journal", "publisher", "year", "month", "volume", "number", "pages", "keywords", "doi", "url", "pmid", "issn"];
       for (var key in bibtexEntry.entryTags) {
          if (fields.indexOf(key) < 0) {
             continue;
          }
-         bibtexEntry.entryTags[key] = bibtexEntry.entryTags[key].replace("{\c{c}}/g", "ç").replace("{\"{o}}", "ö").replace("{\"{u}}", "ü");
+         //bibtexEntry.entryTags[key] = bibtexEntry.entryTags[key].replace(new RegExp('{\\c{c}}', 'g'), 'ç').replace(new RegExp("{\\\"{u}}", 'g'), 'ü').replace(new RegExp('\\"{o}}', 'g'), 'ö');
+         var mysqlconn = require('./mysqlqueries.js');
+         bibtexEntry.entryTags[key] = mysqlconn.replaceAll(bibtexEntry.entryTags[key], "{\\c{c}}", "ç");
+         bibtexEntry.entryTags[key] = mysqlconn.replaceAll(bibtexEntry.entryTags[key], "{\\\"{u}}", "ü");
+         bibtexEntry.entryTags[key] = mysqlconn.replaceAll(bibtexEntry.entryTags[key], "{\\\"{o}}", "ö");
+         insert[key] = bibtexEntry.entryTags[key];
+      }
+      insert['type'] = bibtexEntry.entryType;
+
+      pubId = 0;
+      this.pool.getConnection(function(err, connection) {
+         connection.query("UPDATE Publications SET ? WHERE title = " + insert["title"], insert, function(err, rows) {
+            if (err) {
+               console.log(err);
+            }
+         });
+         connection.release();
+      });
+   },
+
+   escapeRegExp: function(str) {
+      return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+   },
+
+   replaceAll: function(str, find, replace) {
+      var mysqlconn = require('./mysqlqueries.js');
+      return str.replace(new RegExp(mysqlconn.escapeRegExp(find), 'g'), replace);
+   },
+
+   insertPublication: function(bibtexEntry) {
+      var insert = {};
+      var fields = ["title", "author", "abstract", "journal", "publisher", "year", "month", "volume", "number", "pages", "keywords", "doi", "url", "pmid", "issn"];
+      for (var key in bibtexEntry.entryTags) {
+         if (fields.indexOf(key) < 0) {
+            continue;
+         }
+         //bibtexEntry.entryTags[key] = bibtexEntry.entryTags[key].replace(new RegExp('{\\c{c}}', 'g'), 'ç').replace(new RegExp("{\\\"{u}}", 'g'), 'ü').replace(new RegExp('\\"{o}}', 'g'), 'ö');
+         var mysqlconn = require('./mysqlqueries.js');
+         bibtexEntry.entryTags[key] = mysqlconn.replaceAll(bibtexEntry.entryTags[key], "{\\c{c}}", "ç");
+         bibtexEntry.entryTags[key] = mysqlconn.replaceAll(bibtexEntry.entryTags[key], "{\\\"{u}}", "ü");
+         bibtexEntry.entryTags[key] = mysqlconn.replaceAll(bibtexEntry.entryTags[key], "{\\\"{o}}", "ö");
          insert[key] = bibtexEntry.entryTags[key];
       }
       insert['type'] = bibtexEntry.entryType;
@@ -174,6 +213,24 @@ module.exports = {
             mysqlconn.associateAuthors(bibtexEntry, pubId);
          });
          connection.release();
+      });
+      return pubId;
+   },
+
+   addPublication: function(bibtexEntry){
+      this.pool.getConnection(function(err, connection){
+         connection.query("SELECT * FROM Publications WHERE title = \"" + bibtexEntry.entryTags["title"] + "\"", function(err, rows){
+            if(err){
+               console.log(err);
+            }
+            var mysqlconn = require('./mysqlqueries.js');
+            if(rows.length > 0){
+               console.log(bibtexEntry.entryTags["title"] + " exists. Skipping");
+            }else{
+               var pubId = mysqlconn.insertPublication(bibtexEntry);
+               console.log(pubId);
+            }
+         });
       });
    }
 };
