@@ -8,7 +8,8 @@ module.exports = {
       var hostname;
       var user;
       var password;
-      if (this.startsWith(os.hostname(), "jallmer")) {
+      var stringutils = require('./stringutils.js');
+      if (stringutils.startsWith(os.hostname(), "jallmer")) {
          hostname = "localhost";
          user = "root";
          password = "123456";
@@ -49,14 +50,7 @@ module.exports = {
       // });
    },
 
-   startsWith: function(str, prefix) { // Not the right place for this function ... but for the time being ok.
-      if (str.length < prefix.length)
-         return false;
-      for (var i = prefix.length - 1;
-         (i >= 0) && (str[i] === prefix[i]); --i)
-         continue;
-      return i < 0;
-   },
+
 
    logToDB: function(headers, page) {
       var insert = {};
@@ -158,10 +152,10 @@ module.exports = {
             continue;
          }
          //bibtexEntry.entryTags[key] = bibtexEntry.entryTags[key].replace(new RegExp('{\\c{c}}', 'g'), 'ç').replace(new RegExp("{\\\"{u}}", 'g'), 'ü').replace(new RegExp('\\"{o}}', 'g'), 'ö');
-         var mysqlconn = require('./mysqlqueries.js');
-         bibtexEntry.entryTags[key] = mysqlconn.replaceAll(bibtexEntry.entryTags[key], "{\\c{c}}", "ç");
-         bibtexEntry.entryTags[key] = mysqlconn.replaceAll(bibtexEntry.entryTags[key], "{\\\"{u}}", "ü");
-         bibtexEntry.entryTags[key] = mysqlconn.replaceAll(bibtexEntry.entryTags[key], "{\\\"{o}}", "ö");
+         var stringutils = require('./stringutils.js');
+         bibtexEntry.entryTags[key] = stringutils.replaceAll(bibtexEntry.entryTags[key], "{\\c{c}}", "ç");
+         bibtexEntry.entryTags[key] = stringutils.replaceAll(bibtexEntry.entryTags[key], "{\\\"{u}}", "ü");
+         bibtexEntry.entryTags[key] = stringutils.replaceAll(bibtexEntry.entryTags[key], "{\\\"{o}}", "ö");
          insert[key] = bibtexEntry.entryTags[key];
       }
       insert['type'] = bibtexEntry.entryType;
@@ -177,15 +171,6 @@ module.exports = {
       });
    },
 
-   escapeRegExp: function(str) {
-      return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
-   },
-
-   replaceAll: function(str, find, replace) {
-      var mysqlconn = require('./mysqlqueries.js');
-      return str.replace(new RegExp(mysqlconn.escapeRegExp(find), 'g'), replace);
-   },
-
    insertPublication: function(bibtexEntry) {
       var insert = {};
       var fields = ["title", "author", "abstract", "journal", "publisher", "year", "month", "volume", "number", "pages", "keywords", "doi", "url", "pmid", "issn"];
@@ -194,10 +179,10 @@ module.exports = {
             continue;
          }
          //bibtexEntry.entryTags[key] = bibtexEntry.entryTags[key].replace(new RegExp('{\\c{c}}', 'g'), 'ç').replace(new RegExp("{\\\"{u}}", 'g'), 'ü').replace(new RegExp('\\"{o}}', 'g'), 'ö');
-         var mysqlconn = require('./mysqlqueries.js');
-         bibtexEntry.entryTags[key] = mysqlconn.replaceAll(bibtexEntry.entryTags[key], "{\\c{c}}", "ç");
-         bibtexEntry.entryTags[key] = mysqlconn.replaceAll(bibtexEntry.entryTags[key], "{\\\"{u}}", "ü");
-         bibtexEntry.entryTags[key] = mysqlconn.replaceAll(bibtexEntry.entryTags[key], "{\\\"{o}}", "ö");
+         var stringutils = require('./stringutils.js');
+         bibtexEntry.entryTags[key] = stringutils.replaceAll(bibtexEntry.entryTags[key], "{\\c{c}}", "ç");
+         bibtexEntry.entryTags[key] = stringutils.replaceAll(bibtexEntry.entryTags[key], "{\\\"{u}}", "ü");
+         bibtexEntry.entryTags[key] = stringutils.replaceAll(bibtexEntry.entryTags[key], "{\\\"{o}}", "ö");
          insert[key] = bibtexEntry.entryTags[key];
       }
       insert['type'] = bibtexEntry.entryType;
@@ -214,7 +199,6 @@ module.exports = {
          });
          connection.release();
       });
-      return pubId;
    },
 
    addPublication: function(bibtexEntry){
@@ -227,8 +211,7 @@ module.exports = {
             if(rows.length > 0){
                console.log(bibtexEntry.entryTags["title"] + " exists. Skipping");
             }else{
-               var pubId = mysqlconn.insertPublication(bibtexEntry);
-               console.log(pubId);
+               mysqlconn.insertPublication(bibtexEntry);
             }
          });
       });
