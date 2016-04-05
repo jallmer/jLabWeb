@@ -15,9 +15,48 @@ app.set('view engine', 'html');
 //For render .html files
 app.engine('.html', require('ejs').renderFile);
 
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+//app.use(logger('short',{
+//   "stream" : {
+//       write: function(str) {
+//           console.log(str);
+//       }
+//   }
+//    
+//}));
+
+app.use(logger(format({
+    responseTime: ':response-time',
+    IP: ':remote-addr',
+    //remote_user: ':remote-user',
+    status: ':status',
+    targetPage: ':url',
+    requestTime: ':date[iso]',
+    sourcePage: ':referrer',
+    browser: ':user-agent'
+            //type : function (req, res) { return req.headers;}
+            // etc.; any non-standard tokens you would have to implement
+})));
+
+function format(obj) {
+    var keys = Object.keys(obj);
+    var token = /^:([-\w]{2,})(?:\[([^\]]+)\])?$/;
+    return function (tokens, req, res) {
+        var data = {};
+        for (var i = 0; i < keys.length; i++) {
+            var key = keys[i];
+            var val = token.exec(obj[key]);
+            data[key] = val !== null
+                    ? tokens[val[1]](req, res, val[2])
+                    : obj[key];
+        }
+        var mysqlconn = require("./dev/utils/mysqlqueries.js");
+        mysqlconn.logToDB(data);
+        //console.log(JSON.stringify(data, null, 4));
+    };
+}
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
@@ -54,10 +93,10 @@ if (app.get('env') === 'development') {
 app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     console.log(err.message);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
 
 module.exports = app;

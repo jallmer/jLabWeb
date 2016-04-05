@@ -52,24 +52,23 @@ module.exports = {
 
 
 
-   logToDB: function(headers, page) {
-      var insert = {};
-      //console.log("Headers: " + JSON.stringify(headers));
-      insert['IP'] = headers['host'];
-      insert['sourcePage'] = headers['referer'] + "";
-      insert['targetPage'] = page;
-      insert['browser'] = headers['user-agent'];
-      insert['language'] = headers['accept-language'];
-
+   logToDB: function(data) {
+       var insert = {};
+       var keys = Object.keys(data);
+       var fields = ["requestTime", "targetPage", "sourcePage", "status", "responseTime", "IP", "browser"];
+       for(var i = 0; i < keys.length; i++){
+           if(fields.indexOf(keys[i]) < 0)
+               continue;
+            insert[keys[i]] = data[keys[i]];
+       }
       this.pool.getConnection(function(err, connection) {
          connection.query("INSERT INTO clickstats SET ?", insert, function(err, rows) {
             if (err) {
-               console.log(err);
+               console.log(err.message);
             }
             connection.release();
          });
       });
-
    },
 
    addAuthorship: function(autId, pubId) {
