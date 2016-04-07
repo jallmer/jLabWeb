@@ -1,0 +1,551 @@
+#A(((	A(((	Triplet count	Sequential Structural 	Xue et al. 2005
+#A	A	Nucleotide count	Sequential 	Lai et al. 2003
+#A((.	A((.	Triplet count	Sequential Structural 	Xue et al. 2005
+#A(.(	A(.(	Triplet count	Sequential Structural 	Xue et al. 2005
+#A(..	A(..	Triplet count	Sequential Structural 	Xue et al. 2005
+#A.((	A.((	Triplet count	Sequential Structural 	Xue et al. 2005
+#A.(.	A.(.	Triplet count	Sequential Structural 	Xue et al. 2005
+#A..(	A..(	Triplet count	Sequential Structural 	Xue et al. 2005
+#A...	A...	Triplet count	Sequential Structural 	Xue et al. 2005
+#A++#U	A+U content	A+U content	Sequential 	Zhang et al. 2006
+#AA	AA	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#AC	AC	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#AG	AG	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#AU	AU	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#C	C	Nucleotide count	Sequential 	Lai et al. 2003
+#C(((	C(((	Triplet count	Sequential Structural 	Xue et al. 2005
+#C((.	C((.	Triplet count	Sequential Structural 	Xue et al. 2005
+#C(.(	C(.(	Triplet count	Sequential Structural 	Xue et al. 2005
+#C(..	C(..	Triplet count	Sequential Structural 	Xue et al. 2005
+#C.((	C.((	Triplet count	Sequential Structural 	Xue et al. 2005
+#C.(.	C.(.	Triplet count	Sequential Structural 	Xue et al. 2005
+#C..(	C..(	Triplet count	Sequential Structural 	Xue et al. 2005
+#C...	C...	Triplet count	Sequential Structural 	Xue et al. 2005
+#CA	CA	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#CC	CC	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#CG	CG	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#CU	CU	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#G	G	Nucleotide count	Sequential 	Lai et al. 2003
+#G(((	G(((	Triplet count	Sequential Structural 	Xue et al. 2005
+#G((.	G((.	Triplet count	Sequential Structural 	Xue et al. 2005
+#G(.(	G(.(	Triplet count	Sequential Structural 	Xue et al. 2005
+#G(..	G(..	Triplet count	Sequential Structural 	Xue et al. 2005
+#G.((	G.((	Triplet count	Sequential Structural 	Xue et al. 2005
+#G.(.	G.(.	Triplet count	Sequential Structural 	Xue et al. 2005
+#G..(	G..(	Triplet count	Sequential Structural 	Xue et al. 2005
+#G...	G...	Triplet count	Sequential Structural 	Xue et al. 2005
+#G++#C	G+C content	G+C content	Sequential 	Zhang et al. 2006
+#GA	GA	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#GC	GC	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#GG	GG	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#GU	GU	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#U	U	Nucleotide count	Sequential 	Lai et al. 2003
+#U(((	U(((	Triplet count	Sequential Structural 	Xue et al. 2005
+#U((.	U((.	Triplet count	Sequential Structural 	Xue et al. 2005
+#U(.(	U(.(	Triplet count	Sequential Structural 	Xue et al. 2005
+#U(..	U(..	Triplet count	Sequential Structural 	Xue et al. 2005
+#U.((	U.((	Triplet count	Sequential Structural 	Xue et al. 2005
+#U.(.	U.(.	Triplet count	Sequential Structural 	Xue et al. 2005
+#U..(	U..(	Triplet count	Sequential Structural 	Xue et al. 2005
+#U...	U...	Triplet count	Sequential Structural 	Xue et al. 2005
+#UA	UA	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#UC	UC	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#UG	UG	Dinucleotide count	Sequential 	Ng & Mishra 2007
+#UU	UU	Dinucleotide count	Sequential 	Ng & Mishra 2007
+%A	%A	Nucleotide percent	Sequential 	Lai et al. 2003
+%AA	%AA	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%AC	%AC	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%AG	%AG	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%AU	%AU	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%C	%C	Nucleotide percent	Sequential 	Lai et al. 2003
+%CA	%CA	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%CC	%CC	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%CG	%CG	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%CU	%CU	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%G	%G	Nucleotide percent	Sequential 	Lai et al. 2003
+%GA	%GA	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%GC	%GC	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%GG	%GG	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%GU	%GU	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%U	%U	Nucleotide percent	Sequential 	Lai et al. 2003
+%UA	%UA	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%UC	%UC	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%UG	%UG	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+%UU	%UU	Dinucleotide percent	Sequential 	Ng & Mishra 2007
+*A(((	A(((	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*A((.	A((.	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*A(.(	A(.(	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*A(..	A(..	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*A.((	A.((	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*A.(.	A.(.	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*A..(	A..(	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*A...	A...	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*C(((	C(((	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*C((.	C((.	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*C(.(	C(.(	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*C(..	C(..	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*C.((	C.((	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*C.(.	C.(.	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*C..(	C..(	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*C...	C...	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*G(((	G(((	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*G((.	G((.	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*G(.(	G(.(	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*G(..	G(..	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*G.((	G.((	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*G.(.	G.(.	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*G..(	G..(	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*G...	G...	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*U(((	U(((	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*U((.	U((.	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*U(.(	U(.(	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*U(..	U(..	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*U.((	U.((	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*U.(.	U.(.	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*U..(	U..(	Triplet frequency	Sequential Structural 	Xue et al. 2005
+*U...	U...	Triplet frequency	Sequential Structural 	Xue et al. 2005
+bpp/sl	avg_bp_stem	Base pairing propensity/ stem length	Structural 	Ding et al. 2010
+bpd	D, diversity,  ensemble diversity, bpd	Base pairing distance	Structural Thermodynamic	Freyhult et al 2005
+bpd/hpl	D/hpl	base pairing distance/  hairpin length	Structural Thermodynamic	Freyhult et al 2005
+bpp	bpp, dp	Base pairing propensity	Structural 	Ng & Mishra 2007
+bpp/hpl	bpp/hpl	Base pairing propensity/ hairpin length	Structural 	Ding et al. 2010
+bpp/nl	dP/n_loops	Base pairing propensity/ number of loops	Structural 	Ding et al. 2010
+bpp/ns	bpp/nStem	Base pairing propensity/ number of stem	Structural 	Ding et al. 2010
+dc	dc	Degree of compactness	Structural 	(Fera et al., 2004; Gan et al., 2004)
+dG	dG_mf	Gibbs free energy	Thermodynamic	Ng & Mishra 2007
+dG/hpl	dG_mf/L	Gibbs free energy/ hairpin length	Thermodynamic	Ng & Mishra 2007
+dH	dH_mf	Enthalpy	Thermodynamic	Batuwita et al. 2009
+dH/hpl	dH_mf/L	Structure Enthalpy	Thermodynamic	Batuwita et al. 2009
+dme	diff	Difference of MFE and EFE/ hairpin length	Thermodynamic	Batuwita et al. 2009
+dr	dr	Direct repeat	Sequential Structural Thermodynamic	Bentwich et al. 2008
+dS	dS_mf	Entropy	Thermodynamic	Batuwita et al. 2009
+dS/hpl	dS_mf/L	Structure Entropy	Thermodynamic	Batuwita et al. 2009
+ediv	diversity,  ensemble diversity, D, bpd	Ensemble Diversity	Thermodynamic	Batuwita et al. 2009
+efe	EFE	Ensemble Free Energy	Thermodynamic	Batuwita et al. 2009
+efq	Freq	Ensemble frequency	Thermodynamic	Batuwita et al. 2009
+#G++#C/hpl	GhC,G+C content	G+C content	Sequential 	Zhang et al. 2006
+hll	HLL	Hairpin loop length	Structural 	Bentwich et al. 2008
+hpmfe_rf/hpl	hmfe/hpl, mfe4	Hairpin MFE/ hairpin length	Structural Thermodynamic	Bentwich et al. 2008
+hpmfe_rf	hpmfe	Hairpin MFE	Structural Thermodynamic	Jiang et al. 2007
+hpmfe_rs	hpmfe	hairpin mfe	Structural Thermodynamic	Cakir & Almer 2010
+hpl	hpl	Hairpin length	Structural 	Bentwich et al. 2005
+hpl/ns	hpl/nStem	Hairpin length/ number of stem	Structural 	na
+ir	ir	Inverted repeat	Sequential Structural 	Bentwich et al. 2008
+mbs	MBS, largest bulge	Maximum bulge size	Structural 	Bentwich et al. 2008
+hpmfe_rf_I1	MFEI1, MFEahl	MFE index 1	Structural Thermodynamic	Zhang 2006
+hpmfe_rf/ns	MFEI2, mfe/nStems, mfe/ns	MFE index 2	Structural Thermodynamic	Ng & Mishra 2007
+hpmfe_rf/ns/hpl	MFEI3, hpmfe_rf/hpl/nl	MFE index 3	Structural Thermodynamic	Batuwita et al. 2009
+hpmfe_rf/hpl	MFEI4, hpmfe_rf/hpl	MFE index 4	Structural Thermodynamic	Batuwita et al. 2009
+nl	n_loops	Number of Loops	Structural 	Xue et al. 2005
+ns	nStem	Number of Stems	Structural 	Xue et al. 2005
+dns_p(efe)	p(EFEp)	P value using dinucleotide shuffling for efe	Probabilistic Thermodynamic	Jiang et al. 2007
+Q	Q	Shannon entropy	Probabilistic Thermodynamic	Ng & Mishra 2007
+Q/hpl	Q/hpl	Shannon entropy/ hairpin length	Probabilistic Thermodynamic	Ng & Mishra 2007
+st(A-U)/ns	AUS/nStem	AU bonds in stem / number of stem	Sequential Structural 	na
+st(A-U)/sl	AUS/aStl	AU bonds in stem / stem length	Sequential Structural 	na
+st(G-C)/ns	GCS/nStem	GC bonds in stem / number of stem	Sequential Structural 	na
+st(G-C)/sl	GCS/aStl	GC bonds in stem / stem length	Sequential Structural 	na
+st(G-U)/sl	GUS/aStl	GU bonds in stem / stem length	Sequential Structural 	na
+sl	stem length	Stem length	Structural 	Lai et al. 2003
+dns_p(bpd)	p(Dp)	P value using dinucleotide shuffling for bpd	Probabilistic Structural Thermodynamic	Jiang et al. 2007
+dns_p(bpd/hpl)	p(D/hplp)	P value using dinucleotide shuffling for bpd/  hpl	Probabilistic Structural Thermodynamic	Jiang et al. 2007
+dns_p(bpp)	p(bppp)	P value using dinucleotide shuffling for bpp	Probabilistic Structural 	Jiang et al. 2007
+dns_p(bpp/hpl)	p(bpp/hplp)	P value using dinucleotide shuffling for bpp/  hpl	Probabilistic Structural 	Jiang et al. 2007
+dns_p(hpl)	P/hpl	P value using dinucleotide shuffling for hpl	Probabilistic Structural 	Jiang et al. 2007
+dns_p(hpmfe_rf)	p(hpmfe_rfp)	P value using dinucleotide shuffling for mfe	Probabilistic Structural Thermodynamic	Jiang et al. 2007
+dns_p(hpmfe_rf/hpl)	p(hpmfe_rf/hplp)	P value using dinucleotide shuffling for mfe/ hpl	Probabilistic Structural Thermodynamic	Jiang et al. 2007
+dns_p(Q)	p(Qp)	P value using dinucleotide shuffling for Q	Probabilistic Thermodynamic	Jiang et al. 2007
+dns_p(Q/hpl)	p(Q/hplp)	P value using dinucleotide shuffling for Q/ hpl	Probabilistic Thermodynamic	Jiang et al. 2007
+dns_z(bpd)	z(DZ)	Z score using dinucleotide shuffling for bpd	Probabilistic Structural Thermodynamic	Ng & Mishra 2007
+dns_z(bpd/hpl)	z(D/hplZ)	Z score using dinucleotide shuffling for bpd/ hpl	Probabilistic Structural Thermodynamic	Ng & Mishra 2007
+dns_z(bpp)	z(bppZ)	Z score using dinucleotide shuffling for bpp	Probabilistic Structural 	Ng & Mishra 2007
+dns_z(Q)	z(QZ)	Z score using dinucleotide shuffling for Q	Probabilistic Thermodynamic	Ng & Mishra 2007
+dns_z(Q/hpl)	z(Q/hplZ)	Z score using dinucleotide shuffling for Q/ hpl	Probabilistic Thermodynamic	Ng & Mishra 2007
+st(A-U)		AU bonds in stem 	Sequential 	na
+st(G-C)		GC bonds in stem 	Sequential 	na
+st(G-U)		GU bonds in stem 	Sequential 	na
+Tm	Tm_mf	Melting temperature	Thermodynamic	Ding et al. 2010
+Tm/hpl	Tm_mf/L	Melting temperature/ hairpin length	Thermodynamic	Ding et al. 2010
+dns_z(bpp/hpl)	z(bpp/hplZ)	Z score using dinucleotide shuffling for bpp/ hpl	Probabilistic Structural 	Ng & Mishra 2007
+dns_z(efe)	z(EFEZ)	Z score using dinucleotide shuffling for efe	Probabilistic Thermodynamic	Ng & Mishra 2007
+dns_z(hpmfe_rf)	z(hpmfe_rfZ)	Z score using dinucleotide shuffling for mfe	Probabilistic Structural Thermodynamic	Ng & Mishra 2007
+dns_z(hpmfe_rf/hpl)	z(hpmfe_rf/hplZ)	Z score using dinucleotide shuffling for mfe/ hpl	Probabilistic Structural Thermodynamic	Ng & Mishra 2007
+#nisl_h	#nisl_h	Number of nucleotides in symmetric bulges	Structural 	Sewer et al. 2005
+#nial_h	#nial_h	Number of nucleotides in asymmetric bulges	Structural 	Sewer et al. 2005
+adbil	avg_dbil	Average distance between internal loops	Structural 	Sewer et al. 2005
+assl	avg_ssl	Average size of symmetric bulges	Structural 	Sewer et al. 2005
+asal	avg_asl	Average size of asymmetric bulges	Structural 	Sewer et al. 2005
+l(lsr)	len_lsr	Length calculated over the longest symmetrical region (lsr)	Structural 	Sewer et al. 2005
+dfhl	dfhl	Distance of lsr from the hairpin loop	Structural 	Sewer et al. 2005
+lsr(%A-U)	bp_lsr	Proportion of AU bonds in lsr	Sequential Structural 	Sewer et al. 2005
+lsr(%G-C)	bp_lsr	Proportion of  GC bonds in lsr	Sequential Structural 	Sewer et al. 2005
+lsr(%G-U)	bp_lsr	Proportion of  GU bonds in lsr	Sequential Structural 	Sewer et al. 2005
+lsr(%bp)	bp_lsr	Proportion of  bonds in lsr	Sequential Structural 	Sewer et al. 2005
+lsr(%A)	A lsr	Proportion of A in lsr	Sequential Structural 	Sewer et al. 2005
+lsr(%C)	C lsr	Proportion of C in lsr	Sequential Structural 	Sewer et al. 2005
+lsr(%G)	G lsr	Proportion of G in lsr	Sequential Structural 	Sewer et al. 2005
+lsr(%U)	U lsr	Proportion of U in lsr	Sequential Structural 	Sewer et al. 2005
+dns	Shuffling method,sm, sns, dns, or rnd	Dinucleotide shuffling	Probabilistic 	Jiang et al. 2007
+c#A	polyA	The longest continous number of A in the hairpin	Sequential 	Burgt et al. 2009
+c#C	polyC	The longest continous number of C in the hairpin	Sequential 	Burgt et al. 2009
+c#G	polyG	The longest continous number of G in the hairpin	Sequential 	Burgt et al. 2009
+c#U	polyU	The longest continous number of U in the hairpin	Sequential 	Burgt et al. 2009
+c#N	polyN	The longest continous number of any nucleotide in the hairpin	Sequential 	Burgt et al. 2009
+AsC		Surplus A over C	Sequential 	Burgt et al. 2009
+AsG		Surplus A over G	Sequential 	Burgt et al. 2009
+AsU		Surplus A over U	Sequential 	Burgt et al. 2009
+CsA		Surplus C over A	Sequential 	Burgt et al. 2009
+CsG		Surplus C over G	Sequential 	Burgt et al. 2009
+CsU		Surplus C over U	Sequential 	Burgt et al. 2009
+GsA		Surplus G over A	Sequential 	Burgt et al. 2009
+GsC	GsurplusC	Surplus G over C	Sequential 	Burgt et al. 2009
+GsU		Surplus G over U	Sequential 	Burgt et al. 2009
+UsA		Surplus U over A	Sequential 	Burgt et al. 2009
+UsC		Surplus U over C	Sequential 	Burgt et al. 2009
+UsG		Surplus U over G	Sequential 	Burgt et al. 2009
+ACsGU		Surplus of A and C over G and U	Sequential 	Burgt et al. 2009
+ACsUG		Surplus of A and C over U and G	Sequential 	Burgt et al. 2009
+AGsCU		Surplus of A and G over C and U	Sequential 	Burgt et al. 2009
+AGsUC		Surplus of A and G over U and C	Sequential 	Burgt et al. 2009
+AUsCG		Surplus of A and U over C and G	Sequential 	Burgt et al. 2009
+AUsGC		Surplus of A and U over G and C	Sequential 	Burgt et al. 2009
+CAsGU		Surplus of C and A over G and U	Sequential 	Burgt et al. 2009
+CAsUG		Surplus of C and A over U and G	Sequential 	Burgt et al. 2009
+CGsAU		Surplus of C and G over A and U	Sequential 	Burgt et al. 2009
+CGsUA		Surplus of C and G over U and A	Sequential 	Burgt et al. 2009
+CUsAG		Surplus of C and U over A and G	Sequential 	Burgt et al. 2009
+CUsGA		Surplus of C and U over G and A	Sequential 	Burgt et al. 2009
+GAsCU	GAsurplusCU	Surplus of G and A over C and U	Sequential 	Burgt et al. 2009
+GAsUC		Surplus of G and A over U and C	Sequential 	Burgt et al. 2009
+GCsAU		Surplus of G and C over A and U	Sequential 	Burgt et al. 2009
+GCsUA		Surplus of G and C over U and A	Sequential 	Burgt et al. 2009
+GUsAC		Surplus of G and U over A and C	Sequential 	Burgt et al. 2009
+GUsCA		Surplus of G and U over C and A	Sequential 	Burgt et al. 2009
+UAsCG		Surplus of U and A over C and G	Sequential 	Burgt et al. 2009
+UAsGC		Surplus of U and A over G and C	Sequential 	Burgt et al. 2009
+UCsAG		Surplus of U and C over A and G	Sequential 	Burgt et al. 2009
+UCsGA		Surplus of U and C over G and A	Sequential 	Burgt et al. 2009
+UGsAC		Surplus of U and G over A and C	Sequential 	Burgt et al. 2009
+UGsCA		Surplus of U and G over C and A	Sequential 	Burgt et al. 2009
+%A-U		Percentage fo A-U bonds of all constituting bonds.	Sequential Structural 	Burgt et al. 2009
+%G-C		Percentage fo G-C bonds of all constituting bonds.	Sequential Structural 	Burgt et al. 2009
+%G-U		Percentage fo G-U bonds of all constituting bonds.	Sequential Structural 	Burgt et al. 2009
+mscs	SCS-mono	Dinucleotide sequence complexity score 	Sequential 	Burgt et al. 2009
+dscs	SCS-di	Mononucleotide sequence complexity score 	Sequential 	Burgt et al. 2009
+lscm	longest matchstretch	Longest continious stretch of matches in the hairpin	Structural 	Burgt et al. 2009
+#nial_h/sl	bulge ratio	Number of nucleotides in asymmetric bulges/ sl	Structural 	Burgt et al. 2009
+#mdn	MaxDiBaseCount	Count of the two most occurring two bases	Sequential 	Burgt et al. 2009
+#mdn/hpl--c(0.5)	MaxDiBaseRatio	Count of the most occurring two bases/ hpl	Sequential 	Burgt et al. 2009
+c(#)		A constant number (#)		na
+#mnn	MinBasecount	Minimal base occurrence	Sequential 	Burgt et al. 2009
+#mnn/hpl	minimal base occurrence	Minimal base occurrence	Sequential 	Burgt et al. 2010
+c#As	polyAstem	The longest continous number of A in the stem	Sequential 	Burgt et al. 2009
+c#Cs	polyCstem	The longest continous number of C in the stem	Sequential 	Burgt et al. 2009
+c#Gs	polyGstem	The longest continous number of G in the stem	Sequential 	Burgt et al. 2009
+c#Us	polyUstem	The longest continous number of U in the stem	Sequential 	Burgt et al. 2009
+c#Ns	polyNstem	The longest continous number of any nucleotide in the stem	Sequential 	Burgt et al. 2009
+saln		Stem alignment length	Structural 	Xue et al. 2005
+bpp/saln	match ratio in hairpin stem	Base pairing propensity/ saln	Structural 	Burgt et al. 2009
+#goh	gapratio	Gap openings in hairpin alignment	Structural 	Burgt et al. 2009
+#gih	gap open number	Total gaps in alignment	Structural 	Burgt et al. 2009
+#gih/saln	gap open ratio	Total gaps in alignment/ saln	Structural 	Burgt et al. 2009
+adal	stem symmetry	Absolute length difference between both arms.	Structural 	Burgt et al. 2009
+adalr	stem symmetry	Stem length symmetry	Structural 	Burgt et al. 2009
+llha	length of longest helical arm	Length of longest helical arm	Structural 	Lai et al. 2003
+mfe-lha	free energy of the longest helical arm	MFE of the longest helical arm	Structural Thermodynamic	Lai et al. 2003
+#bu	number of bulges	Number of bulges	Structural 	Ritchie et al. 2012
+mll	loop size	Max loop length	Structural 	na
+orf	orf	Open reading frame	Sequential 	Gudys et al. 2013
+mwmF	max match count	Maximum matche count in 24 positions in the stem alignment	Structural Thermodynamic	Burgt et al. 2009
+#mnnS	minimal base ratio	minimum base count in stem	Sequential 	Burgt et al. 2009
+subu	bulged nucleotides	Nucleotide count in all bulges	Sequential Structural	Lai et al. 2003
+%AAs		Dinucleotide percent in stem	Sequential
+%ACs		Dinucleotide percent in stem	Sequential
+%AGs		Dinucleotide percent in stem	Sequential
+%AUs		Dinucleotide percent in stem	Sequential
+%CAs		Dinucleotide percent in stem	Sequential
+%CCs		Dinucleotide percent in stem	Sequential
+%CGs		Dinucleotide percent in stem	Sequential
+%CUs		Dinucleotide percent in stem	Sequential
+%GAs		Dinucleotide percent in stem	Sequential
+%GCs		Dinucleotide percent in stem	Sequential
+%GGs		Dinucleotide percent in stem	Sequential
+%GUs		Dinucleotide percent in stem	Sequential
+%UAs		Dinucleotide percent in stem	Sequential
+%UCs		Dinucleotide percent in stem	Sequential
+%UGs		Dinucleotide percent in stem	Sequential
+%UUs		Dinucleotide percent in stem	Sequential
+dns_z(hpl)		Z score using dinucleotide shuffling for hpl	Structural Thermodynamic	Ng & Mishra 2007
+nfl	length of flanking ends	Number of unbound nucleotides in flanking ends	Structural	Cakir & Almer 2010
+#AAs	AA	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#ACs	AC	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#AGs	AG	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#AUs	AU	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#CAs	CA	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#CCs	CC	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#CGs	CG	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#CUs	CU	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#GAs	GA	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#GCs	GC	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#GGs	GG	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#GUs	GU	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#UAs	UA	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#UCs	UC	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#UGs	UG	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#UUs	UU	Dinucleotide count in stem	Sequential Structural	Ng & Mishra 2007
+#AAA	AAA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#AAC	AAC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#AAG	AAG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#AAU	AAU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CCC	CCC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CCA	CCA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CCG	CCG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CCU	CCU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GGG	GGG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GGA	GGA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GGC	GGC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GGU	GGU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UUU	UUU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UUA	UUA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UUC	UUC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UUG	UUG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#ACC	ACC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#AGG	AGG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#AUU	AUU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CAA	CAA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CUU	CUU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CGG	CGG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UAA	UAA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UCC	UCC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UGG	UGG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GAA	GAA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GCC	GCC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GUU	GUU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#ACA	ACA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#AGA	AGA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#AUA	AUA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CAC	CAC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CGC	CGC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CUC	CUC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GAG	GAG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GCG	GCG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GUG	GUG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UAU	UAU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UCU	UCU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UGU	UGU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#ACG	ACG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#ACU	ACU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#AUC	AUC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#AUG	AUG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CAG	CAG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CAU	CAU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GAC	GAC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GAU	GAU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UAC	UAC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UAG	UAG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#AGC	AGC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#AGU	AGU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CGA	CGA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CGU	CGU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CUA	CUA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#CUG	CUG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GCA	GCA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GCU	GCU	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GUA	GUA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#GUC	GUC	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UCA	UCA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UCG	UCG	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UGA	UGA	TrinucleotideCount	Sequential 	Cheng et al 2016
+#UCA	UCA	TrinucleotideCount	Sequential 	Cheng et al 2016
+%AAA	AAA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%AAC	AAC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%AAG	AAG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%AAU	AAU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CCC	CCC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CCA	CCA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CCG	CCG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CCU	CCU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GGG	GGG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GGA	GGA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GGC	GGC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GGU	GGU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UUU	UUU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UUA	UUA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UUC	UUC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UUG	UUG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%ACC	ACC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%AGG	AGG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%AUU	AUU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CAA	CAA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CUU	CUU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CGG	CGG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UAA	UAA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UCC	UCC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UGG	UGG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GAA	GAA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GCC	GCC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GUU	GUU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%ACA	ACA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%AGA	AGA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%AUA	AUA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CAC	CAC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CGC	CGC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CUC	CUC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GAG	GAG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GCG	GCG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GUG	GUG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UAU	UAU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UCU	UCU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UGU	UGU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%ACG	ACG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%ACU	ACU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%AUC	AUC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%AUG	AUG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CAG	CAG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CAU	CAU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GAC	GAC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GAU	GAU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UAC	UAC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UAG	UAG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%AGC	AGC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%AGU	AGU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CGA	CGA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CGU	CGU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CUA	CUA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%CUG	CUG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GCA	GCA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GCU	GCU	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GUA	GUA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%GUC	GUC	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UCA	UCA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UCG	UCG	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UGA	UGA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+%UCA	UCA	TrinucleotidePercent	Sequential 	Cheng et al 2016
+#AAAs	AAA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#AACs	AAC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#AAGs	AAG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#AAUs	AAU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CCCs	CCC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CCAs	CCA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CCGs	CCG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CCUs	CCU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GGGs	GGG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GGAs	GGA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GGCs	GGC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GGUs	GGU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UUUs	UUU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UUAs	UUA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UUCs	UUC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UUGs	UUG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#ACCs	ACC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#AGGs	AGG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#AUUs	AUU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CAAs	CAA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CUUs	CUU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CGGs	CGG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UAAs	UAA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UCCs	UCC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UGGs	UGG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GAAs	GAA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GCCs	GCC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GUUs	GUU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#ACAs	ACA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#AGAs	AGA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#AUAs	AUA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CACs	CAC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CGCs	CGC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CUCs	CUC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GAGs	GAG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GCGs	GCG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GUGs	GUG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UAUs	UAU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UCUs	UCU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UGUs	UGU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#ACGs	ACG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#ACUs	ACU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#AUCs	AUC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#AUGs	AUG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CAGs	CAG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CAUs	CAU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GACs	GAC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GAUs	GAU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UACs	UAC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UAGs	UAG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#AGCs	AGC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#AGUs	AGU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CGAs	CGA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CGUs	CGU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CUAs	CUA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#CUGs	CUG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GCAs	GCA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GCUs	GCU	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GUAs	GUA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#GUCs	GUC	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UCAs	UCA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UCGs	UCG	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UGAs	UGA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+#UCAs	UCA	TrinucleotideCountStem	Sequential Structural	Cheng et al 2016
+%AAAs	AAA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%AACs	AAC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%AAGs	AAG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%AAUs	AAU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CCCs	CCC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CCAs	CCA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CCGs	CCG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CCUs	CCU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GGGs	GGG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GGAs	GGA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GGCs	GGC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GGUs	GGU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UUUs	UUU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UUAs	UUA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UUCs	UUC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UUGs	UUG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%ACCs	ACC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%AGGs	AGG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%AUUs	AUU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CAAs	CAA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CUUs	CUU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CGGs	CGG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UAAs	UAA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UCCs	UCC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UGGs	UGG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GAAs	GAA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GCCs	GCC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GUUs	GUU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%ACAs	ACA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%AGAs	AGA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%AUAs	AUA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CACs	CAC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CGCs	CGC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CUCs	CUC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GAGs	GAG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GCGs	GCG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GUGs	GUG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UAUs	UAU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UCUs	UCU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UGUs	UGU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%ACGs	ACG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%ACUs	ACU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%AUCs	AUC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%AUGs	AUG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CAGs	CAG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CAUs	CAU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GACs	GAC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GAUs	GAU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UACs	UAC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UAGs	UAG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%AGCs	AGC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%AGUs	AGU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CGAs	CGA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CGUs	CGU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CUAs	CUA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%CUGs	CUG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GCAs	GCA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GCUs	GCU	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GUAs	GUA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%GUCs	GUC	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UCAs	UCA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UCGs	UCG	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UGAs	UGA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016
+%UCAs	UCA	TrinucleotidePercentStem	Sequential Structural	Cheng et al 2016

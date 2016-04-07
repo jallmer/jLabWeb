@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta name="description" lang="en" content="miRNA Feature Calculator" />
+  <meta name="keywords" lang="en" content="miRNA Feature Calculator" />
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>miRNA</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="libs/google-code-prettify/prettify.css" />
+
+  <style>
+    .table>thead>tr>th,
+    .table>tbody>tr>th,
+    .table>tfoot>tr>th,
+    .table>thead>tr>td,
+    .table>tbody>tr>td,
+    .table>tfoot>tr>td {
+      border: none;
+      text-align: center;
+    }
+
+    body {
+      color: black;
+    }
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</head>
+
+<body style="background-color:#F2F4FA;">
+  <!--
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">miRNA</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+-->
+
+  <div class="jumbotron" style="background-color:transparent !important;">
+    <div class="container col-md-6 col-md-offset-3">
+      <h2>miRNA</h2>
+      <p>JLab pre-microRNA feature calculator</p>
+    </div>
+  </div>
+
+  <div class="container container col-md-6 col-md-offset-3" name="mainDiv" id="mainDiv">
+    <br>
+      <table id="featDesc">
+        <tr>
+          <th>Acronym</th>
+          <th>Synonyms</th>
+          <th>Feature Name</th>
+          <th>Feature Type</th>
+          <th>Study</th>
+        </tr>
+      </table>
+
+
+  </div>
+  <script type="text/javascript">
+    function fillTable() {
+      $.ajax({
+        type: "GET",
+        url: "http://10.2.30.139:3000/mirna/featDescription.txt",
+        success: function(text) {
+          var lines = text.split("\n");
+          var table = document.getElementById('featDesc');;
+          var tableBody = document.createElement('TBODY');
+          table.appendChild(tableBody);
+          for (var i = 0; i < lines.length - 1; i++) {
+            var tr = document.createElement('TR');
+            lineSplit = lines[i].split("\t");
+            //lineSplit[0] = lineSplit[0].replace(/\+/g, 'plus');
+            for(var j = 0; j < lineSplit.length; j++){
+              var td = document.createElement('TD');
+              td.appendChild(document.createTextNode(lineSplit[j]));
+              //td.innerHTML(lineSplit[j]);
+              tr.appendChild(td);
+            }
+            tableBody.appendChild(tr);
+          }
+        },
+        error: function() {
+          console.log("File could not be retrieved");
+        }
+      });
+    }
+
+    $(document).ready(function() {
+      fillTable();
+    });
+  </script>
+
+</body>
+
+</html>

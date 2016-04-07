@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta name="description" lang="en" content="miRNA Feature Calculator" />
+  <meta name="keywords" lang="en" content="miRNA Feature Calculator" />
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>miRNA</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="libs/google-code-prettify/prettify.css" />
+
+  <style>
+    .table>thead>tr>th,
+    .table>tbody>tr>th,
+    .table>tfoot>tr>th,
+    .table>thead>tr>td,
+    .table>tbody>tr>td,
+    .table>tfoot>tr>td {
+      border: none;
+      text-align: center;
+    }
+
+    body {
+      color: black;
+    }
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="script.js"></script>
+
+</head>
+
+<body style="background-color:#F2F4FA;">
+  <!--
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">miRNA</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+-->
+
+  <div class="jumbotron" style="background-color:transparent !important;">
+    <div class="container col-md-6 col-md-offset-3">
+      <h2>miRNA</h2>
+      <p>JLab pre-microRNA feature calculator</p>
+    </div>
+  </div>
+
+  <div class="container container col-md-6 col-md-offset-3" name="mainDiv" id="mainDiv">
+    <form action="run.php" method="post" role="form" name="mirnaForm" id="mirnaForm">
+      <div class="form-group">
+        <h5>Paste your sequences here in FASTA format</h5>
+        <h6>You can calculate features for only 5 sequences at a time</h6>
+        <textarea class="form-control" name="inputFasta" id="inputFasta" rows=5 required="required" placeholder=">hsa-let-7a-1 MI0000060
+UGGGAUGAGGUAGUAGGUUGUAUAGUUUUAGGGUCACACCCACCACUGGGAGAUAACUAUACAAUCUACUGUCUUUCCUA
+>hsa-let-7a-2 MI0000061
+AGGUUGAGGUAGUAGGUUGUAUAGUUUAGAAUUACAUCAAGGGAGAUAACUGUACAGCCUCCUAGCUUUCCU
+>hsa-let-7a-3 MI0000062
+GGGUGAGGUAGUAGGUUGUAUAGUUUGGGGCUCUGCCCUGCUAUGGGAUAACUAUACAAUCUACUGUCUUUCCU
+>hsa-let-7b MI0000063
+CGGGGUGAGGUAGUAGGUUGUGUGGUUUCAGGGCAGUGAUGUUGCCCCUCGGAAGAUAACUAUACAACCUACUGCCUUCCCUG
+>hsa-let-7c MI0000064
+GCAUCCGGGUUGAGGUAGUAGGUUGUAUGGUUUAGAGUUACACCCUGGGAGUUAACUGUACAACCUUCUAGCUUUCCUUGGAGC"></textarea>
+      </div>
+      <br>
+      <h5>Select features that you want to calculate</h5>
+      <h5>The list of features with their descriptions are accessible at <a href="featureList.html">here</a></h5>
+      <h5><a href="offer.html">Offer</a> new features to be added to our system</h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="col-md-3">Sequential</th>
+            <th class="col-md-3">Structural</th>
+            <th class="col-md-3">Probabilistic</th>
+            <th class="col-md-3">Thermodynamic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+
+              <div class="form-group">
+                <select name="seq" id="seq" class="form-control" size="5" multiple="multiple">
+                </select>
+              </div>
+            </td>
+            <td>
+
+              <div class="form-group">
+                <select name="str" id="str" class="form-control" size="5" multiple="multiple">
+                </select>
+              </div>
+            </td>
+            <td>
+
+              <div class="form-group">
+                <select name="stat" id="stat" class="form-control" size="5" multiple="multiple">
+                </select>
+              </div>
+            </td>
+            <td>
+
+              <div class="form-group">
+                <select name="thermo" id="thermo" class="form-control" size="5" multiple="multiple">
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="text-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default" onclick="move('up', 'seq');"><span class="glyphicon glyphicon-chevron-up"></span></button>
+                  <button type="button" class="btn btn-default" onclick="move('down', 'seq');"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <div class="text-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default" onclick="move('up', 'str');"><span class="glyphicon glyphicon-chevron-up"></span></button>
+                  <button type="button" class="btn btn-default" onclick="move('down', 'str');"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <div class="text-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default" onclick="move('up', 'stat');"><span class="glyphicon glyphicon-chevron-up"></span></button>
+                  <button type="button" class="btn btn-default" onclick="move('down', 'stat');"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <div class="text-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default" onclick="move('up', 'thermo');"><span class="glyphicon glyphicon-chevron-up"></span></button>
+                  <button type="button" class="btn btn-default" onclick="move('down', 'thermo');"><span class="glyphicon glyphicon-chevron-down"></span></button>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div>
+        <div class="form-group">
+          <center>
+            <h5><b>Selected Features</b><h5></center>
+          <select name="feat[]" id="feat" class="form-control" size="5" multiple="multiple" required="required">
+          </select>
+        </div>
+      </div>
+
+      <div class="checkbox">
+        <label><input type="checkbox" id="hpl" name="hpl" value="hpl">Normalize all selected features by hpl</label>
+        <br>
+        <label><input type="checkbox" id="sl" name="sl" value="sl">Normalize all selected features by sl</label>
+      </div>
+      <br>
+
+      <div class="form-group">
+        <h5>Please enter your e-mail address. The results will be sent to it in a tabular file.</h5>
+            <input type="email" class="form-control" id="email" name="email" placeholder="email adress">
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-default" name="submit" id="submit" onclick="selectAll();">Submit</button>
+        </div>
+
+
+    </form>
+
+    <div id="resultDiv">
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    </div>
+
+
+</body>
+
+</html>

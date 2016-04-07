@@ -1,0 +1,530 @@
+#A(((	Sequential Structural
+#A	Sequential
+#A((.	Sequential Structural
+#A(.(	Sequential Structural
+#A(..	Sequential Structural
+#A.((	Sequential Structural
+#A.(.	Sequential Structural
+#A..(	Sequential Structural
+#A...	Sequential Structural
+#A++#U	Sequential
+#AA	Sequential
+#AC	Sequential
+#AG	Sequential
+#AU	Sequential
+#C	Sequential
+#C(((	Sequential Structural
+#C((.	Sequential Structural
+#C(.(	Sequential Structural
+#C(..	Sequential Structural
+#C.((	Sequential Structural
+#C.(.	Sequential Structural
+#C..(	Sequential Structural
+#C...	Sequential Structural
+#CA	Sequential
+#CC	Sequential
+#CG	Sequential
+#CU	Sequential
+#G	Sequential
+#G(((	Sequential Structural
+#G((.	Sequential Structural
+#G(.(	Sequential Structural
+#G(..	Sequential Structural
+#G.((	Sequential Structural
+#G.(.	Sequential Structural
+#G..(	Sequential Structural
+#G...	Sequential Structural
+#G++#C	Sequential
+#GA	Sequential
+#GC	Sequential
+#GG	Sequential
+#GU	Sequential
+#U	Sequential
+#U(((	Sequential Structural
+#U((.	Sequential Structural
+#U(.(	Sequential Structural
+#U(..	Sequential Structural
+#U.((	Sequential Structural
+#U.(.	Sequential Structural
+#U..(	Sequential Structural
+#U...	Sequential Structural
+#UA	Sequential
+#UC	Sequential
+#UG	Sequential
+#UU	Sequential
+%A	Sequential
+%AA	Sequential
+%AC	Sequential
+%AG	Sequential
+%AU	Sequential
+%C	Sequential
+%CA	Sequential
+%CC	Sequential
+%CG	Sequential
+%CU	Sequential
+%G	Sequential
+%GA	Sequential
+%GC	Sequential
+%GG	Sequential
+%GU	Sequential
+%U	Sequential
+%UA	Sequential
+%UC	Sequential
+%UG	Sequential
+%UU	Sequential
+*A(((	Sequential Structural
+*A((.	Sequential Structural
+*A(.(	Sequential Structural
+*A(..	Sequential Structural
+*A.((	Sequential Structural
+*A.(.	Sequential Structural
+*A..(	Sequential Structural
+*A...	Sequential Structural
+*C(((	Sequential Structural
+*C((.	Sequential Structural
+*C(.(	Sequential Structural
+*C(..	Sequential Structural
+*C.((	Sequential Structural
+*C.(.	Sequential Structural
+*C..(	Sequential Structural
+*C...	Sequential Structural
+*G(((	Sequential Structural
+*G((.	Sequential Structural
+*G(.(	Sequential Structural
+*G(..	Sequential Structural
+*G.((	Sequential Structural
+*G.(.	Sequential Structural
+*G..(	Sequential Structural
+*G...	Sequential Structural
+*U(((	Sequential Structural
+*U((.	Sequential Structural
+*U(.(	Sequential Structural
+*U(..	Sequential Structural
+*U.((	Sequential Structural
+*U.(.	Sequential Structural
+*U..(	Sequential Structural
+*U...	Sequential Structural
+bpd	Structural Thermodynamic
+bpp	Structural
+bpp/nl	Structural
+bpp/ns	Structural
+dc	Structural
+dG	Thermodynamic
+dH	Thermodynamic
+dme	Thermodynamic
+dr	Sequential Structural Thermodynamic
+dS	Thermodynamic
+ediv	Thermodynamic
+efe	Thermodynamic
+efq	Thermodynamic
+hll	Structural
+hpmfe_rf	Structural Thermodynamic
+hpmfe_rs	Structural Thermodynamic
+hpl	Structural
+hpl/ns	Structural
+ir	Sequential Structural
+mbs	Structural
+hpmfe_rf_I1	Structural Thermodynamic
+hpmfe_rf/ns	Structural Thermodynamic
+nl	Structural
+ns	Structural
+dns_p(efe)	Probabilistic Thermodynamic
+Q	Probabilistic Thermodynamic
+st(A-U)/ns	Sequential Structural
+st(G-C)/ns	Sequential Structural
+sl	Structural
+dns_p(bpd)	Probabilistic Structural Thermodynamic
+dns_p(bpd/hpl)	Probabilistic Structural Thermodynamic
+dns_p(bpp)	Probabilistic Structural
+dns_p(bpp/hpl)	Probabilistic Structural
+dns_p(hpl)	Probabilistic Structural
+dns_p(hpmfe_rf)	Probabilistic Structural Thermodynamic
+dns_p(hpmfe_rf/hpl)	Probabilistic Structural Thermodynamic
+dns_p(Q)	Probabilistic Thermodynamic
+dns_p(Q/hpl)	Probabilistic Thermodynamic
+dns_z(bpd)	Probabilistic Structural Thermodynamic
+dns_z(bpd/hpl)	Probabilistic Structural Thermodynamic
+dns_z(bpp)	Probabilistic Structural
+dns_z(Q)	Probabilistic Thermodynamic
+dns_z(Q/hpl)	Probabilistic Thermodynamic
+st(A-U)	Sequential
+st(G-C)	Sequential
+st(G-U)	Sequential
+Tm	Thermodynamic
+dns_z(bpp/hpl)	Probabilistic Structural
+dns_z(efe)	Probabilistic Thermodynamic
+dns_z(hpmfe_rf)	Probabilistic Structural Thermodynamic
+dns_z(hpmfe_rf/hpl)	Probabilistic Structural Thermodynamic
+#nisl_h	Structural
+#nial_h	Structural
+adbil	Structural
+assl	Structural
+asal	Structural
+l(lsr)	Structural
+dfhl	Structural
+lsr(%A-U)	Sequential Structural
+lsr(%G-C)	Sequential Structural
+lsr(%G-U)	Sequential Structural
+lsr(%bp)	Sequential Structural
+lsr(%A)	Sequential Structural
+lsr(%C)	Sequential Structural
+lsr(%G)	Sequential Structural
+lsr(%U)	Sequential Structural
+c#A	Sequential
+c#C	Sequential
+c#G	Sequential
+c#U	Sequential
+c#N	Sequential
+AsC	Sequential
+AsG	Sequential
+AsU	Sequential
+CsA	Sequential
+CsG	Sequential
+CsU	Sequential
+GsA	Sequential
+GsC	Sequential
+GsU	Sequential
+UsA	Sequential
+UsC	Sequential
+UsG	Sequential
+ACsGU	Sequential
+ACsUG	Sequential
+AGsCU	Sequential
+AGsUC	Sequential
+AUsCG	Sequential
+AUsGC	Sequential
+CAsGU	Sequential
+CAsUG	Sequential
+CGsAU	Sequential
+CGsUA	Sequential
+CUsAG	Sequential
+CUsGA	Sequential
+GAsCU	Sequential
+GAsUC	Sequential
+GCsAU	Sequential
+GCsUA	Sequential
+GUsAC	Sequential
+GUsCA	Sequential
+UAsCG	Sequential
+UAsGC	Sequential
+UCsAG	Sequential
+UCsGA	Sequential
+UGsAC	Sequential
+UGsCA	Sequential
+%A-U	Sequential Structural
+%G-C	Sequential Structural
+%G-U	Sequential Structural
+mscs	Sequential
+dscs	Sequential
+lscm	Structural
+#mdn	Sequential
+#mdn/hpl--c(0.5)	Sequential
+#mnn	Sequential
+c#As	Sequential
+c#Cs	Sequential
+c#Gs	Sequential
+c#Us	Sequential
+c#Ns	Sequential
+saln	Structural
+bpp/saln	Structural
+#goh	Structural
+#gih	Structural
+#gih/saln	Structural
+adal	Structural
+adalr	Structural
+#bu	Structural
+mll	Structural
+orf	Sequential
+mwmF	Structural Thermodynamic
+#mnnS	Sequential
+subu	Sequential Structural
+%AAs	Sequential
+%ACs	Sequential
+%AGs	Sequential
+%AUs	Sequential
+%CAs	Sequential
+%CCs	Sequential
+%CGs	Sequential
+%CUs	Sequential
+%GAs	Sequential
+%GCs	Sequential
+%GGs	Sequential
+%GUs	Sequential
+%UAs	Sequential
+%UCs	Sequential
+%UGs	Sequential
+%UUs	Sequential
+dns_z(hpl)	Structural Thermodynamic
+nfl	Structural
+#AAs	Sequential Structural
+#ACs	Sequential Structural
+#AGs	Sequential Structural
+#AUs	Sequential Structural
+#CAs	Sequential Structural
+#CCs	Sequential Structural
+#CGs	Sequential Structural
+#CUs	Sequential Structural
+#GAs	Sequential Structural
+#GCs	Sequential Structural
+#GGs	Sequential Structural
+#GUs	Sequential Structural
+#UAs	Sequential Structural
+#UCs	Sequential Structural
+#UGs	Sequential Structural
+#UUs	Sequential Structural
+#AAA	Sequential
+#AAC	Sequential
+#AAG	Sequential
+#AAU	Sequential
+#CCC	Sequential
+#CCA	Sequential
+#CCG	Sequential
+#CCU	Sequential
+#GGG	Sequential
+#GGA	Sequential
+#GGC	Sequential
+#GGU	Sequential
+#UUU	Sequential
+#UUA	Sequential
+#UUC	Sequential
+#UUG	Sequential
+#ACC	Sequential
+#AGG	Sequential
+#AUU	Sequential
+#CAA	Sequential
+#CUU	Sequential
+#CGG	Sequential
+#UAA	Sequential
+#UCC	Sequential
+#UGG	Sequential
+#GAA	Sequential
+#GCC	Sequential
+#GUU	Sequential
+#ACA	Sequential
+#AGA	Sequential
+#AUA	Sequential
+#CAC	Sequential
+#CGC	Sequential
+#CUC	Sequential
+#GAG	Sequential
+#GCG	Sequential
+#GUG	Sequential
+#UAU	Sequential
+#UCU	Sequential
+#UGU	Sequential
+#ACG	Sequential
+#ACU	Sequential
+#AUC	Sequential
+#AUG	Sequential
+#CAG	Sequential
+#CAU	Sequential
+#GAC	Sequential
+#GAU	Sequential
+#UAC	Sequential
+#UAG	Sequential
+#AGC	Sequential
+#AGU	Sequential
+#CGA	Sequential
+#CGU	Sequential
+#CUA	Sequential
+#CUG	Sequential
+#GCA	Sequential
+#GCU	Sequential
+#GUA	Sequential
+#GUC	Sequential
+#UCA	Sequential
+#UCG	Sequential
+#UGA	Sequential
+#UCA	Sequential
+%AAA	Sequential
+%AAC	Sequential
+%AAG	Sequential
+%AAU	Sequential
+%CCC	Sequential
+%CCA	Sequential
+%CCG	Sequential
+%CCU	Sequential
+%GGG	Sequential
+%GGA	Sequential
+%GGC	Sequential
+%GGU	Sequential
+%UUU	Sequential
+%UUA	Sequential
+%UUC	Sequential
+%UUG	Sequential
+%ACC	Sequential
+%AGG	Sequential
+%AUU	Sequential
+%CAA	Sequential
+%CUU	Sequential
+%CGG	Sequential
+%UAA	Sequential
+%UCC	Sequential
+%UGG	Sequential
+%GAA	Sequential
+%GCC	Sequential
+%GUU	Sequential
+%ACA	Sequential
+%AGA	Sequential
+%AUA	Sequential
+%CAC	Sequential
+%CGC	Sequential
+%CUC	Sequential
+%GAG	Sequential
+%GCG	Sequential
+%GUG	Sequential
+%UAU	Sequential
+%UCU	Sequential
+%UGU	Sequential
+%ACG	Sequential
+%ACU	Sequential
+%AUC	Sequential
+%AUG	Sequential
+%CAG	Sequential
+%CAU	Sequential
+%GAC	Sequential
+%GAU	Sequential
+%UAC	Sequential
+%UAG	Sequential
+%AGC	Sequential
+%AGU	Sequential
+%CGA	Sequential
+%CGU	Sequential
+%CUA	Sequential
+%CUG	Sequential
+%GCA	Sequential
+%GCU	Sequential
+%GUA	Sequential
+%GUC	Sequential
+%UCA	Sequential
+%UCG	Sequential
+%UGA	Sequential
+%UCA	Sequential
+#AAAs	Sequential Structural
+#AACs	Sequential Structural
+#AAGs	Sequential Structural
+#AAUs	Sequential Structural
+#CCCs	Sequential Structural
+#CCAs	Sequential Structural
+#CCGs	Sequential Structural
+#CCUs	Sequential Structural
+#GGGs	Sequential Structural
+#GGAs	Sequential Structural
+#GGCs	Sequential Structural
+#GGUs	Sequential Structural
+#UUUs	Sequential Structural
+#UUAs	Sequential Structural
+#UUCs	Sequential Structural
+#UUGs	Sequential Structural
+#ACCs	Sequential Structural
+#AGGs	Sequential Structural
+#AUUs	Sequential Structural
+#CAAs	Sequential Structural
+#CUUs	Sequential Structural
+#CGGs	Sequential Structural
+#UAAs	Sequential Structural
+#UCCs	Sequential Structural
+#UGGs	Sequential Structural
+#GAAs	Sequential Structural
+#GCCs	Sequential Structural
+#GUUs	Sequential Structural
+#ACAs	Sequential Structural
+#AGAs	Sequential Structural
+#AUAs	Sequential Structural
+#CACs	Sequential Structural
+#CGCs	Sequential Structural
+#CUCs	Sequential Structural
+#GAGs	Sequential Structural
+#GCGs	Sequential Structural
+#GUGs	Sequential Structural
+#UAUs	Sequential Structural
+#UCUs	Sequential Structural
+#UGUs	Sequential Structural
+#ACGs	Sequential Structural
+#ACUs	Sequential Structural
+#AUCs	Sequential Structural
+#AUGs	Sequential Structural
+#CAGs	Sequential Structural
+#CAUs	Sequential Structural
+#GACs	Sequential Structural
+#GAUs	Sequential Structural
+#UACs	Sequential Structural
+#UAGs	Sequential Structural
+#AGCs	Sequential Structural
+#AGUs	Sequential Structural
+#CGAs	Sequential Structural
+#CGUs	Sequential Structural
+#CUAs	Sequential Structural
+#CUGs	Sequential Structural
+#GCAs	Sequential Structural
+#GCUs	Sequential Structural
+#GUAs	Sequential Structural
+#GUCs	Sequential Structural
+#UCAs	Sequential Structural
+#UCGs	Sequential Structural
+#UGAs	Sequential Structural
+#UCAs	Sequential Structural
+%AAAs	Sequential Structural
+%AACs	Sequential Structural
+%AAGs	Sequential Structural
+%AAUs	Sequential Structural
+%CCCs	Sequential Structural
+%CCAs	Sequential Structural
+%CCGs	Sequential Structural
+%CCUs	Sequential Structural
+%GGGs	Sequential Structural
+%GGAs	Sequential Structural
+%GGCs	Sequential Structural
+%GGUs	Sequential Structural
+%UUUs	Sequential Structural
+%UUAs	Sequential Structural
+%UUCs	Sequential Structural
+%UUGs	Sequential Structural
+%ACCs	Sequential Structural
+%AGGs	Sequential Structural
+%AUUs	Sequential Structural
+%CAAs	Sequential Structural
+%CUUs	Sequential Structural
+%CGGs	Sequential Structural
+%UAAs	Sequential Structural
+%UCCs	Sequential Structural
+%UGGs	Sequential Structural
+%GAAs	Sequential Structural
+%GCCs	Sequential Structural
+%GUUs	Sequential Structural
+%ACAs	Sequential Structural
+%AGAs	Sequential Structural
+%AUAs	Sequential Structural
+%CACs	Sequential Structural
+%CGCs	Sequential Structural
+%CUCs	Sequential Structural
+%GAGs	Sequential Structural
+%GCGs	Sequential Structural
+%GUGs	Sequential Structural
+%UAUs	Sequential Structural
+%UCUs	Sequential Structural
+%UGUs	Sequential Structural
+%ACGs	Sequential Structural
+%ACUs	Sequential Structural
+%AUCs	Sequential Structural
+%AUGs	Sequential Structural
+%CAGs	Sequential Structural
+%CAUs	Sequential Structural
+%GACs	Sequential Structural
+%GAUs	Sequential Structural
+%UACs	Sequential Structural
+%UAGs	Sequential Structural
+%AGCs	Sequential Structural
+%AGUs	Sequential Structural
+%CGAs	Sequential Structural
+%CGUs	Sequential Structural
+%CUAs	Sequential Structural
+%CUGs	Sequential Structural
+%GCAs	Sequential Structural
+%GCUs	Sequential Structural
+%GUAs	Sequential Structural
+%GUCs	Sequential Structural
+%UCAs	Sequential Structural
+%UCGs	Sequential Structural
+%UGAs	Sequential Structural
+%UCAs	Sequential Structural
