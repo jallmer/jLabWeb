@@ -80,8 +80,8 @@ module.exports = {
             if (err) {
                console.log(err);
             }
+            connection.release();
          });
-         connection.release();
       });
    },
 
@@ -102,8 +102,8 @@ module.exports = {
             console.log(names[0] + " inserted into table with ID: " + rows.insertId);
             var mysqlconn = require('./mysqlqueries.js');
             mysqlconn.addAuthorship(rows.insertId, pubId);
+            connection.release();
          });
-         connection.release();
       });
    },
 
@@ -125,8 +125,8 @@ module.exports = {
                var mysqlconn = require('./mysqlqueries.js');
                mysqlconn.addAuthor(names, pubId);
             }
+            connection.release();
          });
-         connection.release();
       });
    },
 
@@ -165,8 +165,8 @@ module.exports = {
             if (err) {
                console.log(err);
             }
+            connection.release();
          });
-         connection.release();
       });
    },
 
@@ -195,8 +195,8 @@ module.exports = {
             pubId = rows.insertId;
             var mysqlconn = require('./mysqlqueries.js');
             mysqlconn.associateAuthors(bibtexEntry, pubId);
+            connection.release();
          });
-         connection.release();
       });
    },
 
@@ -212,7 +212,43 @@ module.exports = {
             }else{
                mysqlconn.insertPublication(bibtexEntry);
             }
+            connection.release();
          });
       });
+   },
+
+   logToMirnaLog: function(runId, email, ip, time){
+      var insert = {};
+      insert["rundId"] = runId;
+      insert["email"] = email;
+      insert["ip"] = ip;
+      insert["time"] = time;
+      this.pool.getConnection(function(err, connection){
+         connection.query("INSERT INTO mirnaLog SET ?", insert, function(err, rows){
+            if(err){
+               console.log(err);
+            }
+            connection.release();
+         });
+      });
+   },
+
+   getMirnaRunTimes: function(email, ip, time, runId){
+      console.log(email + "\t" + ip + "\t" + time);
+      this.pool.getConnection(function(err, connection){
+         connection.query("SELECT COUNT(email) as emailCount, COUNT(ip) as ipCount FROM mirnaLog WHERE time = '" + time + "'", function(err, rows){
+            if(err){
+               console.log(err);
+            }
+            console.log(rows);
+            var mirnaFeatCalc = require("./mirna/mirnaFeatCalc.js");
+            if(rows[0].emailCount < 5 && rows[0].ipCount < 5){
+               mirnaFeatCalc.execute(email, runId);
+            }
+//            count = rows['COUNT(email)'];
+            connection.release();
+         });
+      });
+      //return count;
    }
 };

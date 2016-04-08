@@ -11,13 +11,17 @@
     "debug": "~2.2.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
+    "fs": "0.0.2",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.4",
     "gulp-live-server": "0.0.29",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
+    "mkdirp": "^0.5.1",
     "morgan": "~1.6.1",
     "mysql": "^2.10.2",
+    "nodemailer": "^2.3.0",
+    "path": "^0.12.7",
     "serve-favicon": "~2.3.0"
   }
 }
