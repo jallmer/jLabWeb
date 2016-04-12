@@ -36,13 +36,7 @@ router.post('/bibtexParse/registerBibtex', function(req, res){
 });
 
 router.post('/software/mirna/calcMirna', function(req, res){
-   //console.log(req.body);
-   console.log(req.body);
    var mirna = require('../dev/utils/mirna/mirnaFeatCalc.js') ;
-   //console.log(req.body.inputFasta, req.body.inputFeat, req.body.email, req.body.runId);
-   //console.log(req.body[inputFasta]);
-   //console.log(req.body.inputFasta);
-   console.log(req.body);
    mirna.calculate(req.body.inputFasta, req.body.feat, req.body.email, req.body.runId);
    res.end();
 });
