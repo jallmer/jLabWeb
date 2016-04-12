@@ -28,6 +28,13 @@ module.exports = {
       });
    },
 
+   disconnect: function(cbf){
+      this.pool.end(function(err){
+         if(err){
+            console.log(err);
+         }
+      });
+   },
 
    getContributors: function(retfunc) {
       this.pool.getConnection(function(err, connection) {
@@ -234,7 +241,6 @@ module.exports = {
    },
 
    getMirnaRunTimes: function(email, ip, time, runId){
-      console.log(email + "\t" + ip + "\t" + time);
       this.pool.getConnection(function(err, connection){
          connection.query("SELECT COUNT(email) as emailCount, COUNT(ip) as ipCount FROM mirnaLog WHERE time = '" + time + "'", function(err, rows){
             if(err){

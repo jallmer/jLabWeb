@@ -35,5 +35,21 @@ router.post('/bibtexParse/registerBibtex', function(req, res){
   res.end();
 });
 
+router.post('/software/mirna/calcMirna', function(req, res){
+   //console.log(req.body);
+   console.log(req.body);
+   var mirna = require('../dev/utils/mirna/mirnaFeatCalc.js') ;
+   //console.log(req.body.inputFasta, req.body.inputFeat, req.body.email, req.body.runId);
+   //console.log(req.body[inputFasta]);
+   //console.log(req.body.inputFasta);
+   console.log(req.body);
+   mirna.calculate(req.body.inputFasta, req.body.feat, req.body.email, req.body.runId);
+   res.end();
+});
+
+router.get('/software/mirna/', function(req, res, next){
+   res.status(200).render('mirna', {title: "jLab Hairpin Calculator", active: "mirna"});
+});
+
 
 module.exports = router;

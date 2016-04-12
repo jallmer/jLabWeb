@@ -5,7 +5,6 @@ module.exports = {
    mirnaJar: "./dev/utils/mirna/mirnaanalyses/mirnaanalyses.jar",
 
    calculate: function(inputFasta, inputFeat, email, runId) {
-      console.log("calculating features");
       var fs = require('fs'),
          path = require('path'),
          mkdirp = require('mkdirp');
@@ -21,22 +20,16 @@ module.exports = {
       });
       var stringutils = require('../stringutils.js');
       inputFeat = stringutils.replaceAll(inputFeat, 'plus', '+');
+      inputFeat = "Accession\nHairpinSequence\nRNAFolds\n" + stringutils.replaceAll(inputFeat, ',', '\n');
       fs.writeFile(__dirname + '/mirnaanalyses/runs/' + runId + '/' + 'inputFeat.txt', inputFeat, function(err) {
          if (err) {
             console.log(err);
          }
       });
-
-
-
       this.canRun(email, runId);
-
-
-
    },
 
    sendMail: function(email, runId) {
-      console.log("sending mail");
       var nodemailer = require('nodemailer');
       var pass = 'xxx';
       var transporter = nodemailer.createTransport('smtps://jlabmirna%40gmail.com:' + pass + '@smtp.gmail.com');
@@ -61,7 +54,6 @@ module.exports = {
    },
 
    canRun: function(email, runId) {
-      console.log("checking can run");
       var mysqlconn = require('../mysqlqueries.js');
       var d = new Date();
       var date = d.getDate();
@@ -81,14 +73,18 @@ module.exports = {
    },
 
    execute: function(email, runId) {
-      console.log("executing");
       var exec = require('child_process').exec;
       var folder = './dev/utils/mirna/runs/' + runId + '/';
-      exec("./dev/utils/mirna/mirnaanalyses/mirna.sh " + runId, function callback(error, stdout, stderr) {
+      var process = exec("./dev/utils/mirna/mirnaanalyses/mirna.sh " + runId, function callback(error, stdout, stderr) {
+         if(error)
+            console.log(error);
          console.log(stdout);
          console.log(stderr);
          var mirna = require('./mirnaFeatCalc.js');
          mirna.sendMail(email, runId);
+      });
+      process.on('exit', function(code){
+         console.log(code);
       });
    }
 }
