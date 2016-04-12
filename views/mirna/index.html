@@ -66,7 +66,8 @@
     </div>
   </div>
 
-  <div class="container container col-md-6 col-md-offset-3" name="mainDiv" id="mainDiv">
+   <div class="row">
+  <div class="container col-md-4 col-md-offset-3" name="mainDiv" id="mainDiv">
     <form role="form" name="mirnaForm" id="mirnaForm">
       <div class="form-group">
         <h5>Paste your sequences here in FASTA format</h5>
@@ -85,7 +86,6 @@ GCAUCCGGGUUGAGGUAGUAGGUUGUAUGGUUUAGAGUUACACCCUGGGAGUUAACUGUACAACCUUCUAGCUUUCCUUG
       <br>
       <h5>Select features that you want to calculate</h5>
       <h5>The list of features with their descriptions are accessible at <a href="featureList">here</a></h5>
-      <h5><a href="offer.html">Offer</a> new features to be added to our system</h5>
       <table class="table">
         <thead>
           <tr>
@@ -202,8 +202,46 @@ GCAUCCGGGUUGAGGUAGUAGGUUGUAUGGUUUAGAGUUACACCCUGGGAGUUAACUGUACAACCUUCUAGCUUUCCUUG
     <br>
     <br>
     </div>
+    <div class="container col-md-2" name="mainDiv" id="mainDiv">
+
+      <a id="offerHeader"><h5>Offer us new features to be added</h5></a>
+
+      <form role="form" name="offerForm" id="offerForm" style="display: none;">
+        <div class="form-group">
+          <h5>Feature description</h5>
+          <textarea class="form-control" name="offerDescription" id="offerDescription" rows=5 required="required"></textarea>
+        </div>
+        <br>
+
+        <div class="form-group">
+          <h5>If possible, please provide the JAVA code to calculate the feature</h5>
+          <input type="file" class="form-control-file" id="offerCode"></input>
+          <br>
+        </div>
+
+        <div class="form-group">
+          <h5>List of publication that the feature is described in</h5>
+          <textarea class="form-control" name="offerReference" id="offerReference" rows=4></textarea>
+          <br>
+        </div>
+
+        <div class="form-group">
+            <input type="email" class="form-control" id="offerEmail" name="offerEmail" placeholder="your email adress">
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-default" name="offer" id="offer" onclick="offerFeature();">Offer</button>
+          </div>
 
 
+      </form>
+    </div>
+</div>
+<script>
+   $('#offerHeader').click(function(){
+      $('#offerForm').toggle();
+   })
+</script>
 </body>
 
 </html>
