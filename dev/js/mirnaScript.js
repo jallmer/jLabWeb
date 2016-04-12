@@ -2,7 +2,6 @@ $(document).ready(function() {
   fillForm();
   $("#submit").click(function() {
     var inputFasta = $("#inputFasta").val();
-    console.log(inputFasta);
     var feat = $("#feat").val();
     var email = $("#email").val();
     if(inputFasta == ''){
@@ -19,7 +18,6 @@ $(document).ready(function() {
       //var dataStringClear = encodeURI(dataString);
       var runId = Math.floor((Math.random() * 1000000) + 100000);
       var data = {inputFasta:inputFasta,feat:encodeURI(feat),email:email,runId:runId};
-      console.log(data);
       document.getElementById("mirnaForm").reset();
       var featBox = document.getElementById("feat");
       i = featBox.options.length;
