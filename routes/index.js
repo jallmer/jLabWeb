@@ -45,5 +45,8 @@ router.get('/software/mirna/', function(req, res, next){
    res.status(200).render('mirna', {title: "jLab Hairpin Calculator", active: "mirna"});
 });
 
+router.get('/software/mirna/featureList', function(req, res, next){
+   res.status(200).render('mirna/featureList', {title: 'jLab Hairpin Calculator', active: 'mirna/featureList'});
+});
 
 module.exports = router;
