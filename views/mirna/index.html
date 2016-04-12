@@ -15,6 +15,7 @@
 
 
   <link rel="stylesheet" href="/css/prettify.css" />
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   <style>
     .table>thead>tr>th,
@@ -30,6 +31,47 @@
     body {
       color: black;
     }
+
+    .ui-widget.success-dialog {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: .8em;
+}
+
+.ui-widget-content.success-dialog {
+    background: #F9F9F9;
+    border: 1px solid #90d93f;
+    color: #222222;
+}
+
+.ui-dialog.success-dialog {
+    left: 0;
+    outline: 0 none;
+    padding: 0 !important;
+    position: absolute;
+    top: 0;
+}
+
+.ui-dialog.success-dialog .ui-dialog-content {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    overflow: auto;
+    position: relative;
+    padding: 0 !important;
+    margin: 0;
+}
+
+.ui-dialog.success-dialog .ui-widget-header {
+    background: #b0de78;
+    border: 0;
+    color: #fff;
+    font-weight: normal;
+}
+
+.ui-dialog.success-dialog .ui-dialog-titlebar {
+    padding: 0.1em .5em;
+    position: relative;
+    font-size: 1em;
+}
   </style>
   <script src="/js/mirnaScript.js"></script>
 
@@ -194,6 +236,7 @@ GCAUCCGGGUUGAGGUAGUAGGUUGUAUGGUUUAGAGUUACACCCUGGGAGUUAACUGUACAACCUUCUAGCUUUCCUUG
 
     </form>
 
+    <br/><br/>
     <div id="resultDiv">
 
     </div>
@@ -204,7 +247,7 @@ GCAUCCGGGUUGAGGUAGUAGGUUGUAUGGUUUAGAGUUACACCCUGGGAGUUAACUGUACAACCUUCUAGCUUUCCUUG
     </div>
     <div class="container col-md-2" name="mainDiv" id="mainDiv">
 
-      <a id="offerHeader"><h5>Offer us new features to be added</h5></a>
+      <a id="offerHeader" style="cursor: pointer;"><h5>Offer us new features to be added</h5></a>
 
       <form role="form" name="offerForm" id="offerForm" style="display: none;">
         <div class="form-group">
@@ -237,6 +280,7 @@ GCAUCCGGGUUGAGGUAGUAGGUUGUAUGGUUUAGAGUUACACCCUGGGAGUUAACUGUACAACCUUCUAGCUUUCCUUG
       </form>
     </div>
 </div>
+
 <script>
    $('#offerHeader').click(function(){
       $('#offerForm').toggle();

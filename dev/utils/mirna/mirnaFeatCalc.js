@@ -31,11 +31,14 @@ module.exports = {
 
    sendMail: function(email, runId) {
       var nodemailer = require('nodemailer');
+
+      // var transporter = nodemailer.createTransport('smtps://jlabmirna%40gmail.com:' + pass + '@smtp.gmail.com');
+
       var pass = 'xxx';
-      var transporter = nodemailer.createTransport('smtps://jlabmirna%40gmail.com:' + pass + '@smtp.gmail.com');
+      var transporter = nodemailer.createTransport('smtps://bioinfo%40allmer.de:' + pass + '@smtp.strato.de');
 
       var mailOptions = {
-         from: '"JLab Hairpin Feature Calculator", <jlabmirna@gmail.com>',
+         from: '"JLab Hairpin Feature Calculator", <bioinfo@allmer.de>',
          to: email,
          subject: 'JLab Hairpin Feature Calculator',
          text: 'Hi,\nPlease find the results of your calculation for your run with the ID: ' + runId + ' in the attached file',
