@@ -6,7 +6,6 @@
         <% include templates/head.html %>
         <!-- Page specific stylesheets -->
         <link rel="stylesheet" href="/css/main.css">
-
     </head>
     <body>
         <!-- Navigation bar include -->
@@ -15,17 +14,43 @@
         <!-- Main content and items -->
         <div class="container">
             <!-- Main component for a primary marketing message or call to action -->
-            <div class="jumbotron" style="min-height: 800px;">
+            <div id="main" class="jumbotron" style="min-height: 800px;">
 
-                <h1>Posters</h1>
-                <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-                <p>To see the difference between static and fixed top navbars, just scroll.</p>
+                <button class="btn btn-warning" onclick="$('#main').sortDivs('id')"> Sort By ID</button>
+                <button class="btn btn-warning" onclick="$('#main').sortDivs('year')"> Sort By Year</button>
+                <% publications.forEach(function(publication){ %>
+                <div data-year="<%=publication.year%>" data-id="<%=publication.ID%>" class="bs-callout bs-callout-primary " >
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="http://placehold.it/240x130" class="img-thumbnail vertical-center"> 
+                        </div>
+                        <div class="col-md-9">
+                            <h4><%= publication.title %> - <%= publication.ID %> - <%= publication.year %></h4>
+                            <h5>Authors</h5>
+
+                            <% publication.aut.forEach(function(author){ %>
+                            <%= author.fname %> <%= author.mnames %> <%= author.lname %>, 
+                            <% }); %>
+                        </div>
+
+                    </div>
+                </div>
+                <% }); %>
 
             </div>
-        </div> <!-- /container -->
+        </div>
+    </div> <!-- /container -->
 
-        <!-- Script file and function include -->
-        <% include templates/scripts.html %>
+    <!-- Script file and function include -->
+    <% include templates/scripts.html %>
 
-    </body>
+    <script>
+        jQuery.fn.sortDivs = function sortDivs(sortBy) {
+            $("> div", this[0]).sort(dec_sort).appendTo(this[0]);
+            function dec_sort(a, b) {
+                return ($(b).data(sortBy)) < ($(a).data(sortBy)) ? 1 : -1;
+            }
+        };
+    </script>
+</body>
 </html>
