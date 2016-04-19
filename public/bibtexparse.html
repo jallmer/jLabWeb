@@ -1,67 +1,128 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta name="description" lang="en" content="BibTex Parser" />
-    <meta name="keywords" lang="en" content="BibTex Parser" />
-    <meta charset="utf-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BibTex Parser</title>
+<head>
+   <meta name="description" lang="en" content="BibTex Parser" />
+   <meta name="keywords" lang="en" content="BibTex Parser" />
+   <meta charset="utf-8">
 
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="/js/bibtexParse.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>BibTex Parser</title>
 
-
-  </head>
-
-  <body>
-
-     <center>
-    <div id="mainDiv" style="margin-top: 10%;">
-      <form id="citForm" action="">
-
-        <textarea name="bibtexText" id="bibtexText" rows=20 cols=100> </textarea>
+   <link rel="icon" type="image/x-icon" href="favicon.ico" />
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   <script src="/js/bibtexParse.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 
+</head>
 
-      </form>
-        <button id="submit" onclick="submit();">Submit</button>
-    </div>
+<body>
+   <div class="row">
+      <div id="mainDiv" class="col-md-offset-1 col-md-4" style="margin-top: 10%;">
+         <form id="citForm" action="">
 
-    <div id="res">
+            <textarea name="bibtexText" id="bibtexText" rows=20 style="width:100%"> </textarea>
 
-    </div>
-</center>
-    <script>
-      function submit(){
-        var bibtextText = $('#bibtexText').val();
-        //console.log(bibtextText);
-        var bibtexObj = bibtexParse.toJSON(bibtextText);
-        //console.log(bibtexObj);
-        var data ={
-          bibtex: bibtexObj
-        };
-        //data.bibtex = bibtexObj;
-        $.ajax({
-          type: "POST",
-          url: "./bibtexParse/registerBibtex",
-          data: JSON.stringify(bibtexObj),
-          contentType: "application/json",
-          cache: false,
+            <button id="submit" onclick="submit();">Submit</button>
+            </center>
+         </form>
+      </div>
+      <div id="imageDiv" class="col-md-4" style="margin-top: 10%;">
+         <button id="getPub" onclick="getPublications();">Get List Of Publications</button>
 
-          success: function(response){
-            console.log(response);
-            console.log("posted");
-            $('#res').append(response);
-          },
-         error: function(e){
-           console.log(e);
-          }
-        });
+         <form id="imageForm" style="display: none;" action="/bibtexParse/uploadImg" method="post" enctype="multipart/form-data">
+            <p id="imageFormText">Select a publication for which you will add an image:
+               <br/>
+            </p>
+            <select name="pubs" id="pubs" class="form-control" size="25">
+            </select>
+            <br/>
+            <input type="file" id="pubImg" value="imageFile" name="pubImg"></input>
+            <br/>
+            <span id="status"></span>
+            <br/>
+            <input type="submit" id="uploadImg">Upload</input>
+         </form>
+
+      </div>
+   </div>
+   <div class="alert alert-success alert-dismissible col-md-offset-4 col-md-4" style="display: none;" role="alert" id="res">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <p id="resP"></p>
+   </div>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+   <script src="js/jquery-fileupload.min.js"></script>
+   <script>
+      $(document).ready(function() {
+         $('#imageForm').submit(function() {
+            $(this).ajaxSubmit({
+               error: function(xhr) {
+                  console.log(xhr.status);
+               },
+               success: function(response) {
+
+               }
+            });
+            return false;
+         });
+      });
+
+
+
+      function submit() {
+         var bibtextText = $('#bibtexText').val();
+         //console.log(bibtextText);
+         var bibtexObj = bibtexParse.toJSON(bibtextText);
+         //console.log(bibtexObj);
+         var data = {
+            bibtex: bibtexObj
+         };
+         //data.bibtex = bibtexObj;
+         $.ajax({
+            type: "POST",
+            url: "./bibtexParse/registerBibtex",
+            data: JSON.stringify(bibtexObj),
+            contentType: "application/json",
+            cache: false,
+
+            success: function(response) {
+               $('#res').show();
+               $('#resP').html(response);
+            },
+            error: function(e) {
+               console.log(e);
+            }
+         });
       }
-    </script>
-  </body>
+
+      function getPublications() {
+         $.ajax({
+            type: "POST",
+            url: "./bibtexParse/getPubs",
+
+            success: function(response) {
+               fillSelectBox(response);
+            },
+            error: function(e) {
+               console.log(e);
+            }
+         });
+      }
+
+      function fillSelectBox(data) {
+         $('#imageForm').show();
+         $('#uploadImg').show();
+         for (var i = 0; i < data.length; i++) {
+            var opt = document.createElement('option');
+            opt.innerHTML = data[i].title;
+            opt.value = data[i].ID;
+            $('#pubs')[0].appendChild(opt);
+         }
+      }
+   </script>
+</body>
+
 </html>

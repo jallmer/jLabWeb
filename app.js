@@ -25,7 +25,7 @@ app.engine('.html', require('ejs').renderFile);
 //           console.log(str);
 //       }
 //   }
-//    
+//
 //}));
 
 app.use(logger(format({
@@ -58,8 +58,9 @@ function format(obj) {
         //console.log(JSON.stringify(data, null, 4));
     };
 }
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

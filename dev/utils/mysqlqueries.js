@@ -256,5 +256,32 @@ module.exports = {
          });
       });
       //return count;
+   },
+
+   getPublications: function(cbf) {
+      this.pool.getConnection(function (err, con) {
+          con.query('SELECT * FROM Publications', function (err, rows) {
+             if (err)
+                  throw err;
+             else{
+                cbf(rows);
+               }
+             con.release();
+          });
+      });
+   },
+
+   uploadImg : function(data){
+      var insert = {imageFile : data.imageFile};
+      this.pool.getConnection(function(err, con){
+         con.query("UPDATE Publications SET ? WHERE ID = " + data.ID, insert, function(err, rows){
+            if(err){
+               throw err;
+            }else{
+               console.log(rows);
+            }
+            con.release();
+         });
+      });
    }
 };
