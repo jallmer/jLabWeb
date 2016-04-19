@@ -25,11 +25,14 @@ body {
 
 .bs-callout {
     padding: 10px;
-    margin: 20px 0;
-    border: 1px solid #eee;
-    border-left-width: 5px;
-    border-radius: 6px;
+    border-bottom: 12px solid #428bca;
+    border-radius: 2px;
     background: white;
+    margin-bottom: 30px;
+}
+
+.bs-callout a {
+    word-wrap: break-word;
 }
 .bs-callout h4 {
     margin-top: 0;
@@ -46,42 +49,37 @@ body {
 .bs-callout code {
     border-radius: 3px;
 }
-.bs-callout+.bs-callout {
-    margin-top: -5px;
-}
+
 .bs-callout-default {
-    border-left-color: #777;
+    border-bottom-color: #777;
 }
 .bs-callout-default h4 {
     color: #777;
 }
 .bs-callout-primary {
-    border-left-color: #428bca;
+    border-bottom-color: #428bca;
 }
 .bs-callout-primary h4 {
     color: #428bca;
 }
-.bs-callout-success {
-    border-left-color: #5cb85c;
-}
-.bs-callout-success h4 {
-    color: #5cb85c;
-}
-.bs-callout-danger {
-    border-left-color: #d9534f;
-}
-.bs-callout-danger h4 {
-    color: #d9534f;
-}
-.bs-callout-warning {
-    border-left-color: #f0ad4e;
-}
-.bs-callout-warning h4 {
-    color: #f0ad4e;
-}
+
 .bs-callout-info {
     border-left-color: #5bc0de;
 }
 .bs-callout-info h4 {
     color: #5bc0de;
+}
+
+.publication-container {
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.publication-container .publication {
+    display: inline-block;
+    width: 100%;
 }
