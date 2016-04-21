@@ -41,9 +41,9 @@
                                 <p>
                                     <% for(var j = 0; j < publications[i].aut.length; j++) { %>
                                     <% if(publications[i].aut[j].internal) { %>
-                                    <a href="/<%= publications[i].aut[j].internal %>" target="_blank"><%= publications[i].aut[j].fname %> <%= publications[i].aut[j].mnames %> <%= publications[i].aut[j].lname %></a>
+                                    <a href="/staff/<%= publications[i].aut[j].internal %>" target="_blank"><%= publications[i].aut[j].fname %> <%= publications[i].aut[j].mnames %> <%= publications[i].aut[j].lname %></a>
                                     <% } else { %>
-                                    <%= publications[i].aut[j].fname %> <%= publications[i].aut[j].mnames %> <%= publications[i].aut[j].lname %>, 
+                                    <%= publications[i].aut[j].fname %> <%= publications[i].aut[j].mnames %> <%= publications[i].aut[j].lname %>,
                                     <% } %>
                                     <% } %>
                                 </p>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                     </div>
-                    <% 
+                    <%
                     i += 1;
                     if( i === publications.length){
                     break;
@@ -71,7 +71,7 @@
                                     <% if(publications[i].aut[j].internal) { %>
                                     <a href="/<%= publications[i].aut[j].internal %>" target="_blank"><%= publications[i].aut[j].fname %> <%= publications[i].aut[j].mnames %> <%= publications[i].aut[j].lname %></a>
                                     <% } else { %>
-                                    <%= publications[i].aut[j].fname %> <%= publications[i].aut[j].mnames %> <%= publications[i].aut[j].lname %>, 
+                                    <%= publications[i].aut[j].fname %> <%= publications[i].aut[j].mnames %> <%= publications[i].aut[j].lname %>,
                                     <% } %>
                                     <% } %>
                                 </p>
