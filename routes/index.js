@@ -30,6 +30,20 @@ router.get('/software', function(req, res, next) {
    });
 });
 
+router.get('/news', function(req, res, next) {
+   res.status(200).render('news', {
+      title: "News and Noteworthy about jLab",
+      active: "news"
+   });
+});
+
+router.get('/contact', function(req, res, next) {
+   res.status(200).render('contact', {
+      title: "Reach jLab",
+      active: "contact"
+   });
+});
+
 router.get('/about', function(req, res, next) {
    res.status(200).render('about', {
       title: "About jLab",

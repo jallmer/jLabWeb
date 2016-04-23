@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Head tags and stylesheets include -->
+        <% include templates/head.html %>
+        <!-- Page specific stylesheets -->
+        
+        <style>
+            .newsItem1 {
+                border-bottom: thick solid orange;
+            }
+            .newsItem1 h2 {
+                color: orange;
+                font-size: 1.3em;
+            }
+            .newsItem1 .newsDate {
+                color: orange;
+            }
+            
+            .newsItem2 {
+                border-bottom: thick solid #3366CC;
+            }
+            .newsItem2 h2 {
+                color: #3366CC;
+                font-size: 1.3em;
+            }
+            .newsItem2 .newsDate {
+                color: #3366CC;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation bar include -->
+        <% include templates/navbar.html %>
+
+        <!-- Main content and items -->
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron" style="min-height: 800px;">
+                <div class="row">
+                    <div class="row"><div class="col-md-12">
+                        <h1>News</h1>
+                    </div></div>
+                    <div class="row"><div class="col-md-12">
+                            <div class='newsItem1'>
+                                <div class='row'>
+                                    <div class="col-md-12">
+                                        <h2>IB 2016</h2>                                        
+                                        <p>
+                                            We are co-organizing the <a href='http://www.imbio.de/ib2016/' target="_blank">12<sup>th</sup> International Symposium on Integrative Bioinformatics 2016</a>
+                                            to be held in Bielefeld, Germany from 21/09/2016 - 23/09/2016.
+                                        </p>
+                                        <p>
+                                            More Information: <a href='http://www.imbio.de/ib2016/' target="_blank">12<sup>th</sup> International Symposium on Integrative Bioinformatics 2016</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class='row' style='text-align: right; color: orange;'>
+                                    <div class="col-md-12 newsDate">23/04/2016</div>
+                                </div>             
+                            </div>
+                    </div></div>
+                    <div class="row"><div class="col-md-12">
+                        &nbsp;
+                    </div></div>
+                    <div class="row"><div class="col-md-12">
+                            <div class='newsItem2'>
+                                <div class='row'>
+                                    <div class="col-md-12">
+                                        <h2>IB 2016</h2>                                        
+                                        <p>
+                                            We are co-organizing the <a href='http://www.imbio.de/ib2016/' target="_blank">12<sup>th</sup> International Symposium on Integrative Bioinformatics 2016</a>
+                                            to be held in Bielefeld, Germany from 21/09/2016 - 23/09/2016.
+                                        </p>
+                                        <p>
+                                            More Information: <a href='http://www.imbio.de/ib2016/' target="_blank">12<sup>th</sup> International Symposium on Integrative Bioinformatics 2016</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class='row' style='text-align: right; color: orange;'>
+                                    <div class="col-md-12 newsDate">23/04/2016</div>
+                                </div>             
+                            </div>
+                    </div></div>                    
+<!--                    <div class="row"><div class="col-md-6">
+                      
+                    </div><div class="col-md-6">
+                        <img src="img/genomics.png" height="250" alt="Genomics group (2016)"/>
+                    </div></div>-->
+                </div>
+            </div>
+        </div> <!-- /container -->
+
+        <!-- Script file and function include -->
+        <% include templates/scripts.html %>
+
+    </body>
+</html>

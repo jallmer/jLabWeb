@@ -6,6 +6,7 @@
 
         <!-- Page specific stylesheets -->
         <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/lightbox.css">
         
     </head>
     <body>
@@ -16,29 +17,94 @@
         <div class="container">
             <!-- Main component for a primary marketing message or call to action -->
             <div class="jumbotron" style="min-height: 800px;">
-
-                <h1>Software and Online Services</h1>
-                <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-                <p>To see the difference between static and fixed top navbars, just scroll.</p>
-                <ul>
-                    <li>
-                        <div style="background-color: green; border: 1px solid #000000;">
-                            <span class="vertYear" style="float: left; background-color: yellow;">2016</span>
-                            <span  style="float: left;  background-color: green;"><img src="../" /></span>
-                            <span style="float: left;  background-color: blue;">Authors and other stuff</span>
-                            <span style="float: left; background-color: red;">Links</span>
+                <div class="row">
+                    <div class="col-md-3">
+                        <button class="btn btn-warning" onclick="$('.software-container').sortByTitle();" type="button">Sort By Title</button>
+                        <button class="btn btn-warning" onclick="$('.software-container').sortDivs('year');" type="button">Sort By Year</button>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="filter" name="filter" placeholder="Search" />
+                    </div>
+                </div>
+                <div class="row software-container">
+                    
+                    <div data-year="2016" class="bs-callout bs-callout-primary software " >
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="/img/izmir.png" data-lightbox="/img/izmir.png" data-title="izMiR: Beyond the state-of-the-art in pre-miRNA Detection">
+                                    <img src="/img/izmir.png" class="img-thumbnail img-responsive"/></a>
+                            </div>
+                            <div class="col-md-9">
+                                <h4 class="title">izMiR: Beyond the state-of-the-art in pre-miRNA Detection</h4>
+                                <p>
+                                    <a href="/staff/DS" target="_blank">Duygu Müşerref Saçar Demirci</a> and 
+                                    <a href="/staff/JA" target="_blank">Jens Allmer</a>
+                                </p>
+                                <p>References
+                                    <!-- Link to publications -->
+                                </p>
+                                <p>
+                                    <i><a href="izmir">izMiR Details</a></i>
+                                </p>
+                            </div>
                         </div>
-                    </li>
-                    <li>
-
-                    </li>
-                </ul>
-
+                    </div>
+                    
+                    <div data-year="2016" class="bs-callout bs-callout-primary software " >
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="/img/izmir.png" data-lightbox="/img/izmir.png" data-title="Hairpin Feature Calculator">
+                                    <img src="/img/izmir.png" class="img-thumbnail img-responsive"/></a>
+                            </div>
+                            <div class="col-md-9">
+                                <h4 class="title">Hairpin Feature Calculator</h4>
+                                <p>
+                                    <a href="/staff/CB" target="_blank">Caner Bağcı</a> and 
+                                    <a href="/staff/JA" target="_blank">Jens Allmer</a>
+                                </p>
+                                <p>References
+                                    <!-- Link to publications -->
+                                </p>
+                                <p>
+                                    <i><a href="mirna">Visit HFC Service</a></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>                
             </div>
         </div> <!-- /container -->
 
         <!-- Script file and function include -->
         <% include templates/scripts.html %>
-         
+        
+        <script src="/js/lightbox.js"></script>        
+        <script>
+            jQuery.fn.sortDivs = function sortDivs(param) {
+                $("> div", this[0]).sort(dec_sort).appendTo(this[0]);
+                function dec_sort(a, b) {
+                    return ($(b).data(param)) < ($(a).data(param)) ? 1 : -1;
+                }
+            };
+
+            $('#filter').keyup(function () {
+                var txt = $('#filter').val();
+                $('.software').each(function () {
+                    if ($(this).text().toUpperCase().indexOf(txt.toUpperCase()) !== -1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+
+            jQuery.fn.sortByTitle = function sortDivs() {
+                $("> div", this[0]).sort(dec_sort).appendTo(this[0]);
+                function dec_sort(a, b) {
+                    return ($(b).find('h4')[0].innerHTML) < ($(a).find('h4')[0].innerHTML) ? 1 : -1;
+                }
+            };
+        </script>         
     </body>
 </html>
