@@ -226,7 +226,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3"></div>
-                            <div class="col-md-6 shd but" id="scoialbut" style="background: url(img/social.png); background-size: 6em 6em; background-repeat: no-repeat; background-position: center; background-color: #AA3939;">
+                            <div class="col-md-6 shd but" id="scoialbut" style="background: url(img/social.png); background-size: 6em 6em; background-repeat: no-repeat; background-position: center; background-color: #AA3939; cursor: not-allowed;">
                                 <span style='display:inline-block; vertical-align:middle;line-height: normal; clear: both; font-size: 2em; padding-top: 1em;'>
                                     Social<br/>
                                     Media
@@ -243,7 +243,7 @@
         <!-- Page specific scripts -->
         <script>
             $('.carousel').carousel({
-                interval: 3000
+                interval: 4000
             });
             $('.but').hover(
                     function () { //mouse in
@@ -269,7 +269,7 @@
                                 window.location.href = "http://www.iyte.edu.tr/AnaSayfa.aspx?d=ENG";
                                 break;
                             case 'homebut':
-                                window.location.href = "/";
+                                window.location.href = "/about";
                                 break;
                             case 'newsbut':
                                 window.location.href = "/news";
@@ -278,7 +278,7 @@
                                 window.location.href = "/contact";
                                 break;
                             case 'contributionbut':
-                                window.location.href = "/publications/posters";
+                                window.location.href = "/publications/articles";
                                 break;
                             case 'softwarebut':
                                 window.location.href = "/software";
@@ -290,7 +290,7 @@
                                 window.location.href = "/courses";
                                 break;
                             case 'scoialbut':
-                                window.location.href = "/social";
+                                window.location.href = "/";
                                 break;
                         }
                     }
