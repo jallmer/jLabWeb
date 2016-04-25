@@ -20,11 +20,12 @@
          <div id="main" class="jumbotron" style="min-height: 800px;">
 
             <div class="row">
-               <div class="col-md-3">
+               <div class="col-md-4">
                   <button class="btn btn-warning" onclick="$('.publication-container').sortByTitle();" type="button">Sort By Title</button>
                   <button class="btn btn-warning" onclick="$('.publication-container').sortDivs('year');" type="button">Sort By Year</button>
+                  <button class="btn btn-warning" onclick="clearFilter();" type="button">Clear Filter</button>
                </div>
-               <div class="col-md-6">
+               <div class="col-md-8">
                   <input type="text" class="form-control" id="filter" name="filter" placeholder="Search" />
                </div>
             </div>
@@ -169,6 +170,11 @@
                      return sParameterName[1] === undefined ? true : sParameterName[1];
                   }
                }
+            };
+            
+            var clearFilter = function clearFilter() {
+              $('#filter').val('');
+              filterPublications("");
             };
          </script>
 </body>
