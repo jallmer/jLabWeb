@@ -6,10 +6,10 @@
 
         <!-- Page specific stylesheets -->
         <link rel="stylesheet" href="/css/lightbox.css" />
-        
+
         <style>
 /*            First software should be blue and second be orange.*/
-            
+
         </style>
     </head>
     <body>
@@ -31,7 +31,7 @@
                 </div>
                 <hr/>
                 <div class="row software-container">
-                    
+
                     <div data-year="2016" class="bs-callout bs-callout-primary software" >
                         <div class="row">
                             <div class="col-md-3">
@@ -41,7 +41,7 @@
                             <div class="col-md-9">
                                 <h4 class="title">izMiR: Beyond the state-of-the-art in pre-miRNA Detection</h4>
                                 <p>
-                                    <a href="/staff/DS" target="_blank">Duygu Müşerref Saçar Demirci</a> and 
+                                    <a href="/staff/DS" target="_blank">Duygu Müşerref Saçar Demirci</a> and
                                     <a href="/staff/JA" target="_blank">Jens Allmer</a>
                                 </p>
                                 <p>References
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div data-year="2016" class="bs-callout bs-callout-primary software" >
                         <div class="row">
                             <div class="col-md-3">
@@ -63,27 +63,27 @@
                             <div class="col-md-9">
                                 <h4 class="title">Hairpin Feature Calculator</h4>
                                 <p>
-                                    <a href="/staff/CB" target="_blank">Caner Bağcı</a> and 
+                                    <a href="/staff/CB" target="_blank">Caner Bağcı</a> and
                                     <a href="/staff/JA" target="_blank">Jens Allmer</a>
                                 </p>
                                 <p>References
                                     <!-- Link to publications -->
                                 </p>
                                 <p>
-                                    <i><a href="mirna">Visit HFC Service</a></i>
+                                    <i><a href="software/mirna">Visit HFC Service</a></i>
                                 </p>
                             </div>
                         </div>
                     </div>
-                    
-                </div>                
+
+                </div>
             </div>
         </div> <!-- /container -->
 
         <!-- Script file and function include -->
         <% include templates/scripts.html %>
-        
-        <script src="/js/lightbox.js"></script>        
+
+        <script src="/js/lightbox.js"></script>
         <script>
             jQuery.fn.sortDivs = function sortDivs(param) {
                 $("> div", this[0]).sort(dec_sort).appendTo(this[0]);
@@ -109,6 +109,6 @@
                     return ($(b).find('h4')[0].innerHTML) < ($(a).find('h4')[0].innerHTML) ? 1 : -1;
                 }
             };
-        </script>         
+        </script>
     </body>
 </html>

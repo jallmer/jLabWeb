@@ -25,10 +25,9 @@
          <form id="citForm" action="">
 
             <textarea name="bibtexText" id="bibtexText" rows=20 style="width:100%"> </textarea>
-
-            <button id="submit" onclick="submit();">Submit</button>
             </center>
          </form>
+         <button id="submit" onclick="addPublications();">Submit</button>
       </div>
       <div id="imageDiv" class="col-md-4" style="margin-top: 10%;">
          <button id="getPub" onclick="getPublications();">Get List Of Publications</button>
@@ -72,7 +71,7 @@
 
 
 
-      function submit() {
+      function addPublications() {
          var bibtextText = $('#bibtexText').val();
          //console.log(bibtextText);
          var bibtexObj = bibtexParse.toJSON(bibtextText);

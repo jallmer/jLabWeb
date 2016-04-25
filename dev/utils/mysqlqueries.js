@@ -118,7 +118,7 @@ module.exports = {
       autId = 0;
       this.pool.getConnection(function(err, connection) {
 
-         connection.query("SELECT * FROM Persons WHERE lname = '" + names[0] + "'", function(err, rows) {
+         connection.query("SELECT * FROM Persons WHERE lname LIKE '" + names[0] + "%'", function(err, rows) {
             if (err) {
                console.log(err);
             }
@@ -191,6 +191,9 @@ module.exports = {
          bibtexEntry.entryTags[key] = stringutils.replaceAll(bibtexEntry.entryTags[key], "{\\\"{o}}", "ö");
          insert[key] = bibtexEntry.entryTags[key];
       }
+      bibtexEntry.entryTags["title"] = stringutils.replaceAll(bibtexEntry.entryTags["title"], "{", "");
+      bibtexEntry.entryTags["title"] = stringutils.replaceAll(bibtexEntry.entryTags["title"], "}", "");
+      insert["title"] = bibtexEntry.entryTags["title"];
       insert['type'] = bibtexEntry.entryType;
 
       pubId = 0;
