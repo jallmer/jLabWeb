@@ -117,7 +117,6 @@
       <% include templates/scripts.html %>+
 
          <script src="/js/lightbox.js"></script>
-         <script src="/js/js.cookie.js"></script>
          <script>
             jQuery.fn.sortDivs = function sortDivs(param) {
                $("> div", this[0]).sort(dec_sort).appendTo(this[0]);
@@ -127,7 +126,7 @@
                }
             };
 
-            var filterPublications = function(filter){
+            var filterPublications = function(filter) {
                $('.publication').each(function() {
                   if ($(this).text().toUpperCase().indexOf(filter.toUpperCase()) !== -1) {
                      $(this).show();
@@ -150,14 +149,28 @@
                }
             };
 
-            $(document).ready(function(){
-               var filter = Cookies.get("filter");
+            $(document).ready(function() {
+               var filter = getUrlParameter("filter");
                if(filter){
                   $('#filter').val(filter);
                   filterPublications(filter);
-                  Cookies.remove("filter");
                }
             });
+
+            var getUrlParameter = function getUrlParameter(sParam) {
+               var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                  sURLVariables = sPageURL.split('&'),
+                  sParameterName,
+                  i;
+
+               for (i = 0; i < sURLVariables.length; i++) {
+                  sParameterName = sURLVariables[i].split('=');
+
+                  if (sParameterName[0] === sParam) {
+                     return sParameterName[1] === undefined ? true : sParameterName[1];
+                  }
+               }
+            };
          </script>
 </body>
 

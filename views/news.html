@@ -32,17 +32,6 @@
             }
         </style>
 
-        <script src="/js/js.cookie.js"></script>
-        <script>
-            var goToPublications = function(filter) {
-               Cookies.set("filter", filter);
-               window.location.href = "/publications/posters";
-            };
-
-            $(document).ready(function(){
-               $('a').css("cursor", "pointer");
-            });
-        </script>
     </head>
     <body>
         <!-- Navigation bar include -->
@@ -275,7 +264,7 @@
                                     <p>
                                         Publisher: <a href="http://www.nobelyayin.com/detay.asp?u=3611" target="_blank">More information.</a>
                                     </p>
-                                    <a onclick="goToPublications('Biyoenformatik I Dizi Kıyaslamaları')">Publication</a>
+                                    <a href="/publications/posters?filter=Biyoenformatik I Dizi Kıyaslamaları">Publication</a>
                                 </div><div class="col-md-6">
                                     <a href="http://www.nobelyayin.com/detay.asp?u=3611" target="_blank">
                                     <img src="img/nobelyayin_com_3611.jpg" height="180" alt="Cover of our book on Bioinoformatics"/>
