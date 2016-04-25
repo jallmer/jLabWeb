@@ -1,123 +1,164 @@
 <!DOCTYPE html>
 <html>
-    <head>
 
-        <!-- Head tags and stylesheets include -->
-        <% include templates/head.html %>
-        <!-- Page specific stylesheets -->
-        <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="/css/lightbox.css">
+<head>
 
-    </head>
-    <body>
-        <!-- Navigation bar include -->
-        <% include templates/navbar.html %>
+   <!-- Head tags and stylesheets include -->
+   <% include templates/head.html %>
+      <!-- Page specific stylesheets -->
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="/css/lightbox.css">
 
-        <!-- Main content and items -->
-        <div class="container">
-            <!-- Main component for a primary marketing message or call to action -->
-            <div id="main" class="jumbotron" style="min-height: 800px;">
+</head>
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <button class="btn btn-warning" onclick="$('.publication-container').sortByTitle();" type="button">Sort By Title</button>
-                        <button class="btn btn-warning" onclick="$('.publication-container').sortDivs('year');" type="button">Sort By Year</button>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control" id="filter" name="filter" placeholder="Search" />
-                    </div>
-                </div>
-                <hr />
-                <div class="row publication-container">
+<body>
+   <!-- Navigation bar include -->
+   <% include templates/navbar.html %>
 
-                    <% for (var i = 0; i < publications.length; i++) {%>
-                    <div data-year="<%= publications[i].year %>" class="bs-callout bs-callout-primary publication " >
-                        <div class="row">
-                            <div class="col-md-3">
-                                <a href="<%= publications[i].imageFile %>" data-lightbox="<%= publications[i].imageFile %>" data-title="<%= publications[i].title %>"><img src="<%= publications[i].imageFile %>" class="img-thumbnail img-responsive"/></a>
-                            </div>
-                            <div class="col-md-9">
-                                <h4 class="title"><%= publications[i].title %></h4>
-                                <p>
-                                    <% for(var j = 0; j < publications[i].aut.length; j++) { %>
-                                    <% if(publications[i].aut[j].internal) { %>
-                                    <a href="/staff/<%= publications[i].aut[j].internal %>" target="_blank"><%= publications[i].aut[j].fname %> <%= publications[i].aut[j].mnames %> <%= publications[i].aut[j].lname %></a>
-                                    <% } else { %>
-                                    <%= publications[i].aut[j].fname %> <%= publications[i].aut[j].mnames %> <%= publications[i].aut[j].lname %>,
-                                    <% } %>
-                                    <% } %>
-                                </p>
-                                <p><%= publications[i].journal %> / <%= publications[i].volume %>, <%= publications[i].number %>, <%= publications[i].pages %> </p>
-                                <p>
-                                    <i>Doi: <% if(publications[i].doi) { %> <a href="https://doi.org/<%= publications[i].doi %>" target="_blank"><%= publications[i].doi %></a>  <% } else { %> N/A <% } %> ,<% if(publications[i].url) { %> <a href="<%= publications[i].url %>" target="_blank"><%= publications[i].url %> </a> <% } else { %> N/A <% } %></i>
-                                </p>
-                            </div>
+      <!-- Main content and items -->
+      <div class="container">
+         <!-- Main component for a primary marketing message or call to action -->
+         <div id="main" class="jumbotron" style="min-height: 800px;">
+
+            <div class="row">
+               <div class="col-md-3">
+                  <button class="btn btn-warning" onclick="$('.publication-container').sortByTitle();" type="button">Sort By Title</button>
+                  <button class="btn btn-warning" onclick="$('.publication-container').sortDivs('year');" type="button">Sort By Year</button>
+               </div>
+               <div class="col-md-6">
+                  <input type="text" class="form-control" id="filter" name="filter" placeholder="Search" />
+               </div>
+            </div>
+            <hr />
+            <div class="row publication-container">
+
+               <% for (var i = 0; i < publications.length; i++) {%>
+                  <div data-year="<%= publications[i].year %>" class="bs-callout bs-callout-primary publication ">
+                     <div class="row">
+                        <div class="col-md-3">
+                           <a href="<%= publications[i].imageFile %>" data-lightbox="<%= publications[i].imageFile %>" data-title="<%= publications[i].title %>"><img src="<%= publications[i].imageFile %>" class="img-thumbnail img-responsive"/></a>
                         </div>
-                    </div>
-                    <%
+                        <div class="col-md-9">
+                           <h4 class="title"><%= publications[i].title %></h4>
+                           <p>
+                              <% for(var j = 0; j < publications[i].aut.length; j++) { %>
+                                 <% if(publications[i].aut[j].internal) { %>
+                                    <a href="/staff/<%= publications[i].aut[j].internal %>" target="_blank">
+                                       <%= publications[i].aut[j].fname %>
+                                          <%= publications[i].aut[j].mnames %>
+                                             <%= publications[i].aut[j].lname %>
+                                    </a>
+                                    <% } else { %>
+                                       <%= publications[i].aut[j].fname %>
+                                          <%= publications[i].aut[j].mnames %>
+                                             <%= publications[i].aut[j].lname %>,
+                                                <% } %>
+                                                   <% } %>
+                           </p>
+                           <p>
+                              <%= publications[i].journal %> /
+                                 <%= publications[i].volume %>,
+                                    <%= publications[i].number %>,
+                                       <%= publications[i].pages %>
+                           </p>
+                           <p>
+                              <i>Doi: <% if(publications[i].doi) { %> <a href="https://doi.org/<%= publications[i].doi %>" target="_blank"><%= publications[i].doi %></a>  <% } else { %> N/A <% } %> ,<% if(publications[i].url) { %> <a href="<%= publications[i].url %>" target="_blank"><%= publications[i].url %> </a> <% } else { %> N/A <% } %></i>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <%
                     i += 1;
                     if( i === publications.length){
                     break;
                     } %>
-                    <div data-year="<%= publications[i].year %>" class="bs-callout bs-callout-primary publication ">
+                     <div data-year="<%= publications[i].year %>" class="bs-callout bs-callout-primary publication ">
                         <div class="row">
-                            <div class="col-md-3">
-                                <a href="<%= publications[i].imageFile %>" data-lightbox="<%= publications[i].imageFile %>" data-title="<%= publications[i].title %>"><img src="<%= publications[i].imageFile %>" class="img-thumbnail img-responsive"/></a>
-                            </div>
-                            <div class="col-md-9">
-                                <h4 class="title"><%= publications[i].title %></h4>
-                                <p>
-                                    <% for(var j = 0; j < publications[i].aut.length; j++) { %>
+                           <div class="col-md-3">
+                              <a href="<%= publications[i].imageFile %>" data-lightbox="<%= publications[i].imageFile %>" data-title="<%= publications[i].title %>"><img src="<%= publications[i].imageFile %>" class="img-thumbnail img-responsive"/></a>
+                           </div>
+                           <div class="col-md-9">
+                              <h4 class="title"><%= publications[i].title %></h4>
+                              <p>
+                                 <% for(var j = 0; j < publications[i].aut.length; j++) { %>
                                     <% if(publications[i].aut[j].internal) { %>
-                                    <a href="/<%= publications[i].aut[j].internal %>" target="_blank"><%= publications[i].aut[j].fname %> <%= publications[i].aut[j].mnames %> <%= publications[i].aut[j].lname %></a>
-                                    <% } else { %>
-                                    <%= publications[i].aut[j].fname %> <%= publications[i].aut[j].mnames %> <%= publications[i].aut[j].lname %>,
-                                    <% } %>
-                                    <% } %>
-                                </p>
-                                <p><%= publications[i].journal %> / <%= publications[i].volume %>, <%= publications[i].number %>, <%= publications[i].pages %> </p>
-                                <p>
-                                    <i>Doi: <% if(publications[i].doi) { %> <a href="https://doi.org/<%= publications[i].doi %>" target="_blank"><%= publications[i].doi %></a>  <% } else { %> N/A <% } %> , <% if(publications[i].url) { %> <a href="<%= publications[i].url %>" target="_blank"><%= publications[i].url %> </a> <% } else { %> N/A <% } %></i>
-                                </p>
-                            </div>
+                                       <a href="/<%= publications[i].aut[j].internal %>" target="_blank">
+                                          <%= publications[i].aut[j].fname %>
+                                             <%= publications[i].aut[j].mnames %>
+                                                <%= publications[i].aut[j].lname %>
+                                       </a>
+                                       <% } else { %>
+                                          <%= publications[i].aut[j].fname %>
+                                             <%= publications[i].aut[j].mnames %>
+                                                <%= publications[i].aut[j].lname %>,
+                                                   <% } %>
+                                                      <% } %>
+                              </p>
+                              <p>
+                                 <%= publications[i].journal %> /
+                                    <%= publications[i].volume %>,
+                                       <%= publications[i].number %>,
+                                          <%= publications[i].pages %>
+                              </p>
+                              <p>
+                                 <i>Doi: <% if(publications[i].doi) { %> <a href="https://doi.org/<%= publications[i].doi %>" target="_blank"><%= publications[i].doi %></a>  <% } else { %> N/A <% } %> , <% if(publications[i].url) { %> <a href="<%= publications[i].url %>" target="_blank"><%= publications[i].url %> </a> <% } else { %> N/A <% } %></i>
+                              </p>
+                           </div>
                         </div>
-                    </div>
-                    <% } %>
+                     </div>
+                     <% } %>
 
-                </div>
             </div>
-        </div> <!-- /container -->
+         </div>
+      </div>
+      <!-- /container -->
 
-        <!-- Script file and function include -->
-        <% include templates/scripts.html %>+
+      <!-- Script file and function include -->
+      <% include templates/scripts.html %>+
 
-        <script src="/js/lightbox.js"></script>
+         <script src="/js/lightbox.js"></script>
+         <script src="/js/js.cookie.js"></script>
+         <script>
+            jQuery.fn.sortDivs = function sortDivs(param) {
+               $("> div", this[0]).sort(dec_sort).appendTo(this[0]);
 
-        <script>
-                            jQuery.fn.sortDivs = function sortDivs(param) {
-                                $("> div", this[0]).sort(dec_sort).appendTo(this[0]);
-                                function dec_sort(a, b) {
-                                    return ($(b).data(param)) < ($(a).data(param)) ? 1 : -1;
-                                }
-                            };
+               function dec_sort(a, b) {
+                  return ($(b).data(param)) < ($(a).data(param)) ? 1 : -1;
+               }
+            };
 
-                            $('#filter').keyup(function () {
-                                var txt = $('#filter').val();
-                                $('.publication').each(function () {
-                                    if ($(this).text().toUpperCase().indexOf(txt.toUpperCase()) !== -1) {
-                                        $(this).show();
-                                    } else {
-                                        $(this).hide();
-                                    }
-                                });
-                            });
+            var filterPublications = function(filter){
+               $('.publication').each(function() {
+                  if ($(this).text().toUpperCase().indexOf(filter.toUpperCase()) !== -1) {
+                     $(this).show();
+                  } else {
+                     $(this).hide();
+                  }
+               });
+            };
 
-                            jQuery.fn.sortByTitle = function sortDivs() {
-                                $("> div", this[0]).sort(dec_sort).appendTo(this[0]);
-                                function dec_sort(a, b) {
-                                    return ($(b).find('h4')[0].innerHTML) < ($(a).find('h4')[0].innerHTML) ? 1 : -1;
-                                }
-                            };
-        </script>
-    </body>
+            $('#filter').keyup(function() {
+               var txt = $('#filter').val();
+               filterPublications(txt);
+            });
+
+            jQuery.fn.sortByTitle = function sortDivs() {
+               $("> div", this[0]).sort(dec_sort).appendTo(this[0]);
+
+               function dec_sort(a, b) {
+                  return ($(b).find('h4')[0].innerHTML) < ($(a).find('h4')[0].innerHTML) ? 1 : -1;
+               }
+            };
+
+            $(document).ready(function(){
+               var filter = Cookies.get("filter");
+               if(filter){
+                  $('#filter').val(filter);
+                  filterPublications(filter);
+                  Cookies.remove("filter");
+               }
+            });
+         </script>
+</body>
+
 </html>

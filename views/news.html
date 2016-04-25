@@ -5,7 +5,7 @@
         <!-- Head tags and stylesheets include -->
         <% include templates/head.html %>
         <!-- Page specific stylesheets -->
-        
+
         <style>
             .newsItem1 {
                 border-bottom: thick solid orange;
@@ -18,7 +18,7 @@
                 color: orange;
                 text-align: right;
             }
-            
+
             .newsItem2 {
                 border-bottom: thick solid #3366CC;
             }
@@ -31,6 +31,18 @@
                 text-align: right;
             }
         </style>
+
+        <script src="/js/js.cookie.js"></script>
+        <script>
+            var goToPublications = function(filter) {
+               Cookies.set("filter", filter);
+               window.location.href = "/publications/posters";
+            };
+
+            $(document).ready(function(){
+               $('a').css("cursor", "pointer");
+            });
+        </script>
     </head>
     <body>
         <!-- Navigation bar include -->
@@ -48,18 +60,18 @@
                             <div class='newsItem1'>
                                 <div class='row'>
                                     <div class="col-md-12">
-                                        <h2></h2>                                        
+                                        <h2></h2>
                                         <p>
 
                                         </p>
                                         <p>
-                                            
+
                                         </p>
                                     </div>
                                 </div>
                                 <div class='row' style='text-align: right; color: orange;'>
                                     <div class="col-md-12 newsDate"></div>
-                                </div>             
+                                </div>
                             </div>
                     </div></div>
                     <div class="row"><div class="col-md-12">
@@ -69,39 +81,39 @@
                             <div class='newsItem2'>
                                 <div class='row'>
                                     <div class="col-md-12">
-                                        <h2></h2>                                        
-                                        <p>
-                                           
-                                        </p>
-                                        <p>
-                                            
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class='row' style='text-align: right; color: orange;'>
-                                    <div class="col-md-12 newsDate"></div>
-                                </div>             
-                            </div>
-                    </div></div>             
-                    <div class="row"><div class="col-md-12">
-                        &nbsp;
-                    </div></div>-->                    
-<!--                    <div class="row"><div class="col-md-12">
-                            <div class='newsItem1'>
-                                <div class='row'>
-                                    <div class="col-md-12">
-                                        <h2></h2>                                        
+                                        <h2></h2>
                                         <p>
 
                                         </p>
                                         <p>
-                                            
+
                                         </p>
                                     </div>
                                 </div>
                                 <div class='row' style='text-align: right; color: orange;'>
                                     <div class="col-md-12 newsDate"></div>
-                                </div>             
+                                </div>
+                            </div>
+                    </div></div>
+                    <div class="row"><div class="col-md-12">
+                        &nbsp;
+                    </div></div>-->
+<!--                    <div class="row"><div class="col-md-12">
+                            <div class='newsItem1'>
+                                <div class='row'>
+                                    <div class="col-md-12">
+                                        <h2></h2>
+                                        <p>
+
+                                        </p>
+                                        <p>
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class='row' style='text-align: right; color: orange;'>
+                                    <div class="col-md-12 newsDate"></div>
+                                </div>
                             </div>
                     </div></div>
                     <div class="row"><div class="col-md-12">
@@ -111,7 +123,7 @@
                             <div class='newsItem2'>
                                 <div class='row'>
                                     <div class="col-md-12">
-                                        <h2>IB 2016</h2>                                        
+                                        <h2>IB 2016</h2>
                                         <p>
                                             We are co-organizing the <a href='http://www.imbio.de/ib2016/' target="_blank">12<sup>th</sup> International Symposium on Integrative Bioinformatics 2016</a>
                                             to be held in Bielefeld, Germany from 21/09/2016 - 23/09/2016.
@@ -123,18 +135,18 @@
                                 </div>
                                 <div class='row'>
                                     <div class="col-md-12 newsDate">15/01/2016</div>
-                                </div>             
+                                </div>
                             </div>
-                    </div></div>             
+                    </div></div>
                     <div class="row"><div class="col-md-12">
                         &nbsp;
                     </div></div>
-                    
+
                     <div class="row"><div class="col-md-12">
                             <div class='newsItem1'>
                                 <div class='row'>
                                     <div class="col-md-12">
-                                        <h2>IzTech Webpage (during teaching)</h2>                                        
+                                        <h2>IzTech Webpage (during teaching)</h2>
                                         <p>
                                             <a href="http://www.iyte.edu.tr/" target="_blank">
                                             <img src="img/teaching2015.jpg" height="180" alt="While teaching MBG305"/>
@@ -144,7 +156,7 @@
                                 </div>
                                 <div class='row'>
                                     <div class="col-md-12 newsDate">15/12/2015</div>
-                                </div>             
+                                </div>
                             </div>
                     </div></div>
                     <div class="row"><div class="col-md-12">
@@ -154,7 +166,7 @@
                             <div class='newsItem2'>
                                 <div class='row'>
                                     <div class="col-md-12">
-                                        <h2>IzTech Bulletin</h2>                                        
+                                        <h2>IzTech Bulletin</h2>
                                         <p>
                                            Our research has been mentioned in our institutes bulletin.
                                         </p>
@@ -165,19 +177,19 @@
                                 </div>
                                 <div class='row'>
                                     <div class="col-md-12 newsDate">01/09/2014</div>
-                                </div>             
+                                </div>
                             </div>
                     </div></div>
-                    
+
                     <div class="row"><div class="col-md-12">
                         &nbsp;
                     </div></div>
-                    
+
                     <div class="row"><div class="col-md-12">
                             <div class='newsItem1'>
                                 <div class='row'>
                                     <div class="col-md-12">
-                                        <h2>Accepted Grant Proposals</h2>                                        
+                                        <h2>Accepted Grant Proposals</h2>
                                         <p>
                                             Two grant proposals have been accepted by TÜBITAK:
                                             A Datawarehouse For The Analysis Of Micro-RNA Metabolic Network Control [Mikro-RNA Metabolik Ağ Kontrol Analizi İçin Veri Ambarı]
@@ -187,7 +199,7 @@
                                 </div>
                                 <div class='row'>
                                     <div class="col-md-12 newsDate">01/08/2014</div>
-                                </div>             
+                                </div>
                             </div>
                     </div></div>
                     <div class="row"><div class="col-md-12">
@@ -197,27 +209,27 @@
                             <div class='newsItem2'>
                                 <div class='row'>
                                     <div class="col-md-12">
-                                        <h2>Accepted Support for Workshops</h2>                                        
+                                        <h2>Accepted Support for Workshops</h2>
                                         <p>
-                                            Two of our workshop proposals have been accepted by TÜBITAK and we invite to a <a href='http://wtbm.iyte.edu.tr/' target="_blank">Transcriptomics</a> and a 
-                                            <a href='http://ipw.iyte.edu.tr/' target="_blank">Proteomics</a> workshop in May 2014. Stay tuned for more information.                                           
+                                            Two of our workshop proposals have been accepted by TÜBITAK and we invite to a <a href='http://wtbm.iyte.edu.tr/' target="_blank">Transcriptomics</a> and a
+                                            <a href='http://ipw.iyte.edu.tr/' target="_blank">Proteomics</a> workshop in May 2014. Stay tuned for more information.
                                         </p>
                                     </div>
                                 </div>
                                 <div class='row'>
                                     <div class="col-md-12 newsDate">15/01/2014</div>
-                                </div>             
+                                </div>
                             </div>
-                    </div></div>             
+                    </div></div>
                     <div class="row"><div class="col-md-12">
                         &nbsp;
                     </div></div>
-                    
+
                     <div class="row"><div class="col-md-12">
                             <div class='newsItem1'>
                                 <div class='row'>
                                     <div class="col-md-12">
-                                        <h2>2<sup>nd</sup> Place Worldwide</h2>                                        
+                                        <h2>2<sup>nd</sup> Place Worldwide</h2>
                                         <p>
                                             As supervisor for a high school research project with Çakabey high school, we are happy to announce that our students received the 2nd place in a world wide competition (International Conference of Young Scientists, Bali, Indonesia).
                                         </p>
@@ -225,7 +237,7 @@
                                 </div>
                                 <div class='row'>
                                     <div class="col-md-12 newsDate">15/04/2013</div>
-                                </div>             
+                                </div>
                             </div>
                     </div></div>
                     <div class="row"><div class="col-md-12">
@@ -235,50 +247,51 @@
                             <div class='newsItem2'>
                                 <div class='row'>
                                     <div class="col-md-12">
-                                        <h2>Supported Research Stays</h2>                                        
+                                        <h2>Supported Research Stays</h2>
                                         <p>
                                             Jens Allmer has been awarded the EMBO short term fellowship.<br/>
                                             Jens Allmer has been awarded the DAAD research visit grant.<br/>
-                                            Canan Has has been awarded the DAAD visiting research fellowship.<br/>                                           
+                                            Canan Has has been awarded the DAAD visiting research fellowship.<br/>
                                         </p>
                                     </div>
                                 </div>
                                 <div class='row'>
                                     <div class="col-md-12 newsDate">01/03/2013</div>
-                                </div>             
+                                </div>
                             </div>
-                    </div></div>             
+                    </div></div>
                     <div class="row"><div class="col-md-12">
                         &nbsp;
                     </div></div>
-                    
+
                     <div class="row"><div class="col-md-12">
                             <div class='newsItem1'>
                                 <div class="row"><div class="col-md-6">
                                     <h2>First Bioinformatics Book</h2>
                                     <p>The first book on Bioinformatics in Turkish language Editors:<br/>
-                                        Has C, Yılmaz Ş, and Allmer J (2012) 
-                                    Biyoinformatikte Dizi Kıyaslaması (Sequence Alignment in Bioinformatics), Nobel Publishing, Ankara, Turkey, 
+                                        Has C, Yılmaz Ş, and Allmer J (2012)
+                                    Biyoinformatikte Dizi Kıyaslaması (Sequence Alignment in Bioinformatics), Nobel Publishing, Ankara, Turkey,
                                     ISBN: 978-605-133-297-0.</p>
                                     <p>
                                         Publisher: <a href="http://www.nobelyayin.com/detay.asp?u=3611" target="_blank">More information.</a>
                                     </p>
+                                    <a onclick="goToPublications('Biyoenformatik I Dizi Kıyaslamaları')">Publication</a>
                                 </div><div class="col-md-6">
                                     <a href="http://www.nobelyayin.com/detay.asp?u=3611" target="_blank">
                                     <img src="img/nobelyayin_com_3611.jpg" height="180" alt="Cover of our book on Bioinoformatics"/>
                                     </a>
-                                </div></div>                                
+                                </div></div>
                                 <div class='row'>
                                     <div class="col-md-12 newsDate">15/11/2012</div>
-                                </div>             
+                                </div>
                             </div>
                     </div></div>
                     <div class="row"><div class="col-md-12">
                         &nbsp;
                     </div></div>
-                   
+
 <!--                    <div class="row"><div class="col-md-6">
-                      
+
                     </div><div class="col-md-6">
                         <img src="img/genomics.png" height="250" alt="Genomics group (2016)"/>
                     </div></div>-->
