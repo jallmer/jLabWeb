@@ -15,19 +15,6 @@ router.get('/', function(req, res, next) {
    });
 });
 
-router.get('/staff', function(req, res, next) {
-   res.status(200).render('staff', {
-      title: "jLab Staff",
-      active: "staff"
-   });
-});
-
-router.get('/posters', function(req, res, next) {
-   res.status(200).render('posters', {
-      title: "jLab Posters",
-      active: "posters"
-   });
-});
 
 router.get('/software', function(req, res, next) {
    //mysqlconn.logToDB(req.headers, "software");
