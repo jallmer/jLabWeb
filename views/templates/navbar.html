@@ -17,9 +17,9 @@
                 <li <% if(active == 'articles' || active == 'books' || active == 'posters' || active == 'conferences' || active == 'grants' || active == 'projects') {%>class="active"<%}%> class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contributions <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li <% if(active == 'articles') {%>class="active"<%}%>><a href="/articles">Articles</a></li>
-                        <li <% if(active == 'books') {%>class="active"<%}%>><a href="/books">Books</a></li>
-                        <li <% if(active == 'posters') {%>class="active"<%}%>><a href="/posters">Posters</a></li>
+                        <li <% if(active == 'article') {%>class="active"<%}%>><a href="/publications/articles">Articles</a></li>
+                        <li <% if(active == 'book') {%>class="active"<%}%>><a href="/publications/books">Books</a></li>
+                        <li <% if(active == 'poster') {%>class="active"<%}%>><a href="/publications/posters">Posters</a></li>
                         <li role="separator" class="divider"></li>
                         <li <% if(active == 'conferences') {%>class="active"<%}%>><a href="/conferences">Conferences</a></li>
                         <li <% if(active == 'grants') {%>class="active"<%}%>><a href="/grants">Grants</a></li>

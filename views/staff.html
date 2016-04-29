@@ -1,282 +1,318 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <!-- Head tags and stylesheets include -->
         <% include templates/head.html %>
-
         <!-- Page specific stylesheets -->
-        <link rel="stylesheet" href="/css/lightbox.css" />
-        <link rel="stylesheet" href="/css/templatemo_misc.css">
-        <link href="/css/templatemo_style.css" rel="stylesheet">
-	<script src="/js/jquery.lightbox.js"></script>
-        <script src="/js/templatemo_custom.js"></script>
+        <link rel="stylesheet" href="/css/lightbox.css">
+
         <style>
-            
+            #hexGrid {
+                overflow: hidden;
+                width: 90%;
+                margin: 0 auto;
+                padding:0.866% 0;
+                font-family: 'Raleway', sans-serif;
+                font-size: 15px;
+            }
+            #hexGrid:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+            .hex {        
+                position: relative;
+                list-style-type: none;
+                float: left;
+                overflow: hidden;
+                visibility: hidden;
+                outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+                -webkit-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+                -ms-transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+                transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+            }
+            .hex * {
+                position: absolute;
+                visibility: visible;
+                outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+            }
+            .hexIn {
+                display:block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                color: #fff;
+                overflow: hidden;
+                -webkit-transform: skewY(-30deg) rotate(60deg);
+                -ms-transform: skewY(-30deg) rotate(60deg);
+                transform: skewY(-30deg) rotate(60deg);
+            }
+
+            /*** HEX CONTENT **********************************************************************/
+            .hex img {
+                left: -100%;
+                right: -100%;
+                width: auto;
+                height: 100%;
+                margin: 0 auto;
+            }
+
+            .hex h1, .hex p {
+                width: 102%;
+                color: #fff;
+                left:-1%; /* prevent line on the right where background doesn't cover image */
+                padding: 5%;
+                box-sizing:border-box;
+                background-color: #ff8739;
+                font-weight: 300;
+                -webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
+                transition:          transform .2s ease-out, opacity .3s ease-out;
+            }
+            .hex h1 {
+                bottom: 50%;
+                padding-top:50%;
+                font-size: 1.5em;
+                z-index: 1;
+                -webkit-transform:translateY(-100%) translatez(-1px);
+                -ms-transform:translateY(-100%) translatez(-1px);
+                transform:translateY(-100%) translatez(-1px);
+            }
+            .hex h1:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 45%;
+                width: 10%;
+                text-align: center;
+                border-bottom: 1px solid #fff;
+            }
+            .hex p {
+                top: 50%;
+                padding-bottom:50%;
+                -webkit-transform:translateY(100%) translatez(-1px);
+                -ms-transform:translateY(100%) translatez(-1px);
+                transform:translateY(100%) translatez(-1px);
+            }
+
+
+            /*** HOVER EFFECT  **********************************************************************/
+            .hexIn:hover h1, .hexIn:focus h1,
+            .hexIn:hover p, .hexIn:focus p{
+                -webkit-transform:translateY(0%) translatez(-1px);
+                -ms-transform:translateY(0%) translatez(-1px);
+                transform:translateY(0%) translatez(-1px);
+            }
+
+            /*** SPACING AND SIZING *****************************************************************/
+            @media (min-width:1201px) { /* <- 5-4  hexagons per row */
+                .hex {
+                    width: 19.2%; /* = (100-4) / 5 */
+                    padding-bottom: 22.170%; /* =  width / sin(60deg) */
+                }
+                .hex:nth-child(9n+6),
+                .hex:nth-child(9n+7),
+                .hex:nth-child(9n+8),
+                .hex:nth-child(9n+9) {
+                    margin-top: -4.676%;
+                    margin-bottom: -4.676%;
+                    -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+                    -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+                    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+                }
+                .hex:nth-child(9n+6):last-child,
+                .hex:nth-child(9n+7):last-child,
+                .hex:nth-child(9n+8):last-child,
+                .hex:nth-child(9n+9):last-child {
+                    margin-bottom: 0;
+                }
+                .hex:nth-child(9n+6) {
+                    margin-left: 0.5%;
+                    clear: left;
+                }
+                .hex:nth-child(9n+10) {
+                    clear: left;
+                }
+                .hex:nth-child(9n+2),
+                .hex:nth-child(9n+ 7) {
+                    margin-left: 1%;
+                    margin-right: 1%;
+                }
+                .hex:nth-child(9n+3),
+                .hex:nth-child(9n+4),
+                .hex:nth-child(9n+8) {
+                    margin-right: 1%;
+                }
+            }
+            @media (max-width: 1200px) and (min-width:901px) {/* <- 4-3  hexagons per row */
+                .hex {
+                    width: 24.25%; /* = (100-3) / 4 */
+                    padding-bottom: 28.001%; /* =  width / sin(60deg) */
+                }
+                .hex:nth-child(7n+5),
+                .hex:nth-child(7n+6),
+                .hex:nth-child(7n+7) {
+                    margin-top: -6.134%;
+                    margin-bottom: -6.134%;
+                    -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+                    -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+                    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+                }
+                .hex:nth-child(7n+5):last-child,
+                .hex:nth-child(7n+6):last-child,
+                .hex:nth-child(7n+7):last-child {
+                    margin-bottom: 0;
+                }
+                .hex:nth-child(7n+2),
+                .hex:nth-child(7n+6) {
+                    margin-left: 1%;
+                    margin-right: 1%;
+                }
+                .hex:nth-child(7n+3) {
+                    margin-right: 1%;
+                }
+                .hex:nth-child(7n+8) {
+                    clear: left;
+                }
+                .hex:nth-child(7n+5) {
+                    clear: left;
+                    margin-left: 0.5%;
+                }
+            }
+            @media (max-width: 900px) and (min-width:601px) { /* <- 3-2  hexagons per row */
+                .hex {
+                    width: 32.666%; /* = (100-2) / 3 */
+                    padding-bottom: 37.720%; /* =  width / sin(60) */
+                }
+                .hex:nth-child(5n+4),
+                .hex:nth-child(5n+5) {
+                    margin-top: -8.564%;
+                    margin-bottom: -8.564%;
+                    -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+                    -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+                    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+                }
+                .hex:nth-child(5n+4):last-child,
+                .hex:nth-child(5n+5):last-child {
+                    margin-bottom: 0;
+                }
+                .hex:nth-child(5n+4) {
+                    margin-right: 1%;
+                    margin-left: 0.5%;
+                }
+                .hex:nth-child(5n+2) {
+                    margin-left: 1%;
+                    margin-right: 1%;
+                }
+                .hex:nth-child(5n+6) {
+                    clear: left;
+                }
+            }
+            @media (max-width: 600px) { /* <- 2-1  hexagons per row */
+                .hex {
+                    width: 49.5%; /* = (100-1) / 2 */
+                    padding-bottom: 57.158%; /* =  width / sin(60) */
+                }
+                .hex:nth-child(3n+3) {
+                    margin-top: -13.423%;
+                    margin-bottom: -13.423%;
+                    -webkit-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+                    -ms-transform: translateX(50%) rotate(-60deg) skewY(30deg);
+                    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+                }
+                .hex:nth-child(3n+3):last-child {
+                    margin-bottom: 0;
+                }
+                .hex:nth-child(3n+3) {
+                    margin-left: 0.5%;
+                }
+                .hex:nth-child(3n+2) {
+                    margin-left: 1%;
+                }
+                .hex:nth-child(3n+4) {
+                    clear: left;
+                }
+            }
+            @media (max-width: 400px) {
+                #hexGrid {
+                    font-size: 13px;
+                }
+            }
         </style>
+        <%
+          shuffle =  function (array) {
+                var currentIndex = array.length, temporaryValue, randomIndex;
+
+                // While there remain elements to shuffle...
+                while (0 !== currentIndex) {
+
+                    // Pick a remaining element...
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex -= 1;
+
+                    // And swap it with the current element.
+                    temporaryValue = array[currentIndex];
+                    array[currentIndex] = array[randomIndex];
+                    array[randomIndex] = temporaryValue;
+                }
+                return array;
+            }
+        %>
     </head>
+
     <body>
         <!-- Navigation bar include -->
         <% include templates/navbar.html %>
+
         <!-- Main content and items -->
         <div class="container">
             <!-- Main component for a primary marketing message or call to action -->
-            <div class="jumbotron" style="min-height: 1200px;">
-                <div class="row" style="min-height:150px;"><div class="col-md-12">
-                    &nbsp;
-                </div></div>    
-<div id="menu-container">            
-    <!-- gallery start -->
-    <div class="content homepage" id="menu-1">
-    <div class="container">
-	    <div class="row templatemorow">
-    		<div class="hex col-sm-6">
-    	<div>
-          <div class="hexagon">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="">
-<!--                  Placeholder-->
-              </div>
+            <div id="main" class="jumbotron" style="min-height: 800px;">
+
+                <ul id="hexGrid">
+                    <li class="hex"></li>
+                    <li class="hex">
+                        <a class="hexIn" href="<%= head[0].internal %>">
+                            <img src="<%= head[0].image %>"" alt="" />
+                            <h1><%= head[0].fname %> <%= head[0].lname%> </h1>
+                            <p><%= head[0].level%></p>
+                        </a>
+                    </li>
+                    <li class="hex"></li>
+                    <li class="hex"></li>
+                    <li class="hex"></li>
+                    <% for (var i = 0; i < phds.length; i++) {%>
+                    <li class="hex">
+                        <a class="hexIn" href="<%= phds[i].internal %>">
+                            <img src="<%= phds[i].image %>" alt="" />
+                            <h1><%= phds[i].fname %> <%= phds[i].mnames %> <%= phds[i].lname %></h1>
+                            <p><%= phds[i].level %></p>
+                        </a>
+                    </li>
+                    <% } %>
+                    <% for (var i = 0; i < masters.length; i++) {%>
+                    <li class="hex">
+                        <a class="hexIn" href="<%= masters[i].internal %>">
+                            <img src="<%= masters[i].image %>" alt="" />
+                            <h1><%= masters[i].fname %> <%= masters[i].mnames %> <%= masters[i].lname %></h1>
+                            <p><%= masters[i].level %></p>
+                        </a>
+                    </li>
+                    <% } %>
+                    <% for (var i = 0; i < bachelors.length; i++) {%>
+                    <li class="hex">
+                        <a class="hexIn" href="<%= bachelors[i].internal %>">
+                            <img src="<%= bachelors[i].image %>" alt="" />
+                            <h1><%= bachelors[i].fname %> <%= bachelors[i].mnames %> <%= bachelors[i].lname %></h1>
+                            <p><%= bachelors[i].level %></p>
+                        </a>
+                    </li>
+                    <% } %>
             </div>
-          </div>
         </div>
-    </div>
-    <div class="hex col-sm-6">
-    	<div>
-          <div class="hexagon hex-offset hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(/img/profile_pictures/CircJA.png);">
-                    <div class="overlay">
-                        <a href="/staff/JA/index.html" data-rel="lightbox" class="fa fa-expand"><p style='height:10px;'>&nbsp;</p>Jens Allmer<br/>PI</a>
-                    </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6  templatemo-hex-top2">
-    	<div>
-          <div class="hexagon ">
-            <div class="hexagon-in1">
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6  templatemo-hex-top3">
-    	<div>
-          <div class="hexagon ">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(images/gallery/4.jpg);">
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6  templatemo-hex-top3">
-    	<div>
-          <div class="hexagon ">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(images/gallery/5.jpg);">
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-  	     <div class="hex col-sm-6 hex-offset templatemo-hex-top1 templatemo-hex-top2">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(/img/profile_pictures/ch.png);">
-                    <div class="overlay">
-                        <a href="/staff/CH/index.html" data-rel="lightbox" class="fa fa-expand"><p style='height:10px;'>&nbsp;</p>Canan Has<br/>PhD Student</a>
-                    </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-     <div class="hex col-sm-6 templatemo-hex-top1 templatemo-hex-top3">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(/img/profile_pictures/vg.png);">
-                    <div class="overlay">
-                        <a href="/staff/VG/index.html" data-rel="lightbox" class="fa fa-expand"><p style='height:10px;'>&nbsp;</p>Visam Gültekin<br/>PhD Student</a>
-                    </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-      <div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top3">
-      	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(/img/profile_pictures/ds.png);">
-                    <div class="overlay">
-                        <a href="/staff/DS/index.html" data-rel="lightbox" class="fa fa-expand"><p style='height:10px;'>&nbsp;</p>Duygu Saçar<br/>PhD Student</a>
-                    </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top2">
-      	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(/img/profile_pictures/mt.png);">
-                    <div class="overlay">
-                        <a href="/staff/MT/index.html" data-rel="lightbox" class="fa fa-expand"><p style='height:10px;'>&nbsp;</p>Mustafa Toprak<br/>PhD Student</a>
-                    </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top2">
-      	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(/img/profile_pictures/mg.png);">
-                    <div class="overlay">
-                        <a href="/staff/MG/index.html" data-rel="lightbox" class="fa fa-expand"><p style='height:10px;'>&nbsp;</p>Mehmet Göktay<br/>PhD Student</a>
-                    </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>                
-    	</div>
-	</div>
-    <div  id="newpost" class="container answer_list templatemo_gallerytop">
-	    <div class="row templatemorow">
-    		<div class="hex col-sm-6">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(images/gallery/10.jpg);">
-                    <div class="overlay">
-                        <a href="/staff/RS/index.html" data-rel="lightbox" class="fa fa-expand"><p style='height:10px;'>&nbsp;</p>Rabia Suluyayla<br/>MSc Student</a>
-                    </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(/img/profile_pictures/cb.png);">
-                    <div class="overlay">
-                        <a href="/staff/CB/index.html" data-rel="lightbox" class="fa fa-expand"><p style='height:10px;'>&nbsp;</p>Caner Bağcı<br/>MSc Student</a>
-                    </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6  templatemo-hex-top2">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(images/gallery/12.jpg);">
-              	<div class="overlay">
-						<a href="images/gallery/12.jpg" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6  templatemo-hex-top3">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(images/gallery/13.jpg);">
-              	<div class="overlay">
-						<a href="images/gallery/13.jpg" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="hex col-sm-6  templatemo-hex-top3">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(images/gallery/14.jpg);">
-              		<div class="overlay">
-						<a href="images/gallery/14.jpg" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-  	     <div class="hex col-sm-6 hex-offset templatemo-hex-top1 templatemo-hex-top2">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(images/gallery/15.jpg);">
-              		<div class="overlay">
-						<a href="images/gallery/15.jpg" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-     <div class="hex col-sm-6 templatemo-hex-top1 templatemo-hex-top3">
-    	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(images/gallery/16.jpg);">
-              		<div class="overlay">
-						<a href="images/gallery/16.jpg" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-      <div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top3">
-      	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(images/gallery/17.jpg);">
-              		<div class="overlay">
-						<a href="images/gallery/17.jpg" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top2">
-      	<div>
-          <div class="hexagon hexagon2 gallery-item">
-            <div class="hexagon-in1">
-              <div class="hexagon-in2" style="background-image: url(images/gallery/18.jpg);">
-              		<div class="overlay">
-						<a href="images/gallery/18.jpg" data-rel="lightbox" class="fa fa-expand"></a>
-					</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    	</div>
-	</div>
-    </div>
-      <!-- gallery end -->                
-            </div>
-        </div> <!-- /container -->
-</div>
+        <!-- /container -->
+
         <!-- Script file and function include -->
         <% include templates/scripts.html %>
-        
-        <script src="/js/lightbox.js"></script>               
     </body>
 </html>
