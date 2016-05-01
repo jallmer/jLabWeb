@@ -6,6 +6,8 @@
         <% include templates/head.html %>
         <!-- Page specific stylesheets -->
         <link rel="stylesheet" href="/css/lightbox.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/templatemo-gray.css">
 
         <style>
             #hexGrid {
@@ -238,6 +240,9 @@
                     font-size: 13px;
                 }
             }
+            .fa-academia:before{content:"A"}
+            .fa-mendeley:before{content:"M"}
+            .fa-researchgate:before{content:"RG"}            
         </style>
         <%
           shuffle =  function (array) {
@@ -268,6 +273,17 @@
         <div class="container">
             <!-- Main component for a primary marketing message or call to action -->
             <div id="main" class="jumbotron" style="min-height: 800px;">
+                <div class="row">
+                    <div class="col-md-12" style="min-height:80px;">
+                        &nbsp;
+                    </div>
+                </div>   
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>The jLab Team</h1>
+                    </div>
+                </div>                    
+
 
                 <ul id="hexGrid">
                     <li class="hex"></li>
@@ -309,24 +325,68 @@
                     </li>
                     <% } %>
                     <div class="row">
-                        <div class="col-md-12" style="min-height:100px;">
+                        <div class="col-md-12" style="min-height:150px;">
                             &nbsp;
                         </div>
                     </div>                    
                     <div class="row">
                         <div class="col-md-12">
                             <h1>Alumni</h1>
-                            <a target="_blank" href='https://www.researchgate.net/profile/Aybuge_Altay'>Aybuge ALTAY</a>, BSc (2015) <br/>
-                            <a target="_blank" href='#'>Cemal Ulas KUNDAKCI</a>, BSc (2015)<br/>
-                            <a target="_blank" href='#'>Nurselin ATES</a>, BSc (2015)<br/>
-                            <a target="_blank" href='https://www.researchgate.net/profile/Hamid_Hamzeiy'>Hamid HAMZEIY</a>, BSc (2014)<br/>
-                            <a target="_blank" href='https://www.researchgate.net/profile/Sule_Yilmaz6'>Sule YILMAZ</a>, MSc (2012)<br/>
-                            <a target="_blank" href='#'>Seckin BOZ</a>, BSc (2012)<br/>
-                            <a target="_blank" href='#'>Belgin AYTUN</a>, MSc (2011)<br/>
-                            <a target="_blank" href='#'>Emre Can GECER</a>, BSc (2011)<br/>
-                            <a target="_blank" href='#'>Necati BATUR</a>, BSc (2011)<br/>
-                            <a target="_blank" href='#'>Nilay Peker</a>, BSc (2011)<br/>
-                            <a target="_blank" href='https://www.researchgate.net/profile/Mehmet_Cakir2'>Mehmet Volkan CAKIR</a>, MSc (2010)<br/>
+<!--				<ul class="social-icons">
+					<li><a href="https://www.facebook.com/jallmer" target="_blank" class="fa fa-facebook"></a></li>
+                                        <li><a href="https://tr.linkedin.com/in/jallmer" target="_blank" class="fa fa-linkedin"></a></li>
+					<li><a href="https://twitter.com/jallmer" target="_blank" class="fa fa-twitter"></a></li>
+					<li><a href="https://www.researchgate.net/profile/Jens_Allmer" target="_blank" class="fa fa-researchgate"></a></li>
+					<li><a href="https://github.com/jallmer" target="_blank" class="fa fa-github"></a></li>
+					<li><a href="https://iyte.academia.edu/JensAllmer" target="_blank" class="fa fa-academia"></a></li>
+					<li><a href="https://www.mendeley.com/profiles/jens-allmer/" target="_blank" class="fa fa-mendeley"></a></li>
+				</ul>                         -->
+                            <ul class="social-icons">
+                                <li style="vertical-align: middle; margin-top: 16px;">Aybuge Altay, BSc (2015)</li>
+                                <li><a href="https://www.researchgate.net/profile/Aybuge_Altay" target="_blank" class="fa fa-researchgate"></a></li>
+                                <li><a href="https://de.linkedin.com/in/aybuge-altay-5ba67285/en" target="_blank" class="fa fa-linkedin"></a></li>
+                            </ul>
+                            
+                            <ul class="social-icons">
+                                <li style="vertical-align: middle; margin-top: 16px;">Cemal Ulaş Kundakçı, BSc (2015)</li>
+                                <li><a href="https://m.facebook.com/profile.php?id=1076559121" target="_blank" class="fa fa-facebook"></a></li>
+                            </ul>                         
+                            <ul class="social-icons">
+                                <li style="vertical-align: middle; margin-top: 16px;">Nurselin Ateş, BSc (2015)</li>
+                                <li><a href="" target="_blank" class="fa fa-facebook"></a></li>
+                            </ul>                        
+                            <ul class="social-icons">
+                                <li style="vertical-align: middle; margin-top: 16px;">Hamid Hamzeiy, BSc (2014)</li>
+                                <li><a href="https://www.researchgate.net/profile/Hamid_Hamzeiy" target="_blank" class="fa fa-researchgate"></a></li>
+                            </ul>                        
+                            <ul class="social-icons">
+                                <li style="vertical-align: middle; margin-top: 16px;">Şule Yılmaz, MSc (2012)</li>
+                                <li><a href="https://www.researchgate.net/profile/Sule_Yilmaz6" target="_blank" class="fa fa-researchgate"></a></li>
+                            </ul>                        
+                            <ul class="social-icons">
+                                <li style="vertical-align: middle; margin-top: 16px;">Seçkin Boz, BSc (2012)</li>
+                                <li><a href="" target="_blank" class="fa fa-facebook"></a></li>
+                            </ul>                        
+                            <ul class="social-icons">
+                                <li style="vertical-align: middle; margin-top: 16px;">Belgin AYTUN, MSc (2011)</li>
+                                <li><a href="" target="_blank" class="fa fa-facebook"></a></li>
+                            </ul>                        
+                            <ul class="social-icons">
+                                <li style="vertical-align: middle; margin-top: 16px;">Emre Can Geçer, BSc (2011)</li>
+                                <li><a href="" target="_blank" class="fa fa-facebook"></a></li>
+                            </ul>                        
+                            <ul class="social-icons">
+                                <li style="vertical-align: middle; margin-top: 16px;">Necati Batur, BSc (2011)</li>
+                                <li><a href="" target="_blank" class="fa fa-facebook"></a></li>
+                            </ul>   
+                            <ul class="social-icons">
+                                <li style="vertical-align: middle; margin-top: 16px;">Nilay Peker, BSc (2011)</li>
+                                <li><a href="" target="_blank" class="fa fa-facebook"></a></li>
+                            </ul>   
+                            <ul class="social-icons">
+                                <li style="vertical-align: middle; margin-top: 16px;">Mehmet Volkan Çakır, MSc (2010)</li>
+                                <li><a href="https://www.researchgate.net/profile/Mehmet_Cakir2" target="_blank" class="fa fa-researchgate"></a></li>
+                            </ul>   
                         </div>
                     </div>
             </div>
