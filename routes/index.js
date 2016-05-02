@@ -2,6 +2,24 @@ var express = require('express');
 var router = express.Router();
 var mysqlconn = require('../dev/utils/mysqlqueries.js');
 
+var httpProxy = require('http-proxy');
+var proxy = httpProxy.createProxyServer();
+
+router.all('/owncloud*', function(req, res, next){
+   console.log('redirecting ' + req.url);
+   // req.url = '/owncloud/index.php';
+   proxy.web(req, res, {target: 'http://10.2.24.26:80/'}, function(e) {
+      console.log(e);
+   });
+});
+
+router.all('/phpmyadmin*', function(req, res, next){
+   console.log('redirecting ' + req.url);
+   proxy.web(req, res, {target: 'http://10.2.24.19:8080/'}, function(e){
+      console.log(e);
+   });
+});
+
 mysqlconn.connect(function(connection) {
    if (!connection) {
       console.log("Not connected to mysqldb");
@@ -45,6 +63,9 @@ router.get('/about', function(req, res, next) {
    });
 });
 
+var bodyParser = require('body-parser');
+router.use(bodyParser.urlencoded({extended: false}));
+router.use(bodyParser.json());
 //Bibtex Parse routes
 router.post('/bibtexParse/registerBibtex', function(req, res) {
    for (var i = 0; i < req.body.length; i++) {
@@ -115,5 +136,7 @@ router.get('/software/mirna/featureList', function(req, res, next) {
       active: 'mirna/featureList'
    });
 });
+
+
 
 module.exports = router;

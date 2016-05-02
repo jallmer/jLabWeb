@@ -59,8 +59,8 @@ function format(obj) {
         //console.log(JSON.stringify(data, null, 4));
     };
 }
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended: false}));
+// app.use(bodyParser.json());
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -103,5 +103,14 @@ app.use(function (err, req, res, next) {
         error: {}
     });
 });
+
+// var proxy = require('express-http-proxy');
+//
+// app.use('/proxy', proxy('10.2.30.139:80', {
+//       forwardPath: function(req, res){
+//          console.log("forwarding");
+//          return require('url').parse(req.url).path;
+//       }
+// }));
 
 module.exports = app;
