@@ -55,7 +55,7 @@
     </div>
   </nav>
 -->
-
+<% include ../templates/navbar.html %>
   <div class="jumbotron" style="background-color:transparent !important;">
     <div class="container col-md-6 col-md-offset-3">
       <h2>miRNA</h2>
@@ -81,7 +81,7 @@
     function fillTable() {
       $.ajax({
         type: "GET",
-        url: "http://10.2.30.139:3000/mirna/featDescription.txt",
+        url: "/mirna/featDescription.txt",
         success: function(text) {
           var lines = text.split("\n");
           var table = document.getElementById('featDesc');;
