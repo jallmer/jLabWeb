@@ -46,14 +46,16 @@ $(document).ready(function() {
             data: data,
             cache: false,
             success: function(result) {
-               if (result.indexOf("success") != -1) {
-                  console.log(result);
-                  $("<div><br></br><center><h4>Please go check your e-mail. Your calculation is done</center></h4></div>").appendTo("#resultDiv");
+               if (result.success) {
+                  $("<div><br></br><center><h4>" + result.success + "</center></h4></div>").appendTo("#resultDiv");
                   //$("<div><center><h4><br><br>Your job has been queued with the ID: " + resSplit[1] + " <br>The results will be e-mailed to you after they are calculated.<br>Meanwhile, you can check the status of your job at XXX </h4></center></div>").appendTo("#resultDiv");
-               } else {
-                  console.log(result);
-                  $("<div><br></br><center><h4>" + result + "</center></h4></div>").appendTo("#resultDiv");
                }
+               if(result.error){
+                  $("<div><br></br><center><h4>" + result.error + "</center></h4></div>").appendTo("#resultDiv");
+               }
+            },
+            error: function(result){
+               $("<div><br></br><center><h4>" + result + "</center></h4></div>").appendTo("#resultDiv");
             }
          });
       }
@@ -65,7 +67,7 @@ $(document).ready(function() {
 function fillForm() {
    $.ajax({
       type: "GET",
-      url: "/mirna/featList.txt",
+      url: "http://10.2.30.139:3000/mirna/featList.txt",
       success: function(text) {
          var lines = text.split("\n");
          var seqFeat = [];

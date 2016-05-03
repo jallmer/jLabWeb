@@ -229,7 +229,7 @@ module.exports = {
 
    logToMirnaLog: function(runId, email, ip, time){
       var insert = {};
-      insert["rundId"] = runId;
+      insert["runId"] = runId;
       insert["email"] = email;
       insert["ip"] = ip;
       insert["time"] = time;
@@ -243,19 +243,23 @@ module.exports = {
       });
    },
 
-   getMirnaRunTimes: function(email, ip, time, runId){
+   getMirnaRunTimes: function(email, ip, time, runId, response){
       this.pool.getConnection(function(err, connection){
-         connection.query("SELECT COUNT(email) as emailCount, COUNT(ip) as ipCount FROM mirnaLog WHERE time = '" + time + "'", function(err, rows){
+         connection.query("SELECT COUNT(email) as emailCount, COUNT(ip) as ipCount FROM mirnaLog WHERE time = '" + time + "' AND ip = '" + ip + "' AND email = '" + email + "'", function(err, rows){
             if(err){
                console.log(err);
             }
-            console.log(rows);
             var mirnaFeatCalc = require("./mirna/mirnaFeatCalc.js");
             if(rows[0].emailCount < 5 && rows[0].ipCount < 5){
-               mirnaFeatCalc.execute(email, runId);
+               mirnaFeatCalc.execute(email, runId, response);
+            }else{
+               response.contentType('json');
+               response.send({"error" : "You can run 5 jobs in a day", "status" : 200});
             }
 //            count = rows['COUNT(email)'];
             connection.release();
+            var mysqlconn = require('./mysqlqueries.js');
+            mysqlconn.logToMirnaLog(runId, email, ip, time);
          });
       });
       //return count;
