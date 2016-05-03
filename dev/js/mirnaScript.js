@@ -65,7 +65,7 @@ $(document).ready(function() {
 function fillForm() {
    $.ajax({
       type: "GET",
-      url: "http://10.2.30.139:3000/mirna/featList.txt",
+      url: "/mirna/featList.txt",
       success: function(text) {
          var lines = text.split("\n");
          var seqFeat = [];
