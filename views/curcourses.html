@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Head tags and stylesheets include -->
+        <% include templates/head.html %>
+
+        <!-- Page specific stylesheets -->
+        <link rel="stylesheet" href="/css/lightbox.css" />
+
+        <style>
+/*            First software should be blue and second be orange.*/
+
+        </style>
+    </head>
+    <body>
+        <!-- Navigation bar include -->
+        <% include templates/navbar.html %>
+
+        <!-- Main content and items -->
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron" style="min-height: 800px;">
+                <div class="row"><div class="col-md-12">
+                    <h3>Courses Spring 2016</h3>
+                </div></div>                
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-6">
+                    <div class="col-md-12"><a href='http://mbg404.allmer.de' title='Visit web site' target="_blank">Computational Biology</a></div>
+                    </div>
+                    <div class="col-md-5"></div>                    
+                </div>                
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-6">
+                    While Applied Bioinformatics covered a number of algorithms which are available online, the focus of Computational Biology is to 
+                    use algorithms that are not available online or to use features that are not made available online. 
+                    Some algorithms will be briefly reviewed but much of the course is for productivity. Essential computer skills 
+                    will be taught alongside with advanced computer skills such as database design and XML/HTML literacy.
+                    Computational pipelines will be covered and set-up during the course. Algorithms will be covered on a more 
+                    general level enabling algorithmic thinking and new problem solving strategies.
+                    </div>
+                    <div class="col-md-5"></div>
+                </div>
+                <div class="row">&nbsp;</div>                
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-6">
+                    <div class="col-md-12"><a href='http://cs102.allmer.de'  title='Visit web site' target="_blank">Introduction to Programming</a></div>
+                    </div>
+                    <div class="col-md-5"></div>                    
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-6">
+                    Understanding algorihms and being able to think algorithmically is crucial in all parts of science and engineering. 
+                    Since most applications using classical programming languages like (C++, Java, ...) are rather remote 
+                    from practice, this course will introduce web programming which is much closer to our everyday life. 
+                    Dynamical web services will be implemented using static HTML and CSS which will be coupled with server side 
+                    and client side scripting using Javascript.  
+                    </div>
+                    <div class="col-md-5"></div>                    
+                </div>                
+            </div>
+        </div> <!-- /container -->
+
+        <!-- Script file and function include -->
+        <% include templates/scripts.html %>
+
+        <script src="/js/lightbox.js"></script>
+        <script>
+            jQuery.fn.sortDivs = function sortDivs(param) {
+                $("> div", this[0]).sort(dec_sort).appendTo(this[0]);
+                function dec_sort(a, b) {
+                    return ($(b).data(param)) < ($(a).data(param)) ? 1 : -1;
+                }
+            };
+
+            $('#filter').keyup(function () {
+                var txt = $('#filter').val();
+                $('.software').each(function () {
+                    if ($(this).text().toUpperCase().indexOf(txt.toUpperCase()) !== -1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+
+            jQuery.fn.sortByTitle = function sortDivs() {
+                $("> div", this[0]).sort(dec_sort).appendTo(this[0]);
+                function dec_sort(a, b) {
+                    return ($(b).find('h4')[0].innerHTML) < ($(a).find('h4')[0].innerHTML) ? 1 : -1;
+                }
+            };
+        </script>
+    </body>
+</html>

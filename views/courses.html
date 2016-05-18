@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Head tags and stylesheets include -->
+        <% include templates/head.html %>
+
+        <!-- Page specific stylesheets -->
+        <link rel="stylesheet" href="/css/lightbox.css" />
+
+        <style>
+/*            First software should be blue and second be orange.*/
+
+        </style>
+    </head>
+    <body>
+        <!-- Navigation bar include -->
+        <% include templates/navbar.html %>
+
+        <!-- Main content and items -->
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron" style="min-height: 800px;">
+                <div class="row">
+                    <div class="col-md-1">&nbsp;</div><div class="col-md-3" style="text-align: center; font-weight: bold;">Course</div>
+                    <div class="col-md-3" style="text-align: center; font-weight: bold;">Year</div><div class="col-md-3" style="text-align: center; font-weight: bold;">University</div><div class="col-md-2">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">&nbsp;</div><div class="col-md-3">Applied Bioinformatics</div>
+                    <div class="col-md-3">2008, 2009, 2010</div>
+                    <div class="col-md-3"><a href='http://www.iyte.edu.tr' target='_blank'>Izmir Institute of Technology</a></div>
+                    <div class="col-md-2"><a href='/files/syllabi/SyllabusMBG305.pdf' target='_blank'>Syllabus</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">&nbsp;</div><div class="col-md-3">Computational Biology</div>
+                    <div class="col-md-3">2008, 2009, 2010</div>
+                    <div class="col-md-3"><a href='http://www.iyte.edu.tr' target='_blank'>Izmir Institute of Technology</a></div>
+                    <div class="col-md-2"><a href='/files/syllabi/SyllabusMBG404.pdf' target='_blank'>Syllabus</a></div>
+                </div>
+            </div>
+        </div> <!-- /container -->
+
+        <!-- Script file and function include -->
+        <% include templates/scripts.html %>
+
+        <script src="/js/lightbox.js"></script>
+        <script>
+            jQuery.fn.sortDivs = function sortDivs(param) {
+                $("> div", this[0]).sort(dec_sort).appendTo(this[0]);
+                function dec_sort(a, b) {
+                    return ($(b).data(param)) < ($(a).data(param)) ? 1 : -1;
+                }
+            };
+
+            $('#filter').keyup(function () {
+                var txt = $('#filter').val();
+                $('.software').each(function () {
+                    if ($(this).text().toUpperCase().indexOf(txt.toUpperCase()) !== -1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+
+            jQuery.fn.sortByTitle = function sortDivs() {
+                $("> div", this[0]).sort(dec_sort).appendTo(this[0]);
+                function dec_sort(a, b) {
+                    return ($(b).find('h4')[0].innerHTML) < ($(a).find('h4')[0].innerHTML) ? 1 : -1;
+                }
+            };
+        </script>
+    </body>
+</html>

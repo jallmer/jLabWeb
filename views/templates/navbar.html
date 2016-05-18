@@ -34,7 +34,7 @@
                         <li <% if(active == 'group') {%>class="active"<%}%>><a href="/group">Group</a></li>
                         <li <% if(active == 'timeline') {%>class="active"<%}%>><a href="/timeline">Timeline</a></li>
                         <li role="separator" class="divider"></li>
-                        <li <% if(active == 'collaborators') {%>class="active"<%}%>><a href="./collaborators">Collaborators</a></li>
+                        <li <% if(active == 'collaborators') {%>class="active"<%}%>><a href="/collaborators">Collaborators</a></li>
                     </ul>
                 </li>
                 <li <% if(active == 'curcourses' || active == 'tutorials' ||active == 'workshops' ||active == 'courses') {%>class="active"<%}%> class="dropdown">
@@ -48,8 +48,8 @@
                     </ul>
                 </li>
                 <li <% if(active == 'soc_genomics' || active == 'soc_transcriptomics' ||active == 'soc_proteomics') {%>class="active"<%}%> class="dropdown disabled">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">WhatsUp <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
+                    <a href="#" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">WhatsUp <span class="caret"></span></a>
+                    <ul class="dropdown-menu disabled">
                         <li <% if(active == 'soc_genomics') {%>class="active"<%}%>><a href="/soc_genomics">Genomics</a></li>
                         <li <% if(active == 'soc_transcriptomics') {%>class="active"<%}%>><a href="/soc_transcriptomics">Transcriptomics</a></li>
                         <li <% if(active == 'soc_proteomics') {%>class="active"<%}%>><a href="/soc_proteomics">Proteomics</a></li>
