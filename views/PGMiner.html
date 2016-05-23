@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Head tags and stylesheets include -->
+        <% include templates/head.html %>
+        <!-- Page specific stylesheets -->
+        <link rel="stylesheet" href="/css/main.css"></link>
+        <style>
+            h4 {
+                            text-align: center;
+                            font-weight: bolder;
+                            font-size: 1.5em;
+                            margin-top: 0.5em;
+                            margin-bottom: 0.5em;
+                        }
+        </style>
+    </head>
+    <body>
+		    <!-- Navigation bar include -->
+        <% include templates/navbar.html %>
+
+        <!-- Main content and items -->
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron" style="min-height: 800px;">
+                <div class="row">
+                    <div class="row"><div class="col-md-12">
+                            <h1>PGMiner : Complete Proteogenomics Workflow; from Data Acquisition to Result Visualization</h1>
+                    </div></div>
+                    <div class="row"><div class="col-md-6">
+						<h4>Keywords: Proteogenomics, KNIME</h4>
+                        <p>In parallel with the development of nucleotide sequencing an equally important interest in further describing 
+						the sequence in terms of function arose. Following the advent of next generation sequencing, the current 
+						bottleneck is the annotation of available genomic sequences. While sequencing the transcriptome allows for 
+						determining expressed nucleotide sequences, it is limited since it may not be possible to sequence the expressome 
+						under all possible conditions. Proteomics, currently based in mass spectrometry, can perform sequencing on the 
+						protein level and thereby complement transcriptomics studies. Moreover, there exists information such as post 
+						translational modification events which can only be determined on the proteomics level. Therefore, it is essential 
+						to combine proteomics and genomics. For that purpose, a number of proteogenomics data analysis pipelines have been described. 
+						Here we describe a novel proteogenomics workflow which encompasses everything from the acquisition of data to result 
+						visualization in the Konstanz Information Miner, a state of the art workflow management and data analytics platform. 
+						This new workflow, entitled PGMiner, not only includes all data analysis steps, but is highly customizable which is 
+						rather cumbersome for most existing pipelines. Moreover, no burdensome installation processes have to be performed 
+						making PGMiner the most user friendly tool available.</p>                        
+                    </div><div class="col-md-6" style='vertical-align: middle;'>
+                    </div></div>
+                    <div class="row"><div class="col-md-12">
+                        <h3>Information</h3>
+						The current version of PGMiner includes 4 main categories. The nodes that are related to each category are listed. Detailed descriptions
+						on nodes and their configurations
+						can be reached via Node description panel in KNIME platform.</br>
+						<li>Data retrieval</li>
+						<ul style="list-style-type:disc">
+						<li>PeptideAtlas</li>
+						</ul>
+						<li>Database processing</li>
+						<ul style="list-style-type:disc">
+						<li>File operation: 3-frame or 6-frame translation of list of databases</li>
+						<li>Database equalization: Creation of equalized databases</li>
+						</ul>
+						<li>Peptide identification</li>
+						<ul style="list-style-type:disc">
+						<li>MSGF+</li>
+						<li>OMSSA</li>
+						<li>XTandem</li>
+						<li>DatabaseSearchResultMerger: Returns one result file of an algorithm which searches same spectra file against multiple databases</li>
+						<li>FDR: False discovery rate calculation based on target-decoy approach</li>
+						<li>ConsensusDBSearchResult: Majority vote calculation </li>
+						</ul>
+						<li>Peptide mapping</li>
+						<ul style="list-style-type:disc">
+						<li>WuManber exact peptide sequence search</li>
+						<li>EnzymeChecker: Checks whether mapped peptide locations confirm enzymatic cleavage rule</li>
+						<li>Annotation mapping: Maps peptide genomic locations to annotation GFF file of the organism</li>
+						</ul>
+                    </div></div>
+                    <div class="col-md-6">
+                        <h3> Requirements</h3>
+						The current release of PGMiner runs on KNIME 3.0.1 Full Analytics ,nstalled on Linux and Windows. 
+						</br>
+					    Java versions must be 1.8.</br>
+						In case PGMiner update site will be used, there is no installation rather than Java 1.8 and KNIME 3.0.1 Full Analytics is required. </br>
+						PGMiner supports latest versions of following MS Search engines. These tools are available with PGMiner, thus no installation is required. </br>
+						</br>
+						<a href='http://www.thegpm.org/tandem/'>XTandem</a></br>
+						<a href='http://pubchem.ncbi.nlm.nih.gov//omssa/'>OMSSA</a></br>
+						<a href='https://bix-lab.ucsd.edu/pages/viewpage.action?pageId=13533355'>MSGF+</a></br>
+						</br>
+						PGMiner database search engine runners require to be set configuration files which can be found under Downloads section.</br>
+						The parameter names are correlated to definitions given by algorithms. Please see detailed information about settings from algorithms's web pages.</br>
+						Besides that makeblastdb tool of NCBI Blast is available.</br>
+						PGMiner search engine runners currently support only .MGF(Mascot Generic Format).Therefore, MS/MS data in different format must
+						be converted to .mgf format by using OpenMS FileConverter which is already available on KNIME Full Analytics.</br>
+						We recommend running PGTools on a minimum of four core computers with minimum 20GB RAM.</br>
+                    </div></div>
+                    <div class="row"><div class="col-md-12">
+                        &nbsp;
+                    </div></div>
+                    <div class="row"><div class="col-md-6">
+                        <h3>Download</h3>
+                        <p>
+                            <a href='https://www.youtube.com/watch?v=AcS-HIpyIp0'>Watch our video tutorial</a><br/>
+                            <a href='../files/PGMinerVBI.zip'>Download the ubuntu virtual box image to have pre-installed PGMiner on KNIME</a><br/>
+							Note: A ready-to-use workflow and sample data are available on virtual box. The session PG on virtual machine is password protected. The password is 1. </br>
+							The virtual box image will be updated when new version of PGMiner is released. </br>
+                        </p>                        
+                    </div><div class="col-md-12">
+                        Please contact us in case you encounter a problem. The support will be given asap. 
+						<p><i class="fa fa-envelope"></i> cananhas@gmail.com</p>
+						<p><i class="fa fa-envelope"></i> pgminer@allmer.de</p>
+                    </div></div>
+                </div>
+            </div>
+        </div> <!-- /container -->
+
+	   <!-- Script file and function include -->
+        <% include templates/scripts.html %>
+
+    </body>
+</html>

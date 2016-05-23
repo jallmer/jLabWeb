@@ -137,6 +137,14 @@ router.get('/software/mirna/featureList', function(req, res, next) {
    });
 });
 
+router.get('/software/PGMiner/', function(req, res, next) {
+   res.status(200).render('PGMiner', {
+      title: "jLab PGMiner",
+      active: "PGMiner"
+   });
+});
+
+
 
 
 module.exports = router;
