@@ -63,6 +63,77 @@ router.get('/about', function(req, res, next) {
    });
 });
 
+router.get('/courses', function(req, res, next) {
+   res.status(200).render('courses', {
+      title: "Course List",
+      active: "courses"
+   });
+});
+
+router.get('/curcourses', function(req, res, next) {
+   res.status(200).render('curcourses', {
+      title: "Current Courses",
+      active: "curcourses"
+   });
+});
+
+router.get('/workshops', function(req, res, next) {
+   res.status(200).render('ucon', {
+      title: "Workshops",
+      active: "workshops"
+   });
+});
+
+router.get('/tutorials', function(req, res, next) {
+   res.status(200).render('ucon', {
+      title: "Tutorials",
+      active: "tutorials"
+   });
+});
+
+router.get('/conferences', function(req, res, next) {
+   res.status(200).render('ucon', {
+      title: "Conferences",
+      active: "conferences"
+   });
+});
+
+router.get('/grants', function(req, res, next) {
+   res.status(200).render('ucon', {
+      title: "Grants",
+      active: "grants"
+   });
+});
+
+router.get('/projects', function(req, res, next) {
+   res.status(200).render('ucon', {
+      title: "Projects",
+      active: "projects"
+   });
+});
+
+router.get('/group', function(req, res, next) {
+   res.status(200).render('ucon', {
+      title: "Group",
+      active: "group"
+   });
+});
+
+router.get('/collaborators', function(req, res, next) {
+   res.status(200).render('ucon', {
+      title: "Collaborators",
+      active: "collaborators"
+   });
+});
+
+router.get('/timeline', function(req, res, next) {
+   res.status(200).render('ucon', {
+      title: "Timeline",
+      active: "timeline"
+   });
+});
+
+
 var bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({extended: false}));
 router.use(bodyParser.json());
