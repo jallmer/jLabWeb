@@ -152,7 +152,7 @@ module.exports = {
    updatePublication: function(bibtexEntry) {
       console.log("updating");
       var insert = {};
-      var fields = ["title", "author", "abstract", "journal", "publisher", "year", "month", "volume", "number", "pages", "keywords", "doi", "url", "pmid", "issn"];
+      var fields = ["title", "author", "editor", "abstract", "journal", "publisher", "year", "month", "volume", "number", "pages", "keywords", "doi", "url", "pmid", "issn"];
       for (var key in bibtexEntry.entryTags) {
          if (fields.indexOf(key) < 0) {
             continue;

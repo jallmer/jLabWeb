@@ -9,14 +9,12 @@ router.all('/owncloud*', function(req, res, next){
    console.log('redirecting ' + req.url);
    // req.url = '/owncloud/index.php';
    proxy.web(req, res, {target: 'http://10.2.24.26:80/'}, function(e) {
-      console.log(e);
    });
 });
 
 router.all('/phpmyadmin*', function(req, res, next){
    console.log('redirecting ' + req.url);
    proxy.web(req, res, {target: 'http://10.2.24.19:8080/'}, function(e){
-      console.log(e);
    });
 });
 
@@ -190,7 +188,7 @@ router.post('/bibtexParse/uploadImg', function(req, res) {
 
 router.post('/software/mirna/calcMirna', function(req, res) {
    var mirna = require('../dev/utils/mirna/mirnaFeatCalc.js');
-   mirna.calculate(req.body.inputFasta, req.body.feat, req.body.email, req.body.runId);
+   mirna.calculate(req.body.inputFasta, req.body.feat, req.body.email, req.body.runId, req.connection.remoteAddress, res);
    res.end();
 });
 
