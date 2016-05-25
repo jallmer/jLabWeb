@@ -6,14 +6,11 @@ var httpProxy = require('http-proxy');
 var proxy = httpProxy.createProxyServer();
 
 router.all('/owncloud*', function(req, res, next){
-   console.log('redirecting ' + req.url);
-   // req.url = '/owncloud/index.php';
    proxy.web(req, res, {target: 'http://10.2.24.26:80/'}, function(e) {
    });
 });
 
 router.all('/phpmyadmin*', function(req, res, next){
-   console.log('redirecting ' + req.url);
    proxy.web(req, res, {target: 'http://10.2.24.19:8080/'}, function(e){
    });
 });
