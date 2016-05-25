@@ -138,6 +138,9 @@ module.exports = {
    },
 
    associateAuthors: function(bibtexEntry, pubId) {
+      if(bibtexEntry.entryTags["author"] == null){
+         bibtexEntry.entryTags["author"] = bibtexEntry.entryTags["editor"];
+      }
       console.log(bibtexEntry.entryTags["author"]);
       var authors = bibtexEntry.entryTags["author"].split(" and ");
       for (var i = 0; i < authors.length; i++) {
@@ -179,7 +182,7 @@ module.exports = {
 
    insertPublication: function(bibtexEntry) {
       var insert = {};
-      var fields = ["title", "author", "abstract", "journal", "publisher", "year", "month", "volume", "number", "pages", "keywords", "doi", "url", "pmid", "issn"];
+      var fields = ["title", "author", "editor", "abstract", "journal", "publisher", "year", "month", "volume", "number", "pages", "keywords", "doi", "url", "pmid", "issn"];
       for (var key in bibtexEntry.entryTags) {
          if (fields.indexOf(key) < 0) {
             continue;
@@ -189,10 +192,10 @@ module.exports = {
          bibtexEntry.entryTags[key] = stringutils.replaceAll(bibtexEntry.entryTags[key], "{\\c{c}}", "ç");
          bibtexEntry.entryTags[key] = stringutils.replaceAll(bibtexEntry.entryTags[key], "{\\\"{u}}", "ü");
          bibtexEntry.entryTags[key] = stringutils.replaceAll(bibtexEntry.entryTags[key], "{\\\"{o}}", "ö");
+         bibtexEntry.entryTags[key] = stringutils.replaceAll(bibtexEntry.entryTags[key], "{", "");
+         bibtexEntry.entryTags[key] = stringutils.replaceAll(bibtexEntry.entryTags[key], "}", "");
          insert[key] = bibtexEntry.entryTags[key];
       }
-      bibtexEntry.entryTags["title"] = stringutils.replaceAll(bibtexEntry.entryTags["title"], "{", "");
-      bibtexEntry.entryTags["title"] = stringutils.replaceAll(bibtexEntry.entryTags["title"], "}", "");
       insert["title"] = bibtexEntry.entryTags["title"];
       insert['type'] = bibtexEntry.entryType;
 
@@ -212,6 +215,9 @@ module.exports = {
 
    addPublication: function(bibtexEntry){
       this.pool.getConnection(function(err, connection){
+         var stringutils = require('./stringutils.js');
+         bibtexEntry.entryTags["title"] = stringutils.replaceAll(bibtexEntry.entryTags["title"], "{", "");
+         bibtexEntry.entryTags["title"] = stringutils.replaceAll(bibtexEntry.entryTags["title"], "}", "");
          connection.query("SELECT * FROM Publications WHERE title = \"" + bibtexEntry.entryTags["title"] + "\"", function(err, rows){
             if(err){
                console.log(err);
