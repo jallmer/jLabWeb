@@ -118,7 +118,7 @@ router.get('/group', function(req, res, next) {
 });
 
 router.get('/collaborators', function(req, res, next) {
-   res.status(200).render('ucon', {
+   res.status(200).render('collaborators', {
       title: "Collaborators",
       active: "collaborators"
    });
