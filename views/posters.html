@@ -46,7 +46,7 @@
                                     <a href="/staff/<%= publications[i].authors[j].internal %>" target="_blank">
                                         <%= publications[i].authors[j].fname %>
                                         <%= publications[i].authors[j].mnames %>
-                                        <%= publications[i].authors[j].lname %>
+                                        <%= publications[i].authors[j].lname %>,
                                     </a>
                                     <% } else { %>
                                     <%= publications[i].authors[j].fname %>
@@ -62,7 +62,7 @@
                                     <%= publications[i].pages %>
                                 </p>
                                 <p>
-                                    <i>Doi: <% if(publications[i].doi) { %> <a href="https://doi.org/<%= publications[i].doi %>" target="_blank"><%= publications[i].doi %></a>  <% } else { %> N/A <% } %> ,<% if(publications[i].url) { %> <a href="<%= publications[i].url %>" target="_blank"><%= publications[i].url %> </a> <% } else { %> N/A <% } %></i>
+                                    <i>Doi: <% if(publications[i].doi) { %> <a href="https://doi.org/<%= publications[i].doi %>" target="_blank"><%= publications[i].doi %></a>  <% } else { %> N/A <% } %> ,<% if(publications[i].url) { %> <a href="<%= publications[i].url %>" target="_blank"> Link </a> <% } else { %> N/A <% } %></i>
                                 </p>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                                     <a href="/<%= publications[i].authors[j].internal %>" target="_blank">
                                         <%= publications[i].authors[j].fname %>
                                         <%= publications[i].authors[j].mnames %>
-                                        <%= publications[i].authors[j].lname %>
+                                        <%= publications[i].authors[j].lname %>,
                                     </a>
                                     <% } else { %>
                                     <%= publications[i].authors[j].fname %>
@@ -101,7 +101,7 @@
                                     <%= publications[i].pages %>
                                 </p>
                                 <p>
-                                    <i>Doi: <% if(publications[i].doi) { %> <a href="https://doi.org/<%= publications[i].doi %>" target="_blank"><%= publications[i].doi %></a>  <% } else { %> N/A <% } %> , <% if(publications[i].url) { %> <a href="<%= publications[i].url %>" target="_blank"><%= publications[i].url %> </a> <% } else { %> N/A <% } %></i>
+                                    <i>Doi: <% if(publications[i].doi) { %> <a href="https://doi.org/<%= publications[i].doi %>" target="_blank"><%= publications[i].doi %></a>  <% } else { %> N/A <% } %> , <% if(publications[i].url) { %> <a href="<%= publications[i].url %>" target="_blank"> Link </a> <% } else { %> N/A <% } %></i>
                                 </p>
                             </div>
                         </div>
