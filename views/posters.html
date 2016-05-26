@@ -39,7 +39,7 @@
                                 <a href="<%= publications[i].imageFile %>" data-lightbox="<%= publications[i].imageFile %>" data-title="<%= publications[i].title %>"><img src="<%= publications[i].imageFile %>" class="img-thumbnail img-responsive"/></a>
                             </div>
                             <div class="col-md-9">
-                                <h4 class="title"> <a href="<%= publications[i].url %>" target="_blank"> <%= publications[i].title %> </a></h4>
+                                <h4 class="title"><a href="<%= publications[i].url %>" target="_blank"><%= publications[i].title %></a></h4>
                                 <p>
                                     <% for(var j = 0; j < publications[i].authors.length; j++) { %>
                                     <% if(publications[i].authors[j].internal) { %>
@@ -63,8 +63,6 @@
                                 </p>
                                 <p>
                                     <i>Doi: <% if(publications[i].doi) { %> <a href="https://doi.org/<%= publications[i].doi %>" target="_blank"><%= publications[i].doi %></a>  <% } else { %> N/A <% } %>
-                                        
-                                        <% if(publications[i].url) { %> <a href="<%= publications[i].url %>" target="_blank"> Link </a> <% } else { %> N/A <% } %></i>
                                 </p>
                             </div>
                         </div>
@@ -80,7 +78,7 @@
                                 <a href="<%= publications[i].imageFile %>" data-lightbox="<%= publications[i].imageFile %>" data-title="<%= publications[i].title %>"><img src="<%= publications[i].imageFile %>" class="img-thumbnail img-responsive"/></a>
                             </div>
                             <div class="col-md-9">
-                                <h4 class="title"><%= publications[i].title %></h4>
+                                <h4 class="title"><a href="<%= publications[i].url %>" target="_blank"> <%= publications[i].title %> </a></h4>
                                 <p>
                                     <% for(var j = 0; j < publications[i].authors.length; j++) { %>
                                     <% if(publications[i].authors[j].internal) { %>
@@ -103,7 +101,7 @@
                                     <%= publications[i].pages %>
                                 </p>
                                 <p>
-                                    <i>Doi: <% if(publications[i].doi) { %> <a href="https://doi.org/<%= publications[i].doi %>" target="_blank"><%= publications[i].doi %></a>  <% } else { %> N/A <% } %> , <% if(publications[i].url) { %> <a href="<%= publications[i].url %>" target="_blank"> Link </a> <% } else { %> N/A <% } %></i>
+                                    <i>Doi: <% if(publications[i].doi) { %> <a href="https://doi.org/<%= publications[i].doi %>" target="_blank"><%= publications[i].doi %></a>  <% } else { %> N/A <% } %></i>
                                 </p>
                             </div>
                         </div>
