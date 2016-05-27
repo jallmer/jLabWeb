@@ -1,7 +1,7 @@
 nbproject/
 test/
 node_modules/
-public/css/*
-public/js/*
+public/css
+public/js
 dev/utils/mirna/mirnaanalyses
 public/files/PGMinerVBI.zip

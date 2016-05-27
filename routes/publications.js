@@ -24,10 +24,17 @@ router.get('/posters', function (req, res, next) {
     getPublications(res, 'poster');
 });
 
+router.get('/contributions', function (req, res, next) {
+    getPublications(res, null);
+});
 
 function getPublications(res, type) {
     mysqlconn.pool.getConnection(function (err, con) {
-        con.query('SELECT * FROM Publications WHERE type = ?', type, function (err, rows) {
+        var query = 'SELECT * FROM Publications WHERE type = ?';
+        if (type === null) {
+            query = 'SELECT * FROM Publications';
+        }
+        con.query(query, type, function (err, rows) {
             if (err)
                 throw err;
             else
