@@ -210,7 +210,12 @@ router.get('/software/PGMiner/', function(req, res, next) {
    });
 });
 
-
+router.get('/software/ACI/', function(req, res, next) {
+   res.status(200).render('ACI', {
+      title: "jLab ACI",
+      active: "ACI"
+   });
+});
 
 
 module.exports = router;

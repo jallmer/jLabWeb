@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Head tags and stylesheets include -->
+        <% include templates/head.html %>
+        <!-- Page specific stylesheets -->
+        <link rel="stylesheet" href="/css/main.css"></link>
+        <style>
+            h4 {
+                text-align: center;
+                font-weight: bolder;
+                font-size: 1.5em;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation bar include -->
+        <% include templates/navbar.html %>
+
+        <!-- Main content and items -->
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron" style="min-height: 800px;">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>ACI: Aho-Corasick Exact Peptide Mapper</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Keywords: Proteogenomics, Exact string matching</h4>
+                            ACI is a tool that allows matching of multiple peptides to a protein or genome (translated on the fly) database in one pass.                    
+                        </div><div class="col-md-6" style='vertical-align: middle;'>
+                        </div>
+                    </div>                      
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Console application</h3>
+                            The console implementation below is intended to be incorporated into computational pipelines or run on the terminal or console.</br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3> Requirements</h3>
+                            The current release of ACI is compiled on Java 1.8 JDK. 
+                            </br>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        &nbsp;
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Download</h3>
+                            <p>
+                                <a href='/files/ACI/Scenario1.rar'>Scenario 1</a> tests whether peptides can be retrieved when they are at the beginning, in the middle or at the end of a sequence for each reading frame.<br/>
+                                <a href='/files/ACI/Scenario2.rar'>Scenario 2</a> tests whether the query peptides are actually matched to all expected locations in the sequence and whether the locations are properly reported.<br/>
+                                <a href='/files/ACI/Scenario3.rar'>Scenario 3</a> tests whether queries which contain shared prefixes, infixes, or suffixes are properly constructed into a query tree, and are mapped to the sequence correctly.<br/>
+                                <a href='/files/ACI/Scenario4.rar'>Scenario 4</a> tests whether overlapping results which can occur with low complex or repetitive peptide sequences are properly mapped to the sequence multiple times for all respective overlaps.<br/>
+                                <a href='/files/ACI/Scenario5.rar'>Scenario 5</a> is a crude test of the scalability of the implementation and tests whether 100000 distinct randomly generated queries can be mapped to a concatenation of the queries as a sequence file.<br/>
+                                <a href='/files/ACI/RunnerACI.rar'> ACI Java executable</a><br/>
+                            </p>                        
+                        </div><div class="col-md-12">
+                            Please contact us in case you encounter a problem. The support will be given asap. 
+                            <p><i class="fa fa-envelope"></i> cananhas@gmail.com</p>
+                            <p><i class="fa fa-envelope"></i> aci@allmer.de</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /container -->
+
+    <!-- Script file and function include -->
+    <% include templates/scripts.html %>
+
+</body>
+</html>
