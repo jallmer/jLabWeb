@@ -217,5 +217,11 @@ router.get('/software/ACI/', function(req, res, next) {
    });
 });
 
+router.get('/software/izmir/', function(req, res, next) {
+   res.status(200).render('izmir', {
+      title: "izMiR",
+      active: "software"
+   });
+});
 
 module.exports = router;
